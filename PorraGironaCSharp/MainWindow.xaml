@@ -19,8 +19,8 @@
             <Border CornerRadius="10" Grid.RowSpan="2" Margin="0,0,-0.4,0">
                 <Border.Background>
                     <LinearGradientBrush>
-                        <GradientStop Color="#c2185b" Offset="0.0"></GradientStop>
-                        <GradientStop Color="#448a" Offset="1"></GradientStop>
+                        <GradientStop Color="#c2185b" Offset="0.0"/>
+                        <GradientStop Color="#448a" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Button x:Name="BotoLoginUser" Content="Login" 
