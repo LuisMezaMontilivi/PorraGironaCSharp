@@ -79,7 +79,7 @@
                    HorizontalAlignment="Center" 
                    Grid.RowSpan="2"/>
 
-            <extToolkit:WatermarkTextBox FontFamily="Poppins" 
+            <extToolkit:WatermarkTextBox x:Name="LoginUsuari" FontFamily="Poppins" 
                                          FontWeight="Bold" 
                                          Watermark="Usuari" 
                                          FontSize="20" 
@@ -97,7 +97,7 @@
                                         Width="25" 
                                         Margin="664,138,0,0" 
                                         Foreground="White"/>
-            <extToolkit:WatermarkPasswordBox FontFamily="Helvetica" 
+            <extToolkit:WatermarkPasswordBox x:Name="LoginContrasenya" FontFamily="Helvetica" 
                                              FontWeight="Bold"  
                                              Watermark="Contrasenya" 
                                              FontSize="20" 
