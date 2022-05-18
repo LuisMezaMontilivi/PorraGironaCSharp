@@ -25,5 +25,21 @@ namespace PorraGironaCSharp
         {
             InitializeComponent();
         }
+
+        private void BotoLoginUser_Click(object sender, RoutedEventArgs e)
+        {
+            PaginaUser pus = new PaginaUser();
+            pus.Owner = this;
+            this.Hide();
+            pus.ShowDialog();
+        }
+
+        private void BotoLoginAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            PaginaAdmin pad = new PaginaAdmin();
+            pad.Owner = this;
+            this.Hide();
+            pad.ShowDialog();
+        }
     }
 }
