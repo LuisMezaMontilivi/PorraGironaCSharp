@@ -1,0 +1,131 @@
+﻿<UserControl x:Class="PorraGironaCSharp.Capes.View.UltimPartitView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <StackPanel>
+            <Border Width="200"
+                    Height="80">
+                <Grid>
+                    <TextBlock Text="Últim partit"
+                               Foreground="White"
+                               FontSize="28"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="30,0,12,38"
+                               FontFamily="/Fonts/#Poppins"
+                               Width="158"/>
+                    <TextBlock Text="22/02/2022"
+                               Foreground="White"
+                               FontSize="28"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontFamily="/Fonts/#Poppins"
+                               Margin="30,38,10,0" Width="160"/>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,0,0,10">
+            <Border Width="325"
+                    Height="200">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="1,2">
+                        <GradientStop Color="#646F69"
+                                      Offset="0.0"/>
+                        <GradientStop Color="#3aa0ff"
+                                      Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,325,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <TextBlock Text="Equip local"
+                               Foreground="White"
+                               FontFamily="/Fonts/#Poppins"
+                               FontSize="28"
+                               Margin="166,10,-136,0"/>
+                    <TextBox x:Name="TextBoxPuntsLocal"
+                             PreviewTextInput="TypeNumericValidation"
+                             DataObject.Pasting="PasteNumericValidation"
+                             Style="{StaticResource Marcador}"
+                             Margin="194,53,31,10" Width="100"/>
+                    <Button x:Name="ButtonAugmentarLocal"
+                            Content="⏶"
+                            Style="{DynamicResource BotonCircular}"
+                            Margin="194,53,31,127" Click="ButtonAugmentarLocal_Click"/>
+                    <Button x:Name="ButtonDisminuirLocal"
+                            Content="⏷"
+                            Style="{DynamicResource BotonCircular}"
+                            Margin="194,170,31,10" Click="ButtonDisminuirLocal_Click"/>
+                    <Image Source="/Images/Escut.png"
+                           Margin="10,31,158,10"/> <!-- A CAMBIAR CUANDO HAGAMOS CONNECT A BBDD-->
+                </Grid>
+
+            </Border>
+
+            <Border Width="325"
+                    Height="200"
+                    Margin="10,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="1,2">
+                        <GradientStop Color="#646F69"
+                                      Offset="0.0"/>
+                        <GradientStop Color="#3aa0ff"
+                                      Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,325,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <TextBlock Text="Equip visitant"
+                               Foreground="White"
+                               FontFamily="/Fonts/#Poppins"
+                               FontSize="28"
+                               Margin="20,10,10,0"/>
+                    <TextBox x:Name="TextBoxPuntsVisitant"
+                             PreviewTextInput="TypeNumericValidation"
+                             DataObject.Pasting="PasteNumericValidation"
+                             Style="{StaticResource Marcador}"
+                             Margin="44,53,181,10"
+                             Width="100"/>
+                    <Button x:Name="ButtonAugmentarVisitant"
+                            Content="⏶"
+                            Style="{DynamicResource BotonCircular}"
+                            Margin="44,53,181,127" Click="ButtonAugmentarVisitant_Click"/>
+                    <Button x:Name="ButtonDisminuirVisitant"
+                            Content="⏷"
+                            Style="{DynamicResource BotonCircular}"
+                            Margin="44,170,181,10" Click="ButtonDisminuirVisitant_Click"/>
+                    <Image Source="/Images/Escut.png"
+                           Margin="166,30,0,10"/><!-- A CAMBIAR CUANDO HAGAMOS CONNECT A BBDD-->
+                </Grid>
+
+            </Border>
+
+        </StackPanel>
+        <Button Style="{DynamicResource BotonCircular}"
+                Content="Posar fi partit"
+                FontFamily="/Fonts/#Poppins"
+                Height="40" Width="250"/>
+
+    </StackPanel>
+</UserControl>

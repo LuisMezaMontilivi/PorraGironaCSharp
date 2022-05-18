@@ -182,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Capes\View\UltimPartitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -190,6 +194,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
+    <Compile Include="Capes\ViewModel\UltimPartitViewModel.cs" />
+    <Compile Include="Capes\View\UltimPartitView.xaml.cs">
+      <DependentUpon>UltimPartitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ObservableObject.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -199,6 +210,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PaginaUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\BotonCircular.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Marcador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\TextBoxEstiloso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,10 +267,6 @@
   <ItemGroup>
     <Folder Include="Capes\DataBase\" />
     <Folder Include="Capes\Model\" />
-    <Folder Include="Capes\ViewModel\" />
-    <Folder Include="Capes\View\" />
-    <Folder Include="Core\" />
-    <Folder Include="Theme\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Escut.png" />
