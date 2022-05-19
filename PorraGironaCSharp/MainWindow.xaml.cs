@@ -28,13 +28,16 @@ namespace PorraGironaCSharp
 
         private void BotoLoginUser_Click(object sender, RoutedEventArgs e)
         {
-            //if(LoginContrasenya.Text== Select contrasenya from usuari where alias = LoginUsuari.text) //Aqui Comprovem que la contrasenya estigui be
+
+            LabelsLogin();
+
+            //if(Select rol from usuari where alias = LoginUsuari.text and contrasenya = LoginContrasenya.Text ==null) //Aqui Comprovem que la contrasenya estigui be
             //{
-                 //string rol = select rol from usuari where where alias = LoginUsuari.text; 
-                 //if(rol == "user")
-                 //  Anem a Pagina USER
-                 //if(rol == "admin")
-                 //  Anem a Pagina Admin
+            //string rol = select rol from usuari where where alias = LoginUsuari.text; 
+            //if(rol == "user")
+            //  Anem a Pagina USER
+            //if(rol == "admin")
+            //  Anem a Pagina Admin
             //}
             //else
             //MessageBox.Show("Usuari o Contrasenya Incorrectes);
@@ -45,10 +48,10 @@ namespace PorraGironaCSharp
 
 
 
-            PaginaUser pus = new PaginaUser();
-            pus.Owner = this;
-            this.Hide();
-            pus.ShowDialog();
+            //PaginaUser pus = new PaginaUser();
+            //pus.Owner = this;
+            //this.Hide();
+            //pus.ShowDialog();
         }
 
         private void BotoLoginAdmin_Click(object sender, RoutedEventArgs e)
@@ -57,6 +60,41 @@ namespace PorraGironaCSharp
             pad.Owner = this;
             this.Hide();
             pad.ShowDialog();
+        }
+        public void LabelsLogin()
+        {
+            if (LoginUsuari.Text == "")
+            {
+                LabelNoLogin.Content = "Siusplau introdueix un usuari";
+            }
+            else if (LoginUsuari.Text != "")
+            {
+                LabelNoLogin.Content = "";
+            }
+
+            if (LoginContrasenya.Text == "")
+            {
+                LabelNoContrasenya.Content = "Siusplau introdueix una contrasenya";
+            }
+            else if (LoginContrasenya.Text != "")
+            {
+                LabelNoContrasenya.Content = "";
+            }
+        }
+
+        private void BotoToolbarTancar_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BotoToolbarMinimitzar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void BotoToolbarMaximitzar_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }

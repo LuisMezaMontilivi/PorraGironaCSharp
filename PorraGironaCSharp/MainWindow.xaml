@@ -12,6 +12,7 @@
         Width="800"
         AllowsTransparency="True"
         WindowStyle="None"
+        UseNoneWindowStyle="True"
         Background="Transparent">
     <Grid>
         <Grid>
@@ -48,6 +49,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
+
             </Border>
             <!---Boto Auxiliar Prova -->
             <Button x:Name="BotoLoginAdmin" Content="Login Auxiliar" 
@@ -129,6 +131,24 @@
                     Margin="399,46.6,104.6,161" 
                     Opacity="0.75" 
                     Grid.Row="1"/>
+
+            <Label x:Name="LabelNoLogin" Content="" Margin="396,167,111,4.8" Foreground="#FF6E6E6E" FontFamily="/PorraGironaCSharp;component/Fonts/#Poppins" FontWeight="Bold" FontSize="14"/>
+            <Label x:Name="LabelNoContrasenya" Margin="396,49.2,117,126.6" Foreground="#FF6E6E6E" FontFamily="/PorraGironaCSharp;component/Fonts/#Poppins" FontWeight="Bold" FontSize="14" Grid.Row="1"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,189.8" Background="Black" Opacity="0.739"/>
+            <Button x:Name="BotoToolbarTancar" Margin="756,3,10,192.8" Opacity="0.75" Background="Black" Click="BotoToolbarTancar_Click_1">
+                <iconPacks:PackIconMaterial Kind="Close"
+                                            Width="20"
+                                            Height="23"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+            </Button>
+            <Button x:Name="BotoToolbarMinimitzar" Margin="717,3,49,192.8" Opacity="0.75" Background="Black" Click="BotoToolbarMinimitzar_Click">
+                <iconPacks:PackIconMaterial Kind="LineScan"
+                                            Width="20"
+                                            Height="16"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+            </Button>
         </Grid>
     </Grid>
 </mah:MetroWindow>
