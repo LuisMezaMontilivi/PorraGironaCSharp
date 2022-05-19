@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="PorraGironaCSharp.Capes.View.AltaEquip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+            <Label Content="Nom equip"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   RenderTransformOrigin="1.458,0.679"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+            <Label Content="Municipi"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   RenderTransformOrigin="1.458,0.679"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,10,0"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}" Margin="5,0,0,0"/>
+
+            <Label Content="Nom del camp"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   RenderTransformOrigin="1.458,0.679"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Margin="50,0,0,0"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+            <Label Content="Imatge"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   RenderTransformOrigin="1.458,0.679"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,10,0"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}" Margin="12,0,0,0"/>
+            <Button Content="Cercar" Height="10" Width="50" Margin="20,0,0,0"/>
+
+        </StackPanel>
+
+        <Border CornerRadius="10">
+            <Button Margin="50,20,50,0"
+                    Content="Crear equip"
+                    FontFamily="/Fonts/#Poppins"
+                    FontSize="20"/>
+        </Border>
+
+    </StackPanel>
+</UserControl>
