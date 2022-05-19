@@ -28,5 +28,7 @@ namespace PorraGironaCSharp
         {
             InitializeComponent();
         }
+
+
     }
 }
