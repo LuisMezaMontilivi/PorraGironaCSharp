@@ -9,18 +9,23 @@
         xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Material"
                  Title="Porra Girona"
         Height="450"
-        Width="800">
+        Width="800"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Border CornerRadius="10" Grid.RowSpan="2" Margin="0,0,-0.4,0">
+            <Border CornerRadius="10" 
+                    Grid.RowSpan="2" 
+                    Margin="0,0,-0.4,0">
                 <Border.Background>
                     <LinearGradientBrush>
                         <GradientStop Color="#c2185b" Offset="0.0"/>
-                        <GradientStop Color="#448a" Offset="1"/>
+                        <GradientStop Color="#FFB5F6F5" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Button x:Name="BotoLoginUser" Content="Login" 
@@ -74,7 +79,7 @@
                    HorizontalAlignment="Center" 
                    Grid.RowSpan="2"/>
 
-            <extToolkit:WatermarkTextBox FontFamily="Poppins" 
+            <extToolkit:WatermarkTextBox x:Name="LoginUsuari" FontFamily="Poppins" 
                                          FontWeight="Bold" 
                                          Watermark="Usuari" 
                                          FontSize="20" 
@@ -92,7 +97,7 @@
                                         Width="25" 
                                         Margin="664,138,0,0" 
                                         Foreground="White"/>
-            <extToolkit:WatermarkPasswordBox FontFamily="Helvetica" 
+            <extToolkit:WatermarkPasswordBox x:Name="LoginContrasenya" FontFamily="Helvetica" 
                                              FontWeight="Bold"  
                                              Watermark="Contrasenya" 
                                              FontSize="20" 

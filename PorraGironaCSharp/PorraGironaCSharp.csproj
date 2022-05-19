@@ -225,6 +225,19 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Capes\Model\Categoria.cs" />
+    <Compile Include="Capes\Model\Categories.cs" />
+    <Compile Include="Capes\Model\Equip.cs" />
+    <Compile Include="Capes\Model\Equips.cs" />
+    <Compile Include="Capes\Model\GestioAdministradors.cs" />
+    <Compile Include="Capes\Model\Historic.cs" />
+    <Compile Include="Capes\Model\Partit.cs" />
+    <Compile Include="Capes\Model\Partits.cs" />
+    <Compile Include="Capes\Model\Porra.cs" />
+    <Compile Include="Capes\Model\Porres.cs" />
+    <Compile Include="Capes\Model\Porrista.cs" />
+    <Compile Include="Capes\Model\Porristes.cs" />
+    <Compile Include="Capes\Model\Usuari.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -291,6 +304,10 @@
   <ItemGroup>
     <Folder Include="Capes\DataBase\" />
     <Folder Include="Capes\Model\" />
+    <Folder Include="Capes\ViewModel\" />
+    <Folder Include="Capes\View\" />
+    <Folder Include="Core\" />
+    <Folder Include="Theme\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Escut.png" />
