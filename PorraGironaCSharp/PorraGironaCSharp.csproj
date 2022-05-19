@@ -215,6 +215,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Theme\PaginaUserTema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PaginaAdmin.xaml.cs">
@@ -255,7 +259,6 @@
     <Folder Include="Capes\ViewModel\" />
     <Folder Include="Capes\View\" />
     <Folder Include="Core\" />
-    <Folder Include="Theme\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Escut.png" />
