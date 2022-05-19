@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
+   
     class Usuari
     {
         public string alias { get; set; }
@@ -21,10 +23,21 @@ namespace PorraGironaCSharp.Capes.Model
             this.contrasenya = contrasenya;
         }
 
-        public string Verificar()
+        public string Verificar(string alias, string contrasenya)
         {
             string rol="";
+            BaseDadesUsuari conexio = new BaseDadesUsuari();
 
+            try
+            {
+                rol=conexio.SelectRol(alias,contrasenya);
+               
+            }
+            catch
+            {
+                rol = "No Funciona";
+            }
+            
 
             return rol;
         }
