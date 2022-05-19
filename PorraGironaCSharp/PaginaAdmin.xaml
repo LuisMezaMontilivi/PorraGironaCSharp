@@ -1,12 +1,128 @@
-﻿<Window x:Class="PorraGironaCSharp.PaginaAdmin"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PorraGironaCSharp"
-        mc:Ignorable="d"
-        Title="PaginaAdmin" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+﻿<Window xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                  x:Class="PorraGironaCSharp.PaginaAdmin"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:local="clr-namespace:PorraGironaCSharp"
+                  xmlns:viewModel="clr-namespace:PorraGironaCSharp.Capes.ViewModel"
+                  mc:Ignorable="d"
+                  Title="Porra Girona - Admin"
+                  WindowStyle="None"
+                  Background="Transparent"
+                  AllowsTransparency="True"
+                  Height="450"
+                  Width="830">
+    <Window.DataContext>
+        <viewModel:AdminPrincipalVM/>
+    </Window.DataContext>
+    
+    <Border Background="#591112">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        Background="#360808"/>
+
+            <TextBlock Text="Porra Girona"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="20"
+                       Margin="10,0,0,0"
+                       FontFamily="/Fonts/#Poppins"/>
+
+            <StackPanel Grid.Row="1">
+
+                <RadioButton Content="Ultim partit"
+                             Height="70"
+                             Foreground="White"
+                             FontSize="14"
+                             IsChecked="True"
+                             Style="{StaticResource Menu}"
+                             Command="{Binding UltimPartitComanda}"/>
+
+                <RadioButton Content="Altes"
+                             Height="70"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource Menu}"
+                             Command="{Binding AltesComanda}"/>
+
+                <RadioButton Content="Baixes"
+                             Height="70"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource Menu}"/>
+
+                <RadioButton Content="Fi temporada"
+                             Height="70"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource Menu}"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal">
+                <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource TextBoxEstiloso}"
+                     Text="Nombre del usuario"
+                     IsEnabled="False"/>
+
+            </StackPanel>
+
+            <Button Width="50"
+                    Height="50"
+                    Grid.Column="1"
+                    Margin="625,0,0,0"
+                    Content="&#x2718;"
+                    FontSize="30"
+                    Foreground="White"
+                    Background="Transparent"
+                    x:Name="ButtonCerrar"
+                    BorderThickness="0" Click="ButtonCerrar_Click"/>
+
+            <Button Width="50"
+                    Height="50"
+                    Grid.Column="1"
+                    Margin="570,0,55,0"
+                    Content="&#x26F6;"
+                    FontSize="30"
+                    Foreground="White"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    x:Name="ButtonMaximizar" Click="ButtonMaximizar_Click"/>
+
+            <Button Width="50"
+                    Height="50"
+                    Grid.Column="1"
+                    Margin="520,0,105,0"
+                    Content="🡧"
+                    FontSize="30"
+                    Foreground="White"
+                    Background="Transparent"
+                    x:Name="ButtonMinimizar"
+                    BorderThickness="0" Click="ButtonMinimizar_Click"/>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+        </Grid>
+    </Border>
 </Window>
