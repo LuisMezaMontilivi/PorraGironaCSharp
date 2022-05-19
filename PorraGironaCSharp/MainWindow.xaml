@@ -9,7 +9,8 @@
         xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Material"
                  Title="Porra Girona"
         Height="450"
-        Width="800">
+        Width="800"
+        UseNoneWindowStyle="True">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

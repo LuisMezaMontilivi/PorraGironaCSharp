@@ -23,6 +23,10 @@
                 <view:UltimPartitView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:AltesViewModel}">
+                <view:AltesView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

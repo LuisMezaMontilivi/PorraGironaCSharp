@@ -182,6 +182,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Capes\View\AltaEquip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\AltaUsuari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\AltesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Capes\View\UltimPartitView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,7 +207,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
+    <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />
+    <Compile Include="Capes\ViewModel\AltaUsuariViewModel.cs" />
+    <Compile Include="Capes\ViewModel\AltesViewModel.cs" />
     <Compile Include="Capes\ViewModel\UltimPartitViewModel.cs" />
+    <Compile Include="Capes\View\AltaEquip.xaml.cs">
+      <DependentUpon>AltaEquip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\AltaUsuari.xaml.cs">
+      <DependentUpon>AltaUsuari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\AltesView.xaml.cs">
+      <DependentUpon>AltesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Capes\View\UltimPartitView.xaml.cs">
       <DependentUpon>UltimPartitView.xaml</DependentUpon>
     </Compile>

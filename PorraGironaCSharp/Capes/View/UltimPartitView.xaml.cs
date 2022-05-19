@@ -45,22 +45,30 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonAugmentarLocal_Click(object sender, RoutedEventArgs e)
         {
+            if (TextBoxPuntsLocal.Text == "")
+                TextBoxPuntsLocal.Text = "0";
             TextBoxPuntsLocal.Text = (Convert.ToInt32(TextBoxPuntsLocal.Text) + 1).ToString();
         }
 
         private void ButtonDisminuirLocal_Click(object sender, RoutedEventArgs e)
         {
+            if (TextBoxPuntsLocal.Text == "")
+                TextBoxPuntsLocal.Text = "0";
             if (TextBoxPuntsLocal.Text != "0")
                 TextBoxPuntsLocal.Text = (Convert.ToInt32(TextBoxPuntsLocal.Text) - 1).ToString();
         }
 
         private void ButtonAugmentarVisitant_Click(object sender, RoutedEventArgs e)
         {
+            if (TextBoxPuntsVisitant.Text == "")
+                TextBoxPuntsVisitant.Text = "0";
             TextBoxPuntsVisitant.Text = (Convert.ToInt32(TextBoxPuntsVisitant.Text) + 1).ToString();
         }
 
         private void ButtonDisminuirVisitant_Click(object sender, RoutedEventArgs e)
         {
+            if (TextBoxPuntsVisitant.Text == "")
+                TextBoxPuntsVisitant.Text = "0";
             if (TextBoxPuntsVisitant.Text != "0")
                 TextBoxPuntsVisitant.Text = (Convert.ToInt32(TextBoxPuntsVisitant.Text) - 1).ToString();
         }

@@ -48,14 +48,14 @@
                              FontSize="14"
                              IsChecked="True"
                              Style="{StaticResource Menu}"
-                             Command="{Binding UltimoPartidoComando}"/>
+                             Command="{Binding UltimPartitComanda}"/>
 
                 <RadioButton Content="Altes"
                              Height="70"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource Menu}"
-                             Command="{Binding AltesComando}"/>
+                             Command="{Binding AltesComanda}"/>
 
                 <RadioButton Content="Baixes"
                              Height="70"
