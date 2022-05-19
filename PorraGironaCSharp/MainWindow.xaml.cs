@@ -25,5 +25,38 @@ namespace PorraGironaCSharp
         {
             InitializeComponent();
         }
+
+        private void BotoLoginUser_Click(object sender, RoutedEventArgs e)
+        {
+            //if(LoginContrasenya.Text== Select contrasenya from usuari where alias = LoginUsuari.text) //Aqui Comprovem que la contrasenya estigui be
+            //{
+                 //string rol = select rol from usuari where where alias = LoginUsuari.text; 
+                 //if(rol == "user")
+                 //  Anem a Pagina USER
+                 //if(rol == "admin")
+                 //  Anem a Pagina Admin
+            //}
+            //else
+            //MessageBox.Show("Usuari o Contrasenya Incorrectes);
+
+
+
+
+
+
+
+            PaginaUser pus = new PaginaUser();
+            pus.Owner = this;
+            this.Hide();
+            pus.ShowDialog();
+        }
+
+        private void BotoLoginAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            PaginaAdmin pad = new PaginaAdmin();
+            pad.Owner = this;
+            this.Hide();
+            pad.ShowDialog();
+        }
     }
 }
