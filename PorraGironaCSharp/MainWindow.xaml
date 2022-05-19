@@ -12,6 +12,7 @@
         Width="800"
         AllowsTransparency="True"
         WindowStyle="None"
+        UseNoneWindowStyle="True"
         Background="Transparent">
     <Grid>
         <Grid>
@@ -30,7 +31,7 @@
                 </Border.Background>
                 <Button x:Name="BotoLoginUser" Content="Login" 
                         HorizontalAlignment="Left" 
-                        Margin="562,309,0,0" 
+                        Margin="561,327,0,0" 
                         VerticalAlignment="Top" 
                         Width="130" 
                         Foreground="White" 
@@ -48,27 +49,10 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
+
             </Border>
             <!---Boto Auxiliar Prova -->
-            <Button x:Name="BotoLoginAdmin" Content="Login Auxiliar" 
-                        HorizontalAlignment="Left" 
-                        Margin="399,98.6,0,0" 
-                        VerticalAlignment="Top" 
-                        Width="130" 
-                        Foreground="White" 
-                        FontFamily="Helvetica" 
-                        FontSize="15" 
-                        Height="34" 
-                        FontWeight="Bold" Grid.Row="1" Click="BotoLoginAdmin_Click">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FFED528F"/>
-                        <GradientStop Color="White" Offset="1"/>
-                        <GradientStop Color="#44F9F9F9" Offset="0.955"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+           
             <!---Boto Auxiliar Prova -->
             <Image Source="/Images/Escut.png" 
                    Height="342" 
@@ -110,7 +94,8 @@
                                              Margin="399,17.6,159.6,161" 
                                              BorderBrush="White" 
                                              RenderTransformOrigin="0.492,1.917" 
-                                             Grid.Row="1"/>
+                                             Grid.Row="1"
+                                             />
 
             <iconPacks:PackIconMaterial Kind="FormTextboxPassword" 
                                         Height="24" 
@@ -129,6 +114,47 @@
                     Margin="399,46.6,104.6,161" 
                     Opacity="0.75" 
                     Grid.Row="1"/>
+
+            <Label x:Name="LabelNoLogin" 
+                   Content="" 
+                   Margin="396,167,111,4.8" 
+                   Foreground="#FF6E6E6E" 
+                   FontFamily="/PorraGironaCSharp;component/Fonts/#Poppins" 
+                   FontWeight="Bold" 
+                   FontSize="14"/>
+            <Label x:Name="LabelNoContrasenya" 
+                   Margin="396,49.2,117,126.6" 
+                   Foreground="#FF6E6E6E"
+                   FontFamily="/PorraGironaCSharp;component/Fonts/#Poppins" 
+                   FontWeight="Bold" 
+                   FontSize="14" 
+                   Grid.Row="1"/>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="0,0,0,189.8" 
+                        Background="Black" 
+                        Opacity="0.739"/>
+            <Button x:Name="BotoToolbarTancar" 
+                    Margin="756,3,10,192.8" 
+                    Opacity="0.75" 
+                    Background="Black" 
+                    Click="BotoToolbarTancar_Click_1">
+                <iconPacks:PackIconMaterial Kind="Close"
+                                            Width="20"
+                                            Height="23"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+            </Button>
+            <Button x:Name="BotoToolbarMinimitzar" 
+                    Margin="717,3,49,192.8" 
+                    Opacity="0.75" 
+                    Background="Black"
+                    Click="BotoToolbarMinimitzar_Click">
+                <iconPacks:PackIconMaterial Kind="LineScan"
+                                            Width="20"
+                                            Height="16"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+            </Button>
         </Grid>
     </Grid>
 </mah:MetroWindow>
