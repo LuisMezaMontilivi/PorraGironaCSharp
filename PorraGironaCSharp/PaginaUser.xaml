@@ -25,7 +25,7 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-          
+
 
             <Border Grid.ColumnSpan="2"
                     Background="#252525">
@@ -53,7 +53,7 @@
                         x:Name="ButtonMinimitzar"
                         Click="ButtonMinimizar_Click"
                         >
-                        <iconPacks:PackIconMaterial Kind="WindowMinimize"  
+                    <iconPacks:PackIconMaterial Kind="WindowMinimize"  
                                              Width="20"
                                             Height="23"
                                             VerticalAlignment="Center"
@@ -75,9 +75,9 @@
                                             Height="23"
                                             VerticalAlignment="Center"
                                             Foreground="White"/>
-                    
+
                 </Button>
-                
+
                 <Button Width="37" Height="37" 
                         
                         Foreground="White"
@@ -87,7 +87,7 @@
                         BorderThickness="0" 
                         x:Name="ButtonCerrar"
                         Click="ButtonCerrar_Click">
-                        
+
                     <iconPacks:PackIconMaterial Kind="Close"
                                             Width="20"
                                             Height="23"
@@ -122,9 +122,111 @@
                              FontSize="14"
                              Style="{StaticResource PaginaUser}"/>
             </StackPanel>
-            
-            
-            
+
+
+            <Grid Grid.Row="1" Grid.Column="1" 
+                        Margin="40, 30, 30, 40"
+                        >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="20"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+
+                <Border Grid.Row="0" CornerRadius="15" BorderThickness="3" BorderBrush="Black" 
+                        x:Name="PartitAnterior" >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="37*"/>
+                            <RowDefinition Height="20*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="EquipLocal"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   />
+                        <TextBlock Grid.Row="2" Grid.Column="1"
+                                   Text="DataPartit"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   />
+
+                        <TextBlock Grid.Row="2" Grid.Column="2"
+                                   Text="EquipVisitant"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   />
+
+
+
+                    </Grid>
+
+                </Border>
+
+                <Border Grid.Row="1" ></Border>
+
+                <Border Grid.Row="2" CornerRadius="15" BorderThickness="3" BorderBrush="Black" 
+                        x:Name="PartitActual" >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="37*"/>
+                            <RowDefinition Height="20*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="EquipLocal"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   />
+                        <TextBlock Grid.Row="2" Grid.Column="1"
+                                   Text="DataPartit"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   />
+
+                        <TextBlock Grid.Row="2" Grid.Column="2"
+                                   Text="EquipVisitant"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   />
+
+
+                    </Grid>
+
+                </Border>
+
+
+
+
+            </Grid>
 
 
 
