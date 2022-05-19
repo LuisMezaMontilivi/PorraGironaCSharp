@@ -7,10 +7,9 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Material"
-                 Title="Porra Girona"
+        Title="Porra Girona"
         Height="450"
-        Width="800"
-        UseNoneWindowStyle="True">
+        Width="800">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
