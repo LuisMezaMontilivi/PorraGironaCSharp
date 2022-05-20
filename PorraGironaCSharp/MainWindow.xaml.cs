@@ -40,31 +40,37 @@ namespace PorraGironaCSharp
         private void BotoLoginUser_Click(object sender, RoutedEventArgs e)
         {
             string alias = LoginUsuari.Text, contrasenya = LoginContrasenya.Password;
-            Usuari usuari = new Usuari(alias,contrasenya);
-            string prova= usuari.Verificar(alias, contrasenya);
-            if(alias=="" || contrasenya == "")
+            if (alias == "" || contrasenya == "")
             {
                 LabelsLogin();
             }
-            else if (prova == "user")
-            {
-                PaginaUser pus = new PaginaUser();
-                pus.Owner = this;
-                this.Hide();
-                pus.ShowDialog();
-            }
-            else if(prova == "admin")
-            {
-                PaginaAdmin pad = new PaginaAdmin();
-                pad.Owner = this;
-                this.Hide();
-                pad.ShowDialog();
-            }
             else
             {
-                MessageBox.Show("Usuari o Contrasenya Introduit Incorrectament");
-                LoginUsuari.Text = null; LoginContrasenya.Text = null; LoginUsuari.Focus();
+                Usuari usuari = new Usuari(alias, contrasenya);
+                string prova = usuari.Verificar(alias, contrasenya);
+
+
+                if (prova == "user")
+                {
+                    PaginaUser pus = new PaginaUser();
+                    pus.Owner = this;
+                    this.Hide();
+                    pus.ShowDialog();
+                }
+                else if (prova == "admin")
+                {
+                    PaginaAdmin pad = new PaginaAdmin();
+                    pad.Owner = this;
+                    this.Hide();
+                    pad.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuari o Contrasenya Introduit Incorrectament");
+                    LoginUsuari.Text = null; LoginContrasenya.Text = null; LoginUsuari.Focus();
+                }
             }
+           
 
             //Protitip De la idea Inicial (Erronea)
             //if(Select rol from usuari where alias = LoginUsuari.text and contrasenya = LoginContrasenya.Text ==null) //Aqui Comprovem que la contrasenya estigui be
