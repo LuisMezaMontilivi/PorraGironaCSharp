@@ -18,11 +18,11 @@
                   VerticalAlignment="Top"
                   Width="120"
                   IsSynchronizedWithCurrentItem="True"
-                  SelectedIndex="0"
+                  SelectedIndex="0" SelectionChanged="ComboBoxOpcio_SelectionChanged"
                   />
 
         <StackPanel Grid.Row="1">
-            <local:AltaEquip/>
+            <Frame x:Name="FrameOpcions"/>
         </StackPanel>
 
     </Grid>
