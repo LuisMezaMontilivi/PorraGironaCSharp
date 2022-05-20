@@ -7,7 +7,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Material"
-                 Title="Porra Girona"
+        Title="Porra Girona"
         Height="450"
         Width="800"
         AllowsTransparency="True"
@@ -52,7 +52,7 @@
 
             </Border>
             <!---Boto Auxiliar Prova -->
-           
+
             <!---Boto Auxiliar Prova -->
             <Image Source="/Images/Escut.png" 
                    Height="342" 
@@ -155,6 +155,36 @@
                                             VerticalAlignment="Center"
                                             Foreground="White"/>
             </Button>
+            <Button x:Name="BotoRegister" Content="Registrar" 
+                        HorizontalAlignment="Left" 
+                        Margin="402,102.2,0,0" 
+                        VerticalAlignment="Top" 
+                        Width="130" 
+                        Foreground="White" 
+                        FontFamily="Helvetica" 
+                        FontSize="15" 
+                        Height="34" 
+                        FontWeight="Bold" Click="BotoRegister_Click" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="#FFED528F"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#44F9F9F9" Offset="0.955"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <iconPacks:PackIconMaterial Kind="Tools" 
+                                        Height="14" 
+                                        Width="18" 
+                                        Margin="511,113.2,0,0" 
+                                        Foreground="White" Grid.Row="1"/>
+            <iconPacks:PackIconMaterial Kind="Tools" 
+                                        Height="14" 
+                                        Width="18" 
+                                        Margin="405,113.2,0,0" 
+                                        Foreground="White" Grid.Row="1" RenderTransformOrigin="0.464,0.496"/>
+
         </Grid>
     </Grid>
 </mah:MetroWindow>

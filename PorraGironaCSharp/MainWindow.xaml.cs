@@ -26,7 +26,17 @@ namespace PorraGironaCSharp
         {
             InitializeComponent();
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
 
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            this.DragMove();
+        }
         private void BotoLoginUser_Click(object sender, RoutedEventArgs e)
         {
             string alias = LoginUsuari.Text, contrasenya = LoginContrasenya.Password;
@@ -98,10 +108,14 @@ namespace PorraGironaCSharp
         {
             this.WindowState = WindowState.Minimized;
         }
-
-        private void BotoToolbarMaximitzar_Click(object sender, RoutedEventArgs e)
+        private void BotoRegister_Click(object sender, RoutedEventArgs e)
         {
-           
+            PaginaRegistre pr = new PaginaRegistre();
+            pr.Owner = this;
+            this.Hide();
+            pr.ShowDialog();
         }
+
+
     }
 }
