@@ -22,11 +22,19 @@ namespace PorraGironaCSharp.Capes.Model
             this.alias = alias;
             this.contrasenya = contrasenya;
         }
+        public Usuari(string nom, string cognom, string dni ,string alias, string contrasenya)
+        {
+            this.nom = nom;
+            this.cognom = cognom;
+            this.nif = dni;
+            this.alias = alias;
+            this.contrasenya = contrasenya;
+        }
 
         public string Verificar(string alias, string contrasenya)
         {
             string rol="";
-            BaseDadesUsuari conexio = new BaseDadesUsuari();
+            BaseDades conexio = new BaseDades();
 
             try
             {
@@ -40,6 +48,24 @@ namespace PorraGironaCSharp.Capes.Model
             
 
             return rol;
+        }
+        public void Afegir(string nom, string cognom, string dni, string alias, string contrasenya)
+        {
+           
+            BaseDades conexio = new BaseDades();
+
+            try
+            {
+               conexio.InsertUsuari(nom,cognom,dni,alias, contrasenya);
+
+            }
+            catch
+            {
+                rol = "No Funciona";
+            }
+
+
+            
         }
 
 

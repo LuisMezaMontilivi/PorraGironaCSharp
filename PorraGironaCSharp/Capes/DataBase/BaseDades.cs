@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace PorraGironaCSharp.Capes.DataBase
 {
 
-    class BaseDadesUsuari
+    class BaseDades
     {
         MySqlConnection connexio = new MySqlConnection($"server=localhost; port=3306; user=root; password=; database=porra");
       
@@ -36,6 +36,19 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
 
             return escut;
+
+        }
+        public void InsertUsuari(string nom, string cognom, string nif, string alias, string contrasenya)
+        {
+
+            MySqlCommand command = new MySqlCommand($"Insert into Usuari(Nom, Cognom, Nif,Alias,Rol,Contrasenya,DataAlta,PuntuacioTotal) Values ('{nom}','{cognom}','{nif}','{alias}','user','{contrasenya}',current_timestamp,0);");
+            //insert into usuari values (null,'Fernanda','Perez','12345678A','FPerez','user','1234',current_timestamp,10);
+            command.Connection = connexio;
+            connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+
+            
 
         }
     }
