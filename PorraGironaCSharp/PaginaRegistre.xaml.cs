@@ -47,6 +47,10 @@ namespace PorraGironaCSharp
 
         private void BotoTornar_Click(object sender, RoutedEventArgs e)
         {
+            TornarPantallaMenu();
+        }
+        public void TornarPantallaMenu()
+        {
             MainWindow pp = new MainWindow();
             pp.Owner = this;
             this.Hide();
@@ -55,9 +59,28 @@ namespace PorraGironaCSharp
 
         private void BotoRegistrarUsuari_Click(object sender, RoutedEventArgs e)
         {
-            string nom=TextBoxNom.Text, cognom=TextBoxCogom.Text, nif=TextBoxDNI.Text, alias = TextBoxAlias.Text, contrasenya = TextBoxContrasenya.Text;
-            Usuari usuari = new Usuari(nom,cognom,nif,alias, contrasenya);
-            usuari.Afegir(nom, cognom, nif, alias, contrasenya);
+            bool correcte;
+            
+            string nom=TextBoxNom.Text, cognom=TextBoxCogom.Text, nif=TextBoxDNI.Text, alias = TextBoxAlias.Text, contrasenya = TextBoxContrasenya.Password, confirmarContrasenya=TextBoxConfirmarContrasenya.Password;
+            if (confirmarContrasenya != contrasenya)
+            {
+                MessageBox.Show("Error Dades Introduïdes Incorrectament");
+            }
+            else
+            {
+                Usuari usuari = new Usuari(nom, cognom, nif, alias, contrasenya);
+                correcte = usuari.Afegir(nom, cognom, nif, alias, contrasenya);
+                if (correcte)
+                {
+                    MessageBox.Show("Usuari Introduït Correctament");
+                    TornarPantallaMenu();
+                }
+                else
+                {
+                    MessageBox.Show("ERROR Usuari No Valid");
+                }
+            }
+            
         }
     }
 }

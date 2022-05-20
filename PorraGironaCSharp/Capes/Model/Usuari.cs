@@ -49,21 +49,23 @@ namespace PorraGironaCSharp.Capes.Model
 
             return rol;
         }
-        public void Afegir(string nom, string cognom, string dni, string alias, string contrasenya)
+        public bool Afegir(string nom, string cognom, string dni, string alias, string contrasenya)
         {
-           
+            bool funciona;
             BaseDades conexio = new BaseDades();
 
             try
             {
                conexio.InsertUsuari(nom,cognom,dni,alias, contrasenya);
-
+               funciona = true;
+               
             }
             catch
             {
-                rol = "No Funciona";
+                funciona = false;
             }
-
+            
+            return funciona;
 
             
         }

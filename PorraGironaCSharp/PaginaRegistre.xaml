@@ -37,12 +37,12 @@
 
             </Border>
             <!---Boto Auxiliar Prova -->
-            <TextBox TextWrapping="Wrap" Text="" Margin="460,101,134,97.8" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxNom" FontFamily="Poppins"/>
-            <TextBox TextWrapping="Wrap" Text="" Margin="455,146,134,52.8" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxCogom" FontFamily="Poppins" />
-            <TextBox TextWrapping="Wrap" Text="" Margin="454,187,134,11.8" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxDNI" FontFamily="Poppins" />
-            <TextBox TextWrapping="Wrap" Text="" Margin="454,10.2,134,188.6" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxAlias" Grid.Row="1" FontFamily="Poppins" />
-            <TextBox TextWrapping="Wrap" Text="" Margin="455,52.2,134,146.6" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxContrasenya" Grid.Row="1" FontFamily="Poppins" />
-            <TextBox TextWrapping="Wrap" Text="" Margin="454,93.2,135,105.6" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxConfirmarContrasenya" Grid.Row="1" FontFamily="Poppins" />
+            <TextBox TextWrapping="Wrap" Text="" Margin="455,101,139,97.8" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxNom" FontFamily="Poppins" FontSize="16" FontWeight="Bold"/>
+            <TextBox TextWrapping="Wrap" Text="" Margin="455,146,134,52.8" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxCogom" FontFamily="Poppins" FontSize="16" FontWeight="Bold" />
+            <TextBox TextWrapping="Wrap" Text="" Margin="454,187,134,11.8" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxDNI" FontFamily="Poppins" FontSize="16" FontWeight="Bold" />
+            <TextBox TextWrapping="Wrap" Text="" Margin="454,10.2,134,188.6" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxAlias" Grid.Row="1" FontFamily="Poppins" FontSize="16" FontWeight="Bold" />
+            <PasswordBox  Margin="455,52.2,134,146.6" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxContrasenya" Grid.Row="1" FontFamily="Poppins" FontSize="16" FontWeight="Bold"/>
+            <PasswordBox  Margin="454,93.2,135,105.6" Background="Transparent" BorderThickness="0"  Foreground="White" x:Name="TextBoxConfirmarContrasenya" Grid.Row="1" FontFamily="Poppins" FontSize="16" FontWeight="Bold" />
             <!---Boto Auxiliar Prova -->
             <Image Source="/Images/Escut.png" 
                    Height="144" 
@@ -112,11 +112,11 @@
             </Button>
 
             <Label Content="Nom" Margin="139,100,580,89.8" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Foreground="White" Opacity="0.85" />
-            <Label Content="Cognom" Margin="139,139,519,40.8" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Foreground="White" Opacity="0.85"/>
+            <Label Content="Cognom" Margin="139,142,519,37.8" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Foreground="White" Opacity="0.85"/>
             <Label Content="DNI" Margin="139,184,555,224.6" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Grid.RowSpan="2" Foreground="White" Opacity="0.85"/>
             <Label Content="Alias" Margin="139,0.2,555,187.6" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Grid.Row="1" Foreground="White" Opacity="0.85"/>
             <Label Content="Contrasenya" Margin="139,42.2,465,140.6" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Grid.Row="1" Foreground="White" Opacity="0.85"/>
-            <Label Content="Confirmar Contrasenya" Margin="134,89.2,363,92.6" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Grid.Row="1" RenderTransformOrigin="0.532,0.563" Foreground="White" Opacity="0.85"/>
+            <Label Content="Confirmar Contrasenya" Margin="139,89.2,358,92.6" FontFamily="Poppins" FontWeight="Bold" FontSize="26" Grid.Row="1" RenderTransformOrigin="0.532,0.563" Foreground="White" Opacity="0.85"/>
 
             <Border Height="2" 
                     Background="White" 
