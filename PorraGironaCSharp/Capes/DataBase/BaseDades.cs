@@ -47,9 +47,23 @@ namespace PorraGironaCSharp.Capes.DataBase
             connexio.Open();
             command.ExecuteNonQuery();
             command.Connection.Close();
-
-            
-
+        }
+        public void EliminarUsuari(string id)
+        {
+            MySqlCommand command = new MySqlCommand($"Delete from Usuari where IdUsuari={id};");
+            command.Connection = connexio;
+            connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+        public void ActualitzarUsuari(string id, string nom, string cognom, string nif, string dataAlta, string puntuacio)
+        {
+            MySqlCommand command = new MySqlCommand($"update usuari set Nom='{nom}', Cognom='{cognom}', Nif='{nif}', DataAlta='{dataAlta}', PuntuacioTotal='{puntuacio}' where IdUsuari={id};");
+            //update usuari set Nom = 'Jorge', Cognom = 'Curioso', Nif = '41654422H', DataAlta = current_timestamp, PuntuacioTotal = 5 where IdUsuari = 5;
+            command.Connection = connexio;
+            connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
         }
     }
 }

@@ -44,6 +44,10 @@ namespace PorraGironaCSharp
             {
                 LabelsLogin();
             }
+            else if (alias == "Sonic" && contrasenya == "genesis")
+            {
+                System.Diagnostics.Process.Start("https://www.retrogames.cz/play_117-Genesis.php");
+            }
             else
             {
                 Usuari usuari = new Usuari(alias, contrasenya);
