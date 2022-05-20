@@ -155,6 +155,17 @@
                                             VerticalAlignment="Center"
                                             Foreground="White"/>
             </Button>
+            <Button x:Name="BotoToolbarModeNit" 
+                    Margin="678,3,88,192.8" 
+                    Opacity="0.75" 
+                    Background="Black"
+                    Click="BotoToolbarMinimitzar_Click">
+                <iconPacks:PackIconMaterial Kind="WeatherNight"
+                                            Width="20"
+                                            Height="16"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+            </Button>
         </Grid>
     </Grid>
 </mah:MetroWindow>

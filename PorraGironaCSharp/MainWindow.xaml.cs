@@ -98,10 +98,11 @@ namespace PorraGironaCSharp
         {
             this.WindowState = WindowState.Minimized;
         }
-
-        private void BotoToolbarMaximitzar_Click(object sender, RoutedEventArgs e)
+        private void BotoToolbarModeNit_Click(object sender, RoutedEventArgs e)
         {
-           
+            
         }
+
+
     }
 }

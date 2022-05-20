@@ -26,5 +26,17 @@ namespace PorraGironaCSharp.Capes.DataBase
             return rol;
 
         }
+        public string SelectEscut()
+        {
+
+            MySqlCommand command = new MySqlCommand($"Select Escut from Equip where IdEquip=1;");
+            command.Connection = connexio;
+            connexio.Open();
+            string escut = command.ExecuteScalar().ToString();
+            command.Connection.Close();
+
+            return escut;
+
+        }
     }
 }
