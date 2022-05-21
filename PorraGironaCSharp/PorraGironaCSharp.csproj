@@ -221,6 +221,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Capes\View\BaixesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Capes\View\UltimPartitView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -238,6 +242,7 @@
     <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />
     <Compile Include="Capes\ViewModel\AltaUsuariViewModel.cs" />
     <Compile Include="Capes\ViewModel\AltesViewModel.cs" />
+    <Compile Include="Capes\ViewModel\BaixesViewModel.cs" />
     <Compile Include="Capes\ViewModel\UltimPartitViewModel.cs" />
     <Compile Include="Capes\View\AltaEquip.xaml.cs">
       <DependentUpon>AltaEquip.xaml</DependentUpon>
@@ -250,6 +255,9 @@
     </Compile>
     <Compile Include="Capes\View\AltesView.xaml.cs">
       <DependentUpon>AltesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\BaixesView.xaml.cs">
+      <DependentUpon>BaixesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Capes\View\UltimPartitView.xaml.cs">
       <DependentUpon>UltimPartitView.xaml</DependentUpon>
@@ -282,6 +290,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\BotonCircular.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ComboBoxRedondo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,23 +16,13 @@ using System.Windows.Shapes;
 namespace PorraGironaCSharp.Capes.View
 {
     /// <summary>
-    /// Lógica de interacción para AltaEquip.xaml
+    /// Lógica de interacción para BaixesView.xaml
     /// </summary>
-    public partial class AltaEquip : UserControl
+    public partial class BaixesView : UserControl
     {
-        public AltaEquip()
+        public BaixesView()
         {
             InitializeComponent();
-        }
-
-        private void ButtonAfegirImatge_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                InitialDirectory = "c:\\"
-            };
-            openFileDialog.ShowDialog();
-            TextBoxImatge.Text = openFileDialog.FileName;
         }
     }
 }

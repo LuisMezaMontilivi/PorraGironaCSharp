@@ -7,16 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+        <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
             <Label Content="Nom equip"
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+            <TextBox x:Name="TextBoxNomEquip"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+        <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
             <Label Content="Municipi"
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"
@@ -24,7 +25,9 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Margin="0,0,10,0"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}" Margin="5,0,0,0"/>
+            <TextBox x:Name="TextBoxMunicipi"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"
+                     Margin="5,0,0,0"/>
 
             <Label Content="Nom del camp"
                    Foreground="White"
@@ -32,7 +35,8 @@
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center" Margin="50,0,0,0"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+            <TextBox x:Name="TextBoxCamp"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
 
         </StackPanel>
 
@@ -44,8 +48,14 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Margin="0,0,10,0"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}" Margin="12,0,0,0"/>
-            <Button Content="Cercar" Height="10" Width="50" Margin="20,0,0,0"/>
+            <TextBox x:Name="TextBoxImatge"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"
+                     Margin="12,0,0,0"/>
+            <Button x:Name="ButtonAfegirImatge"
+                    Content="Cercar"
+                    Height="10"
+                    Width="50"
+                    Margin="20,0,0,0" Click="ButtonAfegirImatge_Click"/>
 
         </StackPanel>
 

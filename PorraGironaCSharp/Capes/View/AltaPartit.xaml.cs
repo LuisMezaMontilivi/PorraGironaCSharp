@@ -23,6 +23,14 @@ namespace PorraGironaCSharp.Capes.View
         public AltaPartit()
         {
             InitializeComponent();
+            ComboBoxVisitant.Items.Add("Usuari");
+            ComboBoxVisitant.Items.Add("Equip");
+            ComboBoxVisitant.Items.Add("Partit");
+            ComboBoxVisitant.Items.Add("Categoria");
+            ComboBoxLocal.Items.Add("Usuari");
+            ComboBoxLocal.Items.Add("Equip");
+            ComboBoxLocal.Items.Add("Partit");
+            ComboBoxLocal.Items.Add("Categoria");
         }
     }
 }

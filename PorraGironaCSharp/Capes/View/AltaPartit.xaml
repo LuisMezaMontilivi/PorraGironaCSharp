@@ -8,17 +8,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-            <Label Content="Equip local" Foreground="White"/>
-            <ComboBox/>
+        
+        <StackPanel Margin="50,0,0,0">
+            <Label Content="Data del partit"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   Width="170"/>
+            <wpfx:DateTimePicker x:Name="DateTimePartit"
+                                 Width="170"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-            <Label Content="Equip visitant" Foreground="White"/>
-            <ComboBox/>
+        <StackPanel Orientation="Horizontal" Margin="0,20,0,10">
+            <Label Content="Equip local"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"/>
+            <ComboBox x:Name="ComboBoxLocal"
+                      Style="{StaticResource ComboBoxRedondo}"
+                      Margin="19,0,0,0" Width="163"/>
+            <Label Content="Equip visitant"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   Margin="100,0,0,0"/>
+            <ComboBox x:Name="ComboBoxVisitant"
+                      Style="{StaticResource ComboBoxRedondo}"
+                      Margin="5,0,0,0"
+                      Width="163"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Data del partit" Foreground="White"/>
-            <wpfx:DateTimePicker/>
-        </StackPanel>
+        <Border CornerRadius="10">
+            <Button Margin="50,20,50,0"
+                    Content="Crear partit"
+                    FontFamily="/Fonts/#Poppins"
+                    FontSize="20"/>
+        </Border>
     </StackPanel>
 </UserControl>

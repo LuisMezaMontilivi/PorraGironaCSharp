@@ -61,7 +61,8 @@
                              Height="70"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource Menu}"/>
+                             Style="{StaticResource Menu}"
+                             Command="{Binding BaixesComanda}"/>
 
                 <RadioButton Content="Fi temporada"
                              Height="70"
