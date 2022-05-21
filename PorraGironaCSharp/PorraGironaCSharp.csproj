@@ -209,6 +209,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Capes\View\AltaPartit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Capes\View\AltaUsuari.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -237,6 +241,9 @@
     <Compile Include="Capes\ViewModel\UltimPartitViewModel.cs" />
     <Compile Include="Capes\View\AltaEquip.xaml.cs">
       <DependentUpon>AltaEquip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\AltaPartit.xaml.cs">
+      <DependentUpon>AltaPartit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Capes\View\AltaUsuari.xaml.cs">
       <DependentUpon>AltaUsuari.xaml</DependentUpon>
@@ -325,14 +332,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Capes\DataBase\" />
-    <Folder Include="Capes\Model\" />
-    <Folder Include="Capes\ViewModel\" />
-    <Folder Include="Capes\View\" />
-    <Folder Include="Core\" />
-    <Folder Include="Theme\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Escut.png" />
   </ItemGroup>

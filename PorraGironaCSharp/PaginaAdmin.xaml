@@ -94,29 +94,20 @@
                     Foreground="White"
                     Background="Transparent"
                     x:Name="ButtonCerrar"
-                    BorderThickness="0" Click="ButtonCerrar_Click"/>
-
-            <Button Width="50"
-                    Height="50"
-                    Grid.Column="1"
-                    Margin="570,0,55,0"
-                    Content="&#x26F6;"
-                    FontSize="30"
-                    Foreground="White"
-                    Background="Transparent"
                     BorderThickness="0"
-                    x:Name="ButtonMaximizar" Click="ButtonMaximizar_Click"/>
+                    Click="ButtonCerrar_Click"/>
 
             <Button Width="50"
                     Height="50"
                     Grid.Column="1"
-                    Margin="520,0,105,0"
+                    Margin="572,0,58,0"
                     Content="🡧"
                     FontSize="30"
                     Foreground="White"
                     Background="Transparent"
                     x:Name="ButtonMinimizar"
-                    BorderThickness="0" Click="ButtonMinimizar_Click"/>
+                    BorderThickness="0"
+                    Click="ButtonMinimizar_Click"/>
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"

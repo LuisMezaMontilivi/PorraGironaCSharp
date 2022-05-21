@@ -44,6 +44,7 @@ namespace PorraGironaCSharp.Capes.View
                     FrameOpcions.Content = new AltaEquip();
                     break;
                 case 2:
+                    FrameOpcions.Content = new AltaPartit();
                     break;
                 case 3:
                     break;
