@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,14 +24,18 @@ namespace PorraGironaCSharp.Capes.View
         public AltaPartit()
         {
             InitializeComponent();
-            ComboBoxVisitant.Items.Add("Usuari");
-            ComboBoxVisitant.Items.Add("Equip");
-            ComboBoxVisitant.Items.Add("Partit");
-            ComboBoxVisitant.Items.Add("Categoria");
-            ComboBoxLocal.Items.Add("Usuari");
-            ComboBoxLocal.Items.Add("Equip");
-            ComboBoxLocal.Items.Add("Partit");
-            ComboBoxLocal.Items.Add("Categoria");
+            Equips baseDades = new Equips();
+            List<Equip> equips = baseDades.EquipsBaseDades();
+            foreach(Equip X in equips)
+            {
+                ComboBoxLocal.Items.Add(X.NomEquip);
+                ComboBoxVisitant.Items.Add(X.NomEquip);
+            }
+        }
+
+        private void ButtonCrearPartit_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

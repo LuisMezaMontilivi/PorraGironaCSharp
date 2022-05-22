@@ -14,6 +14,12 @@ namespace PorraGironaCSharp.Capes.Model
         private int idPartit;
         private int temporada;
 
+        public Partit(string estat, Equip local, Equip visitant, int temp)
+        {
+            this.estat = estat; EquipLocal = local; EquipVisitant = visitant; temporada = temp;
+            golsLocal = golsVisitant = 0;
+        }
+
         public Equip EquipVisitant
         {
             get => default;
@@ -35,7 +41,7 @@ namespace PorraGironaCSharp.Capes.Model
             throw new System.NotImplementedException();
         }
 
-        public bool ActualitzarMarcador()
+        public bool ActualitzarMarcador(int local, int visitant)
         {
             throw new System.NotImplementedException();
         }

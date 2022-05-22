@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using PorraGironaCSharp.Capes.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace PorraGironaCSharp.Capes.View
     /// </summary>
     public partial class AltaEquip : UserControl
     {
+        Equips equips;
+
         public AltaEquip()
         {
             InitializeComponent();
@@ -34,6 +37,21 @@ namespace PorraGironaCSharp.Capes.View
             };
             openFileDialog.ShowDialog();
             TextBoxImatge.Text = openFileDialog.FileName;
+        }
+
+        private void ButtonCrearEquip_Click(object sender, RoutedEventArgs e)
+        {
+            Categoria cat = new Categoria();
+            cat.IdCategoria = 1;
+            Equip insertar = new Equip(24, TextBoxEquip.Text, TextBoxMunicipi.Text, TextBoxCamp.Text, TextBoxImatge.Text);
+            if (equips.AfegirEquip(insertar))
+            {
+                MessageBox.Show("Equip insertat amb éxit");
+            }
+            else
+            {
+                MessageBox.Show("No s'ha pogut insertat");
+            }
         }
     }
 }

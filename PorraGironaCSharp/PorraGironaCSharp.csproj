@@ -237,6 +237,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Capes\DataBase\BaseDadesEquip.cs" />
     <Compile Include="Capes\DataBase\BaseDadesUsuari.cs" />
     <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
     <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />

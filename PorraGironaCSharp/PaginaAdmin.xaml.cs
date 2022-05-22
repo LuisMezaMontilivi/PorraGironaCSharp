@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using PorraGironaCSharp.Capes.Model;
 
 namespace PorraGironaCSharp
 {
@@ -20,38 +21,42 @@ namespace PorraGironaCSharp
     /// </summary>
     public partial class PaginaAdmin : Window
     {
+        private Equips equips;
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
+
         public PaginaAdmin()
         {
             InitializeComponent();
+            equips = new Equips();
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
-            this.DragMove();
+            DragMove();
         }
 
         private void ButtonCerrar_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ButtonMaximizar_Click(object sender, RoutedEventArgs e)
         {
-            if (this.WindowState != WindowState.Maximized)
-                this.WindowState = WindowState.Maximized;
+            if (WindowState != WindowState.Maximized)
+                WindowState = WindowState.Maximized;
             else
-                this.WindowState = WindowState.Normal;
+                WindowState = WindowState.Normal;
         }
 
         private void ButtonMinimizar_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
     }
 }

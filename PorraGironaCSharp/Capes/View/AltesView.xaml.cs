@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace PorraGironaCSharp.Capes.View
     /// </summary>
     public partial class AltesView : UserControl
     {
+        Equips equips;
         public AltesView()
         {
             InitializeComponent();

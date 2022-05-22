@@ -14,7 +14,7 @@
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-            <TextBox x:Name="TextBoxNomEquip"
+            <TextBox x:Name="TextBoxEquip"
                      Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
@@ -60,10 +60,11 @@
         </StackPanel>
 
         <Border CornerRadius="10">
-            <Button Margin="50,20,50,0"
+            <Button x:Name="ButtonCrearEquip"
+                    Margin="50,20,50,0"
                     Content="Crear equip"
                     FontFamily="/Fonts/#Poppins"
-                    FontSize="20"/>
+                    FontSize="20" Click="ButtonCrearEquip_Click"/>
         </Border>
 
     </StackPanel>

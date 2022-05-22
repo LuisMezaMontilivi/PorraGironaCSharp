@@ -34,10 +34,11 @@
                       Width="163"/>
         </StackPanel>
         <Border CornerRadius="10">
-            <Button Margin="50,20,50,0"
+            <Button x:Name="ButtonCrearPartit"
+                    Margin="50,20,50,0"
                     Content="Crear partit"
                     FontFamily="/Fonts/#Poppins"
-                    FontSize="20"/>
+                    FontSize="20" Click="ButtonCrearPartit_Click"/>
         </Border>
     </StackPanel>
 </UserControl>

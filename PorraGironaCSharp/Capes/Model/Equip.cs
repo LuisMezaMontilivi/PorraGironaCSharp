@@ -7,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
-    class Equip
+    public class Equip
     {
+        public Equip(int id, string nom, string mun, string camp, string ruta)
+        {
+            idEquip = id; nomEquip = nom; municipi = mun; nomCamp = camp; rutaImatge = ruta;
+        }
+
         private int idEquip;
         private string municipi;
         private string nomCamp;
         private string nomEquip;
-        //private Image imatge;
+        private string rutaImatge;
 
         public Categoria Categoria
         {
@@ -21,6 +26,29 @@ namespace PorraGironaCSharp.Capes.Model
             set
             {
             }
+        }
+
+        public int IdEquip
+        {
+            get { return idEquip; }
+        }
+
+        public string Municipi
+        {
+            get { return municipi; }
+        }
+        public string NomCamp
+        {
+            get { return nomCamp; }
+        }
+        public string NomEquip
+        {
+            get { return nomEquip; }
+        }
+
+        public string RutaEscut
+        {
+            get { return rutaImatge; }
         }
     }
 }
