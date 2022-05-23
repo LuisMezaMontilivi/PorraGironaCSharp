@@ -84,7 +84,9 @@
                          Style="{StaticResource TextBoxEstiloso}"
                          Text="Nombre del usuario"
                          IsEnabled="False"/>
-
+                <Button x:Name="ButtonLogout"
+                        Content="Logout"
+                        Style="{StaticResource BotonCircular}" Click="ButtonLogout_Click"/>
             </StackPanel>
 
             <Button Width="50"

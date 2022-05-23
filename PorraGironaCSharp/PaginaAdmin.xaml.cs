@@ -62,5 +62,13 @@ namespace PorraGironaCSharp
         {
             WindowState = WindowState.Minimized;
         }
+
+        private void ButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow pp = new MainWindow();
+            pp.Owner = this;
+            this.Hide();
+            pp.ShowDialog();
+        }
     }
 }
