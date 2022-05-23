@@ -63,7 +63,7 @@ namespace PorraGironaCSharp
                 }
                 else if (prova == "admin")
                 {
-                    PaginaAdmin pad = new PaginaAdmin();
+                    PaginaAdmin pad = new PaginaAdmin(alias);
                     pad.Owner = this;
                     this.Hide();
                     pad.ShowDialog();
@@ -126,6 +126,29 @@ namespace PorraGironaCSharp
             pr.ShowDialog();
         }
 
+        private void BotoToolbarModeNit_Click(object sender, RoutedEventArgs e)
+        {
+            Color original1 = Color1.Color;
+            Color original2 = Color2.Color;
+            Color negre = Color3Negre.Color;
+            Color blanc = Color2.Color;
 
+            if (BotoToolbarModeNit.Name == "BotoToolbarModeNit")
+            {
+                
+                Color1.Color = blanc;
+                Color2.Color = negre;
+                BotoToolbarModeNit.Name = "Canvi";
+            }
+            else if(BotoToolbarModeNit.Name == "Canvi")
+            {
+               
+
+                Color1.Color = original1;
+                Color2.Color = original2;
+                BotoToolbarModeNit.Name = "BotoToolbarModeNit";
+            }
+               
+        }
     }
 }

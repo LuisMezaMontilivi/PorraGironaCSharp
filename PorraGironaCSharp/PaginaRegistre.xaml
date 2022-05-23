@@ -94,7 +94,7 @@
                     x:Name="BotoMinimitzar"
                     BorderThickness="0" Click="BotoMinimitzar_Click"/>
             <Button
-                    Margin="4,-12,762,189.8"
+                    Margin="4,-11,762,188.8"
                     Content="🡨;"
                     FontSize="30"
                     Foreground="White"

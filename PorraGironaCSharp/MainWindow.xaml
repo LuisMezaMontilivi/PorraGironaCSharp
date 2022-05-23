@@ -25,8 +25,8 @@
                     Margin="0,0,-0.4,0">
                 <Border.Background>
                     <LinearGradientBrush>
-                        <GradientStop Color="#c2185b" Offset="0.0"/>
-                        <GradientStop Color="#FFB5F6F5" Offset="1"/>
+                        <GradientStop x:Name="Color1" Color="#c2185b" Offset="0.0"/>
+                        <GradientStop x:Name="Color2" Color="#FFB5F6F5" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Button x:Name="BotoLoginUser" Content="Login" 
@@ -155,6 +155,17 @@
                                             VerticalAlignment="Center"
                                             Foreground="White"/>
             </Button>
+            <Button x:Name="BotoToolbarModeNit" 
+                    Margin="678,3,88,192.8" 
+                    Opacity="0.75" 
+                    Background="Black" Click="BotoToolbarModeNit_Click"
+                    >
+                <iconPacks:PackIconMaterial Kind="WeatherNight"
+                                            Width="16"
+                                            Height="15"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+            </Button>
             <Button x:Name="BotoRegister" Content="Registrar" 
                         HorizontalAlignment="Left" 
                         Margin="402,102.2,0,0" 
@@ -167,7 +178,7 @@
                         FontWeight="Bold" Click="BotoRegister_Click" Grid.Row="1">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop x:Name="Color3Negre" Color="Black" Offset="1"/>
                         <GradientStop Color="#FFED528F"/>
                         <GradientStop Color="White" Offset="1"/>
                         <GradientStop Color="#44F9F9F9" Offset="0.955"/>
