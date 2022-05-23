@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace PorraGironaCSharp.Capes.View
     /// </summary>
     public partial class AltesView : UserControl
     {
+        Equips equips;
         public AltesView()
         {
             InitializeComponent();
@@ -31,6 +33,24 @@ namespace PorraGironaCSharp.Capes.View
             ComboBoxOpcio.Items.Add("Equip");
             ComboBoxOpcio.Items.Add("Partit");
             ComboBoxOpcio.Items.Add("Categoria");
+        }
+
+        private void ComboBoxOpcio_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (ComboBoxOpcio.SelectedIndex)
+            {
+                case 0:
+                    FrameOpcions.Content = new AltaUsuari();
+                    break;
+                case 1:
+                    FrameOpcions.Content = new AltaEquip();
+                    break;
+                case 2:
+                    FrameOpcions.Content = new AltaPartit();
+                    break;
+                case 3:
+                    break;
+            }
         }
     }
 }

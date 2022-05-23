@@ -8,33 +8,36 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+        <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
             <Label Content="Alias d'usuari"
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+            <TextBox Margin="10,0,0,0"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+        <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
             <Label Content="Nom"
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+            <TextBox Margin="60,0,0,0"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
             <Label Content="Cognom"
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center" Margin="50,0,0,0"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+            <TextBox Margin="10,0,0,0"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+        <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
             <Label Content="NIF"
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"
@@ -42,20 +45,20 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Margin="0,0,10,0"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
-
+            <TextBox Margin="60,0,0,0"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
             <RadioButton Content="Porrista"
                          Foreground="White"
-                         Style="{StaticResource Menu}"
+                         Background="Transparent"
                          Width="74"
-                         Margin="100,0,0,0"/>
-
+                         Margin="100,0,0,0"
+                         FontFamily="/Fonts/#Poppins"/>
             <RadioButton Content="Administrador"
                          Foreground="White"
-                         Style="{StaticResource Menu}"
-                         Width="100"
-                         Margin="20,0,0,0"/>
-
+                         Background="Transparent"
+                         Width="120"
+                         Margin="20,0,0,0"
+                         FontFamily="/Fonts/#Poppins"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
@@ -68,7 +71,7 @@
                    Margin="0,0,10,0"/>
             <PasswordBox Style="{StaticResource MahApps.Styles.PasswordBox.Button.Revealed}"
                          Background="Gray"
-                         BorderThickness="0" Width="210"/>
+                         BorderThickness="0" Width="198"/>
 
         </StackPanel>
 
