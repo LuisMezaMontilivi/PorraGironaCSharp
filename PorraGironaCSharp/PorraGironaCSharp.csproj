@@ -143,10 +143,33 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.1.9\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -182,6 +205,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+
+    <Page Include="Capes\View\AltaEquip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\AltaPartit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\AltaUsuari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\AltesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\BaixesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\UltimPartitView.xaml">
+
     <Compile Include="Historic.xaml.cs">
       <DependentUpon>Historic.xaml</DependentUpon>
     </Compile>
@@ -189,6 +235,7 @@
       <DependentUpon>Puntuacions.xaml</DependentUpon>
     </Compile>
     <Page Include="Historic.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,11 +247,38 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Capes\Model\Categoria.cs" />
-    <Compile Include="Capes\Model\Categories.cs" />
+    <Compile Include="Capes\DataBase\EquipBD.cs" />
+    <Compile Include="Capes\DataBase\PartitBD.cs" />
+    <Compile Include="Capes\DataBase\Connexio.cs" />
+    <Compile Include="Capes\DataBase\UsuariBD.cs" />
+    <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
+    <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />
+    <Compile Include="Capes\ViewModel\AltaUsuariViewModel.cs" />
+    <Compile Include="Capes\ViewModel\AltesViewModel.cs" />
+    <Compile Include="Capes\ViewModel\BaixesViewModel.cs" />
+    <Compile Include="Capes\ViewModel\UltimPartitViewModel.cs" />
+    <Compile Include="Capes\View\AltaEquip.xaml.cs">
+      <DependentUpon>AltaEquip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\AltaPartit.xaml.cs">
+      <DependentUpon>AltaPartit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\AltaUsuari.xaml.cs">
+      <DependentUpon>AltaUsuari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\AltesView.xaml.cs">
+      <DependentUpon>AltesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\BaixesView.xaml.cs">
+      <DependentUpon>BaixesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\UltimPartitView.xaml.cs">
+      <DependentUpon>UltimPartitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ObservableObject.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Capes\Model\Equip.cs" />
     <Compile Include="Capes\Model\Equips.cs" />
-    <Compile Include="Capes\Model\GestioAdministradors.cs" />
     <Compile Include="Capes\Model\Historic.cs" />
     <Compile Include="Capes\Model\Partit.cs" />
     <Compile Include="Capes\Model\Partits.cs" />
@@ -221,15 +295,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PaginaRegistre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PaginaUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
+    <Page Include="Theme\BotonCircular.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ComboBoxRedondo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Marcador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\TextBoxEstiloso.xaml">
+
     <Page Include="Puntuacions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\PaginaUserTema.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,6 +335,9 @@
   <ItemGroup>
     <Compile Include="PaginaAdmin.xaml.cs">
       <DependentUpon>PaginaAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaRegistre.xaml.cs">
+      <DependentUpon>PaginaRegistre.xaml</DependentUpon>
     </Compile>
     <Compile Include="PaginaUser.xaml.cs">
       <DependentUpon>PaginaUser.xaml</DependentUpon>
@@ -268,14 +369,40 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
+
+    <Resource Include="Images\Escut.png" />
+
     <Folder Include="Capes\DataBase\" />
     <Folder Include="Capes\ViewModel\" />
     <Folder Include="Capes\View\" />
     <Folder Include="Core\" />
+
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Escut.png" />
+    <Resource Include="Images\EscutAlcorcon.png" />
+    <Resource Include="Images\EscutAlmeria.png" />
+    <Resource Include="Images\EscutBurgos.png" />
+    <Resource Include="Images\EscutEibar.png" />
+    <Resource Include="Images\EscutFCCartagena.png" />
+    <Resource Include="Images\EscutFuenLabrada.png" />
+    <Resource Include="Images\EscutGirona.png" />
+    <Resource Include="Images\EscutHuesca.png" />
+    <Resource Include="Images\EscutLasPalmas.png" />
+    <Resource Include="Images\EscutLeganes.png" />
+    <Resource Include="Images\EscutLugo.png" />
+    <Resource Include="Images\EscutMalaga.png" />
+    <Resource Include="Images\EscutMirandes.png" />
+    <Resource Include="Images\EscutOviedo.png" />
+    <Resource Include="Images\EscutPonferradina.png" />
+    <Resource Include="Images\EscutRealValladolid.png" />
+    <Resource Include="Images\EscutRealZaragoza.png" />
+    <Resource Include="Images\EscutReialSocietat.png" />
+    <Resource Include="Images\EscutSDAmorebieta.png" />
+    <Resource Include="Images\EscutSporting.png" />
+    <Resource Include="Images\EscutTenerife.png" />
+    <Resource Include="Images\EscutUDIbiza.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

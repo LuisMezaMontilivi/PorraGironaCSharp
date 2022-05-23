@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PorraGironaCSharp.Capes.Model
+namespace PorraGironaCSharp.Capes.ViewModel
 {
-    class Categoria
+    class BaixesViewModel
     {
-        private int idCategoria;
-        private string nomCategoria;
     }
 }
