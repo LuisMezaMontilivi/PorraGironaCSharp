@@ -267,11 +267,8 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="Capes\Model\Categoria.cs" />
-    <Compile Include="Capes\Model\Categories.cs" />
     <Compile Include="Capes\Model\Equip.cs" />
     <Compile Include="Capes\Model\Equips.cs" />
-    <Compile Include="Capes\Model\GestioAdministradors.cs" />
     <Compile Include="Capes\Model\Historic.cs" />
     <Compile Include="Capes\Model\Partit.cs" />
     <Compile Include="Capes\Model\Partits.cs" />
