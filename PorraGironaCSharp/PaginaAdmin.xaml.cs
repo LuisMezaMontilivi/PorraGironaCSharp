@@ -22,7 +22,6 @@ namespace PorraGironaCSharp
     public partial class PaginaAdmin : Window
     {
         private Equips equips;
-        private string alias;
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -35,9 +34,9 @@ namespace PorraGironaCSharp
 
         public PaginaAdmin(string alias)
         {
-            this.alias = alias;
             InitializeComponent();
             equips = new Equips();
+            TextBoxUserName.Text = alias;
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
