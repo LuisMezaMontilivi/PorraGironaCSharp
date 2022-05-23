@@ -1,11 +1,9 @@
-﻿<Window x:Class="PorraGironaCSharp.PaginaUser"
+﻿<Window x:Class="PorraGironaCSharp.Historic"
          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:local="clr-namespace:PorraGironaCSharp"
-        xmlns:viewModel="clr-namespace:PorraGironaCSharp.Capes.ViewModel"
         mc:Ignorable="d"
         Title="VistaUSR1" Height="450" Width="800"
         ResizeMode="CanResizeWithGrip"
@@ -13,10 +11,7 @@
         Background="Transparent"
         AllowsTransparency="True"
 		>
-    <Window.DataContext>
-        <viewModel:UserPrincipalVM/>
-    </Window.DataContext>
-    
+
     <Border
         Background="White"
         CornerRadius= "20">
@@ -135,12 +130,19 @@
             </StackPanel>
 
 
-            <ContentControl Grid.Row="1" 
-                            Grid.Column="1"
-                            Margin="10"
-                            Content ="{Binding CurrentView}"/>
+            <DataGrid Grid.Row="1" Grid.Column="1" 
+                        Margin="40, 30, 30, 40"
+                        Background="AliceBlue"
+                      x:Name="Puntuacio"
+                        >
 
 
+
+
+
+
+
+            </DataGrid>
 
 
 

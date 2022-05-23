@@ -11,34 +11,31 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using PorraGironaCSharp.Capes.Model;
 
 namespace PorraGironaCSharp
 {
     /// <summary>
-    /// Lógica de interacción para PaginaUser.xaml
+    /// Lógica de interacción para Puntuacions.xaml
     /// </summary>
-    public partial class PaginaUser : Window
+    public partial class Puntuacions : Window
     {
-        private string alias ;
-       
-
-        public PaginaUser()
+        private string alias = "user";
+        public Puntuacions()
         {
             InitializeComponent();
         }
-        public PaginaUser(string alias)
+        public Puntuacions(string alias)
         {
             this.alias = alias;
             InitializeComponent();
-            labelUsuari.Content = this.alias;
+            labelUsuari.Content = alias;
+
         }
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
-
         private void ButtonCerrar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -90,5 +87,6 @@ namespace PorraGironaCSharp
         {
 
         }
+
     }
 }

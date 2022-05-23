@@ -56,10 +56,10 @@ namespace PorraGironaCSharp
 
                 if (prova == "user")
                 {
-                    PaginaUser pus = new PaginaUser();
-                    pus.Owner = this;
+                    PaginaUser FinestraPaginaUser = new PaginaUser(alias);
+                    FinestraPaginaUser.Owner = this;
                     this.Hide();
-                    pus.ShowDialog();
+                    FinestraPaginaUser.ShowDialog();
                 }
                 else if (prova == "admin")
                 {
