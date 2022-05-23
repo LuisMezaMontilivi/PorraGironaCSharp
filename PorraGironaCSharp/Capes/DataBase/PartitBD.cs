@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.DataBase
 {
-    class BaseDadesPartit
+    class PartitBD
     {
         static public bool InsertarPartit(Partit p)
         {

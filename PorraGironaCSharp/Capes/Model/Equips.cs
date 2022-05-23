@@ -13,13 +13,13 @@ namespace PorraGironaCSharp.Capes.Model
 
         public Equips()
         {
-            llistatEquips = BaseDadesEquip.LlistatEquips();
+            llistatEquips = EquipBD.LlistatEquips();
         }
 
         public bool AfegirEquip(Equip equip)
         {
             llistatEquips.Add(equip);
-            return BaseDadesEquip.InsertarEquip(equip);
+            return EquipBD.InsertarEquip(equip);
         }
 
         public bool EliminarEquip(int idEquip)
@@ -29,7 +29,7 @@ namespace PorraGironaCSharp.Capes.Model
 
         public List<Equip> EquipsBaseDades()
         {
-            return BaseDadesEquip.LlistatEquips();
+            return EquipBD.LlistatEquips();
         }
     }
 }

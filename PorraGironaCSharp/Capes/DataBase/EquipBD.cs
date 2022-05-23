@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.DataBase
 {
-    class BaseDadesEquip
+    class EquipBD
     {
         
         static public bool InsertarEquip(Equip e)
