@@ -74,16 +74,19 @@
 
             <StackPanel Grid.Column="1"
                         Orientation="Horizontal">
-                <TextBox Width="250"
-                     Height="40"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Margin="5"
-                     Grid.Column="1"
-                     Style="{StaticResource TextBoxEstiloso}"
-                     Text="Nombre del usuario"
-                     IsEnabled="False"/>
-
+                <TextBox x:Name="TextBoxUserName"
+                         Width="250"
+                         Height="40"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Margin="5"
+                         Grid.Column="1"
+                         Style="{StaticResource TextBoxEstiloso}"
+                         Text="Nombre del usuario"
+                         IsEnabled="False"/>
+                <Button x:Name="ButtonLogout"
+                        Content="Logout"
+                        Style="{StaticResource BotonCircular}" Click="ButtonLogout_Click"/>
             </StackPanel>
 
             <Button Width="50"

@@ -39,7 +39,8 @@
                         FontSize="15" 
                         Grid.ColumnSpan="3" 
                         Height="34" 
-                        FontWeight="Bold" Click="BotoLoginUser_Click">
+                        FontWeight="Bold" Click="BotoLoginUser_Click"
+                        IsDefault="True">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="1"/>
