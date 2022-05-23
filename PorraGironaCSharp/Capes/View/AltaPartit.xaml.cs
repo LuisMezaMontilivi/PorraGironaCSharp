@@ -39,6 +39,17 @@ namespace PorraGironaCSharp.Capes.View
         private void ButtonCrearPartit_Click(object sender, RoutedEventArgs e)
         {
             
+            MessageBox.Show("Per jugar" +
+                (string)ComboBoxLocal.SelectedItem +
+                (string)ComboBoxVisitant.SelectedItem +
+                (DateTime)DateTimePartit.SelectedDateTime);
+
+            Partit p = new Partit("Per jugar",
+                equips.RetornarEquip((string)ComboBoxLocal.SelectedItem),
+                equips.RetornarEquip((string)ComboBoxVisitant.SelectedItem),
+                (DateTime)DateTimePartit.SelectedDateTime);
+            partits.AfegirPartit(p);
+            MessageBox.Show("Ha lelgado hasta aquí");
         }
     }
 }

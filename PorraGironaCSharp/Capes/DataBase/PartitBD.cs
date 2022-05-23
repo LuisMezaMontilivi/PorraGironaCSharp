@@ -27,6 +27,27 @@ namespace PorraGironaCSharp.Capes.DataBase
                 resultatInsercio = false;
             }
             return resultatInsercio;
+            ////MySqlConnection connexio = new MySqlConnection($"server=localhost; port=3306; user=root; password=; database=porra");
+            //bool resultatInsercio = true;
+            //try
+            //{
+            //    MySqlCommand command = new MySqlCommand($"INSERT INTO Partit (IdEquipLocal, IdEquipVisitant, Estat, Descripcio_Jornada) VALUES ({p.EquipLocal.IdEquip},{p.EquipLocal.IdEquip},'Per Jugar','Puta Basura');");
+            //    command.Connection = Connexio.Connect();
+            //    Connexio.Open();
+            //    command.ExecuteNonQuery();
+            //    command.Connection.Close();
+            //}
+            //catch
+            //{
+            //    resultatInsercio = false;
+            //    throw new Exception("PUTOOOO");
+            //}
+            //return resultatInsercio;
         }
+
+        //static public Partit RecuperarUltimPartit()
+        //{
+            
+        //}
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace PorraGironaCSharp.Capes.Model
         public bool AfegirPartit(Partit p)
         {
             llistatPartits.Add(p);
-
+            PartitBD.InsertarPartit(p);
             return true;
         }
 
