@@ -60,7 +60,7 @@ namespace PorraGironaCSharp
 
                 if (prova == "user")
                 {
-                    PaginaUser pus = new PaginaUser();
+                    PaginaUser pus = new PaginaUser(alias);
                     pus.Owner = this;
                     this.Hide();
                     pus.ShowDialog();
