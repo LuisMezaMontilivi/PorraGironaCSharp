@@ -29,6 +29,9 @@ namespace PorraGironaCSharp
             Application.Current.Shutdown();
         }
         public PaginaAdmin()
+        {
+            InitializeComponent();
+        }
 
         public PaginaAdmin(string alias)
         {
