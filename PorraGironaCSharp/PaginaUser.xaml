@@ -101,26 +101,27 @@
 
             <StackPanel Grid.Row="1">
 
-                <RadioButton Content="Funcio 1"
+                <RadioButton Content="Pantalla Principal"
+                             Height="103"
+                             Foreground="White"
+                             Background="#005ecb"
+                             FontSize="14"
+                             Style="{StaticResource PaginaUser}"/>
+                <RadioButton Content="Puntuacions"
                              Height="103"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}"/>
-                <RadioButton Content="Funcio 2"
+                <RadioButton Content="Històric "
                              Height="103"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource PaginaUser}"/>
-                <RadioButton Content="Funcio 3"
+                             Style="{StaticResource PaginaUser}" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Donacions"
                              Height="103"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource PaginaUser}"/>
-                <RadioButton Content="Funcio 4"
-                             Height="103"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource PaginaUser}"/>
+                             Style="{StaticResource PaginaUser}" Checked="RadioButton_Checked_1"/>
             </StackPanel>
 
 
@@ -134,8 +135,9 @@
                 </Grid.RowDefinitions>
 
 
-                <Border Grid.Row="0" CornerRadius="15" BorderThickness="3" BorderBrush="Black" 
-                        x:Name="PartitAnterior" >
+                <Border Grid.Row="0" CornerRadius="15" BorderThickness="3" 
+                        BorderBrush="#cf0c2e" 
+                        x:Name="BorderInteriorAnterior" >
 
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -148,6 +150,40 @@
                             <RowDefinition Height="37*"/>
                             <RowDefinition Height="20*"/>
                         </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Grid.Column="1" 
+                                Height="25"
+                                BorderThickness="3"
+                                BorderBrush=" #cf0c2e"
+                                CornerRadius="5"
+                                x:Name="EtiquetaJornadaAnterior"
+                                ></Border>
+
+
+                        <Border Grid.Row="1" Grid.Column="1"  
+                                CornerRadius="5" 
+                                BorderThickness="3" 
+                                BorderBrush="#cf0c2e" 
+                        x:Name="InternAnterior">
+                            <Grid x:Name="GridInternaAnterior">
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="17"/>
+                                    <RowDefinition />
+                                    <RowDefinition Height="17"/>
+                                </Grid.RowDefinitions>
+
+                               
+
+                            </Grid>
+                            
+                        </Border>
+                        
+                        
 
                         <TextBlock Grid.Row="2" Grid.Column="0"
                                    Text="EquipLocal"
@@ -180,10 +216,12 @@
 
                 <Border Grid.Row="1" ></Border>
 
-                <Border Grid.Row="2" CornerRadius="15" BorderThickness="3" BorderBrush="Black" 
+                <Border Grid.Row="2" CornerRadius="15" 
+                        BorderThickness="3" 
+                        BorderBrush="#448AFF" 
                         x:Name="PartitActual" >
 
-                    <Grid>
+                    <Grid x:Name="GridInternaSeguent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition/>
@@ -194,6 +232,71 @@
                             <RowDefinition Height="37*"/>
                             <RowDefinition Height="20*"/>
                         </Grid.RowDefinitions>
+
+
+                        <Border Grid.Row="0" Grid.Column="1" 
+                                Height="25"
+                                BorderThickness="3"
+                                BorderBrush="#448AFF"
+                                CornerRadius="5"
+                                x:Name="EtiquetaJornadaSeguent"
+                                ></Border>
+                        
+
+                        <Border Grid.Row="1" Grid.Column="1"  
+                                CornerRadius="5" 
+                                BorderThickness="3" 
+                                BorderBrush="#448AFF" 
+                        x:Name="BorderInternSeguent">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="17"/>
+                                    <RowDefinition Height=""/>
+                                    <RowDefinition Height="17"/>
+                                </Grid.RowDefinitions>
+
+                                <iconPacks:PackIconFontAwesome Grid.Row="0"
+                                                               Grid.Column="0"
+                                                               Kind="AngleUpSolid"
+                                                               Foreground="Black"
+                                                               HorizontalAlignment="Center"
+                                                               x:Name="IncrementarLocal"
+                                                               >
+                                </iconPacks:PackIconFontAwesome>
+
+                                <iconPacks:PackIconFontAwesome Grid.Row="2"
+                                                               Grid.Column="0"
+                                                               Kind="AngleDownSolid"
+                                                               HorizontalAlignment="Center"
+                                                               x:Name="DisminuirLocal"
+                                                               >
+                                </iconPacks:PackIconFontAwesome>
+
+                                <iconPacks:PackIconFontAwesome Grid.Row="0"
+                                                               Grid.Column="2"
+                                                               Kind="AngleUpSolid"
+                                                               HorizontalAlignment="Center"
+                                                               x:Name="IncrementarVisitant"
+                                                               >
+                                </iconPacks:PackIconFontAwesome>
+                                
+                                <iconPacks:PackIconFontAwesome Grid.Row="2"
+                                                               Grid.Column="2"
+                                                               Kind="AngleDownSolid"
+                                                               HorizontalAlignment="Center"
+                                                               x:Name="DisminuirVisitant"
+                                                               >
+                                </iconPacks:PackIconFontAwesome>
+
+
+                            </Grid>
+
+                        </Border>
 
                         <TextBlock Grid.Row="2" Grid.Column="0"
                                    Text="EquipLocal"

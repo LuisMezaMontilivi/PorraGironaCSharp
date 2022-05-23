@@ -22,7 +22,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Background"  Value="Black"/>
+            <Setter Property="Background"  Value="#448AFF"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style.Setters>
 
