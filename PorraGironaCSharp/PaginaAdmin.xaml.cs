@@ -32,6 +32,7 @@ namespace PorraGironaCSharp
             InitializeComponent();
         }
 
+
         public PaginaAdmin(string alias)
         {
             InitializeComponent();
@@ -70,5 +71,8 @@ namespace PorraGironaCSharp
             this.Hide();
             pp.ShowDialog();
         }
+
+
+
     }
 }

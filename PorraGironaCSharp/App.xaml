@@ -13,11 +13,16 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <!-- Theme setting -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+
                 <ResourceDictionary Source="Theme/Menu.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxEstiloso.xaml"/>
                 <ResourceDictionary Source="Theme/BotonCircular.xaml"/>
                 <ResourceDictionary Source="Theme/Marcador.xaml"/>
                 <ResourceDictionary Source="Theme/ComboBoxRedondo.xaml"/>
+
+                <!--Temes Propis-->
+                <ResourceDictionary Source="Theme/PaginaUserTema.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:UltimPartitViewModel}">

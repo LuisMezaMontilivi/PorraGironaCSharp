@@ -205,6 +205,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+
     <Page Include="Capes\View\AltaEquip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +227,15 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Capes\View\UltimPartitView.xaml">
+
+    <Compile Include="Historic.xaml.cs">
+      <DependentUpon>Historic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Puntuacions.xaml.cs">
+      <DependentUpon>Puntuacions.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Historic.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -293,6 +303,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="Theme\BotonCircular.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -310,6 +321,13 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\TextBoxEstiloso.xaml">
+
+    <Page Include="Puntuacions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\PaginaUserTema.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -353,7 +371,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+
     <Resource Include="Images\Escut.png" />
+
+    <Folder Include="Capes\DataBase\" />
+    <Folder Include="Capes\ViewModel\" />
+    <Folder Include="Capes\View\" />
+    <Folder Include="Core\" />
+
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\EscutAlcorcon.png" />
