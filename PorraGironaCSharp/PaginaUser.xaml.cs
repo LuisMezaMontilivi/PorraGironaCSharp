@@ -19,14 +19,22 @@ namespace PorraGironaCSharp
     /// </summary>
     public partial class PaginaUser : Window
     {
+        private string alias = "user";
+       
+        public PaginaUser()
+        {
+            InitializeComponent();
+        }
+        public PaginaUser(string alias)
+        {
+            this.alias = alias;
+            labelUsuari.Content = alias;
+            InitializeComponent();
+        }
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
-        }
-        public PaginaUser()
-        {
-            InitializeComponent();
         }
 
         private void ButtonCerrar_Click(object sender, RoutedEventArgs e)
@@ -53,12 +61,30 @@ namespace PorraGironaCSharp
             this.DragMove();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked_Principal(object sender, RoutedEventArgs e)
         {
+            PaginaUser FinestraPaginaUser = new PaginaUser();
+            FinestraPaginaUser.Owner = this;
+            this.Hide();
+            FinestraPaginaUser.ShowDialog();
 
         }
 
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked_Puntuacions(object sender, RoutedEventArgs e)
+        {
+            Puntuacions FinestraPuntuacions = new Puntuacions();
+            FinestraPuntuacions.Owner = this;
+            this.Hide();
+            FinestraPuntuacions.ShowDialog();
+        }
+        private void RadioButton_Checked_Historic(object sender, RoutedEventArgs e)
+        {
+            Historic FinestraHistoric = new Historic();
+            FinestraHistoric.Owner = this;
+            this.Hide();
+            FinestraHistoric.ShowDialog();
+        }
+        private void RadioButton_Checked_Donacions(object sender, RoutedEventArgs e)
         {
 
         }

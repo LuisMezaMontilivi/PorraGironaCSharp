@@ -32,10 +32,11 @@
             </Border>
 
             <Grid HorizontalAlignment="Left" >
-                <Label Content="Usuari"
+                <Label 
                        Foreground="White"
                        FontWeight="SemiBold"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center"
+                       x:Name="labelUsuari"/>
 
 
             </Grid>
@@ -104,25 +105,28 @@
                 <RadioButton Content="Pantalla Principal"
                              Height="103"
                              Foreground="White"
+                             Background="#005ecb"
                              FontSize="14"
-                             Style="{StaticResource PaginaUser}"/>
+                             Style="{StaticResource PaginaUser}"
+                             Checked="RadioButton_Checked_Principal"/>
                 <RadioButton Content="Puntuacions"
                              Height="103"
                              Foreground="White"
-                             
                              FontSize="14"
-                             Style="{StaticResource PaginaUser}"/>
+                             Style="{StaticResource PaginaUser}"
+                             Checked="RadioButton_Checked_Puntuacions"/>
                 <RadioButton Content="Històric "
                              Height="103"
                              Foreground="White"
-                             Background="#005ecb"
                              FontSize="14"
-                             Style="{StaticResource PaginaUser}" Checked="RadioButton_Checked"/>
+                             Style="{StaticResource PaginaUser}" 
+                             Checked="RadioButton_Checked_Historic"/>
                 <RadioButton Content="Donacions"
                              Height="103"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource PaginaUser}" Checked="RadioButton_Checked_1"/>
+                             Style="{StaticResource PaginaUser}" 
+                             Checked="RadioButton_Checked_Donacions"/>
             </StackPanel>
 
 
