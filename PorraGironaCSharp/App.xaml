@@ -18,6 +18,8 @@
                 <ResourceDictionary Source="Theme/BotonCircular.xaml"/>
                 <ResourceDictionary Source="Theme/Marcador.xaml"/>
                 <ResourceDictionary Source="Theme/ComboBoxRedondo.xaml"/>
+                <!--Temes Propis-->
+                <ResourceDictionary Source="Theme/PaginaUserTema.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:UltimPartitViewModel}">

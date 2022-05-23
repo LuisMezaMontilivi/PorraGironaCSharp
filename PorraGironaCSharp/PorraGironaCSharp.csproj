@@ -310,6 +310,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\TextBoxEstiloso.xaml">
+    <Page Include="Theme\PaginaUserTema.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -354,6 +355,10 @@
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Escut.png" />
+    <Folder Include="Capes\DataBase\" />
+    <Folder Include="Capes\ViewModel\" />
+    <Folder Include="Capes\View\" />
+    <Folder Include="Core\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\EscutAlcorcon.png" />
