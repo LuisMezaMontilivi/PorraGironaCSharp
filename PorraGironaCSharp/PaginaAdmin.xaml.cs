@@ -20,14 +20,17 @@ namespace PorraGironaCSharp
     /// </summary>
     public partial class PaginaAdmin : Window
     {
+        private string alias;
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
-        public PaginaAdmin()
+        public PaginaAdmin(string alias)
         {
+            this.alias = alias;
             InitializeComponent();
+
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)

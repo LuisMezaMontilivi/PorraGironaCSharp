@@ -34,11 +34,11 @@ namespace PorraGironaCSharp.Capes.Model
         public string Verificar(string alias, string contrasenya)
         {
             string rol="";
-            BaseDades conexio = new BaseDades();
+            
 
             try
             {
-                rol=conexio.SelectRol(alias,contrasenya);
+                rol=UsuariBD.SelectRol(alias,contrasenya);
                
             }
             catch
@@ -52,11 +52,11 @@ namespace PorraGironaCSharp.Capes.Model
         public bool Afegir(string nom, string cognom, string dni, string alias, string contrasenya)
         {
             bool funciona;
-            BaseDades conexio = new BaseDades();
+            
 
             try
             {
-               conexio.InsertUsuari(nom,cognom,dni,alias, contrasenya);
+               UsuariBD.InsertUsuari(nom,cognom,dni,alias, contrasenya);
                funciona = true;
                
             }
