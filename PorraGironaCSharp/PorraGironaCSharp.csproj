@@ -209,11 +209,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Capes\View\AltaPartit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Capes\View\AltaUsuari.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Capes\View\AltesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\BaixesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,21 +237,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Capes\DataBase\EquipBD.cs" />
+    <Compile Include="Capes\DataBase\PartitBD.cs" />
+    <Compile Include="Capes\DataBase\BaseDadesUsuari.cs" />
     <Compile Include="Capes\DataBase\Connexio.cs" />
     <Compile Include="Capes\DataBase\UsuariBD.cs" />
     <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
     <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />
     <Compile Include="Capes\ViewModel\AltaUsuariViewModel.cs" />
     <Compile Include="Capes\ViewModel\AltesViewModel.cs" />
+    <Compile Include="Capes\ViewModel\BaixesViewModel.cs" />
     <Compile Include="Capes\ViewModel\UltimPartitViewModel.cs" />
     <Compile Include="Capes\View\AltaEquip.xaml.cs">
       <DependentUpon>AltaEquip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\AltaPartit.xaml.cs">
+      <DependentUpon>AltaPartit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Capes\View\AltaUsuari.xaml.cs">
       <DependentUpon>AltaUsuari.xaml</DependentUpon>
     </Compile>
     <Compile Include="Capes\View\AltesView.xaml.cs">
       <DependentUpon>AltesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\BaixesView.xaml.cs">
+      <DependentUpon>BaixesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Capes\View\UltimPartitView.xaml.cs">
       <DependentUpon>UltimPartitView.xaml</DependentUpon>
@@ -280,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Theme\BotonCircular.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ComboBoxRedondo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

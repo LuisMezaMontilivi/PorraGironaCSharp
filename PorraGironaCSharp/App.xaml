@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="Theme/TextBoxEstiloso.xaml"/>
                 <ResourceDictionary Source="Theme/BotonCircular.xaml"/>
                 <ResourceDictionary Source="Theme/Marcador.xaml"/>
+                <ResourceDictionary Source="Theme/ComboBoxRedondo.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:UltimPartitViewModel}">
@@ -25,6 +26,10 @@
 
             <DataTemplate DataType="{x:Type viewModel:AltesViewModel}">
                 <view:AltesView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:BaixesViewModel}">
+                <view:BaixesView/>
             </DataTemplate>
 
         </ResourceDictionary>

@@ -12,6 +12,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <Label Content="Menú d'altes"
+               Foreground="White"
+               FontFamily="/Fonts/#Poppins"
+               FontSize="25"
+               Margin="50,0,0,0"
+               VerticalContentAlignment="Top"/>
+
         <ComboBox x:Name="ComboBoxOpcio"
                   HorizontalAlignment="Left"
                   Margin="540,10,0,0"
@@ -19,10 +26,11 @@
                   Width="120"
                   IsSynchronizedWithCurrentItem="True"
                   SelectedIndex="0"
-                  />
+                  SelectionChanged="ComboBoxOpcio_SelectionChanged"
+                  Style="{StaticResource ComboBoxRedondo}"/>
 
-        <StackPanel Grid.Row="1">
-            <local:AltaEquip/>
+        <StackPanel Grid.Row="1" Margin="0,20,0,0">
+            <Frame x:Name="FrameOpcions" NavigationUIVisibility="Hidden"/>
         </StackPanel>
 
     </Grid>
