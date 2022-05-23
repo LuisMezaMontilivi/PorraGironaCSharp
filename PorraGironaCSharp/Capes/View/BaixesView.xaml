@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="PorraGironaCSharp.Capes.View.BaixesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Menú baixes"
+               Foreground="White"
+               FontFamily="/Fonts/#Poppins"
+               FontSize="25"
+               Margin="50,0,0,0"
+               VerticalContentAlignment="Top"/>
+
+        <StackPanel Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <Label Content="Eliminar usuari"
+                           Foreground="White"
+                           FontFamily="/Fonts/#Poppins"
+                           Margin="20,0,0,0"/>
+                    <ComboBox x:Name="ComboBoxEliminarUsuari"
+                              Margin="10,0,10,0"
+                              Style="{StaticResource ComboBoxRedondo}"/>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,10,0,0">
+                        <Label Content="Alias: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="21,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Nom: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="20,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Cognom: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="NIF: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="28,0,0,0"/>
+                    </StackPanel>
+
+                    <Button x:Name="Button" Margin="20"
+                            Content="Eliminar usuari"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <Label Content="Eliminar equip"
+                           Foreground="White"
+                           FontFamily="/Fonts/#Poppins"
+                           Margin="20,0,0,0"/>
+                    <ComboBox x:Name="ComboBoxEliminarEquip"
+                              Margin="10,0,10,0"
+                              Style="{StaticResource ComboBoxRedondo}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Nom: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="20,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Camp: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="15,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Municipi: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="0,0,0,0"/>
+                    </StackPanel>
+
+                    <Button Margin="20,56,20,0"
+                            Content="Eliminar equip"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <Label Content="Eliminar partit"
+                           Foreground="White"
+                           FontFamily="/Fonts/#Poppins"
+                           Margin="20,0,0,0"/>
+                    <ComboBox x:Name="ComboBoxEliminarPartit"
+                              Margin="10,0,10,0"
+                              Style="{StaticResource ComboBoxRedondo}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Local: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="12,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Visitant: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="0,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Data: "
+                           Foreground="White"/>
+                        <Label Content="Holo"
+                               Foreground="Gray"
+                               Margin="14,0,0,0"/>
+                    </StackPanel>
+
+                    <Button Margin="20,56,20,0"
+                            Content="Eliminar partit"/>
+                </StackPanel>
+                
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

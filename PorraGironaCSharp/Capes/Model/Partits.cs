@@ -10,9 +10,16 @@ namespace PorraGironaCSharp.Capes.Model
     {
         private List<Partit> llistatPartits;
 
-        public bool AfegirPartit(Equip equipLocal, Equip equipVisitant)
+        public Partits()
         {
-            throw new System.NotImplementedException();
+            llistatPartits = new List<Partit>();
+        }
+
+        public bool AfegirPartit(Partit p)
+        {
+            llistatPartits.Add(p);
+
+            return true;
         }
 
         public bool EliminarPartit(int idPartit)

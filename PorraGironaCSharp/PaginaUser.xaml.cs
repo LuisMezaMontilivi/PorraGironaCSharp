@@ -24,6 +24,7 @@ namespace PorraGironaCSharp
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
+        
         public PaginaUser()
         {
             InitializeComponent();
