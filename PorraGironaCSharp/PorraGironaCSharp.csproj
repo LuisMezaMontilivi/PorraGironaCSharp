@@ -240,6 +240,8 @@
     <Compile Include="Capes\DataBase\EquipBD.cs" />
     <Compile Include="Capes\DataBase\PartitBD.cs" />
     <Compile Include="Capes\DataBase\BaseDadesUsuari.cs" />
+    <Compile Include="Capes\DataBase\Connexio.cs" />
+    <Compile Include="Capes\DataBase\UsuariBD.cs" />
     <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
     <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />
     <Compile Include="Capes\ViewModel\AltaUsuariViewModel.cs" />
@@ -287,6 +289,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PaginaRegistre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PaginaUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -315,6 +321,9 @@
   <ItemGroup>
     <Compile Include="PaginaAdmin.xaml.cs">
       <DependentUpon>PaginaAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaRegistre.xaml.cs">
+      <DependentUpon>PaginaRegistre.xaml</DependentUpon>
     </Compile>
     <Compile Include="PaginaUser.xaml.cs">
       <DependentUpon>PaginaUser.xaml</DependentUpon>
@@ -349,6 +358,30 @@
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Escut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\EscutAlcorcon.png" />
+    <Resource Include="Images\EscutAlmeria.png" />
+    <Resource Include="Images\EscutBurgos.png" />
+    <Resource Include="Images\EscutEibar.png" />
+    <Resource Include="Images\EscutFCCartagena.png" />
+    <Resource Include="Images\EscutFuenLabrada.png" />
+    <Resource Include="Images\EscutGirona.png" />
+    <Resource Include="Images\EscutHuesca.png" />
+    <Resource Include="Images\EscutLasPalmas.png" />
+    <Resource Include="Images\EscutLeganes.png" />
+    <Resource Include="Images\EscutLugo.png" />
+    <Resource Include="Images\EscutMalaga.png" />
+    <Resource Include="Images\EscutMirandes.png" />
+    <Resource Include="Images\EscutOviedo.png" />
+    <Resource Include="Images\EscutPonferradina.png" />
+    <Resource Include="Images\EscutRealValladolid.png" />
+    <Resource Include="Images\EscutRealZaragoza.png" />
+    <Resource Include="Images\EscutReialSocietat.png" />
+    <Resource Include="Images\EscutSDAmorebieta.png" />
+    <Resource Include="Images\EscutSporting.png" />
+    <Resource Include="Images\EscutTenerife.png" />
+    <Resource Include="Images\EscutUDIbiza.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

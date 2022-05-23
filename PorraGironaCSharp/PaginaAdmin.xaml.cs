@@ -22,15 +22,17 @@ namespace PorraGironaCSharp
     public partial class PaginaAdmin : Window
     {
         private Equips equips;
-
+        private string alias;
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
-
         public PaginaAdmin()
+
+        public PaginaAdmin(string alias)
         {
+            this.alias = alias;
             InitializeComponent();
             equips = new Equips();
         }

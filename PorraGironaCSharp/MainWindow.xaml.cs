@@ -26,35 +26,55 @@ namespace PorraGironaCSharp
         {
             InitializeComponent();
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
 
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            this.DragMove();
+        }
         private void BotoLoginUser_Click(object sender, RoutedEventArgs e)
         {
             string alias = LoginUsuari.Text, contrasenya = LoginContrasenya.Password;
-            Usuari usuari = new Usuari(alias,contrasenya);
-            string prova= usuari.Verificar(alias, contrasenya);
-            if(alias=="" || contrasenya == "")
+            if (alias == "" || contrasenya == "")
             {
                 LabelsLogin();
             }
-            else if (prova == "user")
+            else if (alias == "Sonic" && contrasenya == "genesis")
             {
-                PaginaUser pus = new PaginaUser();
-                pus.Owner = this;
-                this.Hide();
-                pus.ShowDialog();
-            }
-            else if(prova == "admin")
-            {
-                PaginaAdmin pad = new PaginaAdmin();
-                pad.Owner = this;
-                this.Hide();
-                pad.ShowDialog();
+                System.Diagnostics.Process.Start("https://www.retrogames.cz/play_117-Genesis.php");
             }
             else
             {
-                MessageBox.Show("Usuari o Contrasenya Introduit Incorrectament");
-                LoginUsuari.Text = null; LoginContrasenya.Text = null; LoginUsuari.Focus();
+                Usuari usuari = new Usuari(alias, contrasenya);
+                string prova = usuari.Verificar(alias, contrasenya);
+
+
+                if (prova == "user")
+                {
+                    PaginaUser pus = new PaginaUser();
+                    pus.Owner = this;
+                    this.Hide();
+                    pus.ShowDialog();
+                }
+                else if (prova == "admin")
+                {
+                    PaginaAdmin pad = new PaginaAdmin(alias);
+                    pad.Owner = this;
+                    this.Hide();
+                    pad.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuari o Contrasenya Introduit Incorrectament");
+                    LoginUsuari.Text = null; LoginContrasenya.Text = null; LoginUsuari.Focus();
+                }
             }
+           
 
             //Protitip De la idea Inicial (Erronea)
             //if(Select rol from usuari where alias = LoginUsuari.text and contrasenya = LoginContrasenya.Text ==null) //Aqui Comprovem que la contrasenya estigui be
@@ -98,10 +118,37 @@ namespace PorraGironaCSharp
         {
             this.WindowState = WindowState.Minimized;
         }
-
-        private void BotoToolbarMaximitzar_Click(object sender, RoutedEventArgs e)
+        private void BotoRegister_Click(object sender, RoutedEventArgs e)
         {
-           
+            PaginaRegistre pr = new PaginaRegistre();
+            pr.Owner = this;
+            this.Hide();
+            pr.ShowDialog();
+        }
+
+        private void BotoToolbarModeNit_Click(object sender, RoutedEventArgs e)
+        {
+            Color original1 = Color1.Color;
+            Color original2 = Color2.Color;
+            Color negre = Color3Negre.Color;
+            Color blanc = Color2.Color;
+
+            if (BotoToolbarModeNit.Name == "BotoToolbarModeNit")
+            {
+                
+                Color1.Color = blanc;
+                Color2.Color = negre;
+                BotoToolbarModeNit.Name = "Canvi";
+            }
+            else if(BotoToolbarModeNit.Name == "Canvi")
+            {
+               
+
+                Color1.Color = original1;
+                Color2.Color = original2;
+                BotoToolbarModeNit.Name = "BotoToolbarModeNit";
+            }
+               
         }
     }
 }
