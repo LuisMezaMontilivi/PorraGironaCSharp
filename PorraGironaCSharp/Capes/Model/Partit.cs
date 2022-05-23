@@ -36,6 +36,11 @@ namespace PorraGironaCSharp.Capes.Model
             }
         }
 
+        public string Estat
+        {
+            get => default;
+        }
+
         public bool CanviarEstat(string NouEstat)
         {
             throw new System.NotImplementedException();

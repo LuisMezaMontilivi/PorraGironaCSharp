@@ -21,12 +21,15 @@ namespace PorraGironaCSharp.Capes.View
     /// </summary>
     public partial class AltaPartit : UserControl
     {
+        private Partits partits;
+        private Equips equips;
         public AltaPartit()
         {
             InitializeComponent();
-            Equips baseDades = new Equips();
-            List<Equip> equips = baseDades.EquipsBaseDades();
-            foreach(Equip X in equips)
+            equips = new Equips();
+            partits = new Partits();
+            List<Equip> llistatEquips = equips.EquipsBaseDades();
+            foreach(Equip X in llistatEquips)
             {
                 ComboBoxLocal.Items.Add(X.NomEquip);
                 ComboBoxVisitant.Items.Add(X.NomEquip);

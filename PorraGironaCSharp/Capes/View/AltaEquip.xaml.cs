@@ -27,6 +27,7 @@ namespace PorraGironaCSharp.Capes.View
         public AltaEquip()
         {
             InitializeComponent();
+            equips = new Equips();
         }
 
         private void ButtonAfegirImatge_Click(object sender, RoutedEventArgs e)
