@@ -20,13 +20,6 @@ namespace PorraGironaCSharp.Capes.Model
         private string nomEquip;
         private string rutaImatge;
 
-        public Categoria Categoria
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
         public int IdEquip
         {

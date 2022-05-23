@@ -42,8 +42,6 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonCrearEquip_Click(object sender, RoutedEventArgs e)
         {
-            Categoria cat = new Categoria();
-            cat.IdCategoria = 1;
             Equip insertar = new Equip(24, TextBoxEquip.Text, TextBoxMunicipi.Text, TextBoxCamp.Text, TextBoxImatge.Text);
             if (equips.AfegirEquip(insertar))
             {
