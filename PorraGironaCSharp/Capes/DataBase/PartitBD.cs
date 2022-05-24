@@ -62,23 +62,24 @@ namespace PorraGironaCSharp.Capes.DataBase
 
         static public Partit RecuperarUltim()
         {
-            Partit partit = null;
-            string conexio = "server=localhost; port=3306; user=root; password=; database=porra; convert zero datetime=True";
-            using (MySqlConnection connect = new MySqlConnection(conexio))
-            {
-                connect.Open();
-                MySqlCommand llegirDarrerPartit = new MySqlCommand("select p.Idpartit, p.Estat, p.Gols_Local, p.Gols_Visitant, p.Moment, " +
+            MySqlConnection connexio = new MySqlConnection($"server=localhost; port=3306;user=root;password=;database=porra");
+            connexio.Open();
+            MySqlCommand command = new MySqlCommand("select p.Idpartit, p.Estat, p.Gols_Local, p.Gols_Visitant, p.Moment, " +
                     "e.IdEquip idLocal, e.Nom_Equip nomLocal, e.Nom_Camp campLocal, e.Municipi municipiLocal, e.Escut escutLocal, " +
                     "ev.IdEquip idVisitant, ev.Nom_Equip nomVisitant, ev.Nom_Camp campVisitant, ev.Municipi municipiVisitant, ev.Escut escutVisitant " +
                     "from partit p join equip e on (p.idEquipLocal = e.IdEquip) " +
                     "join equip ev on (p.idEquipVisitant = ev.IdEquip) " +
-                    "where estat = 'Per Jugar' and moment = (select min(moment) from partit where estat = 'Per Jugar');", connect);
-                MySqlDataReader lector = llegirDarrerPartit.ExecuteReader();
-                Equip local = new Equip((int)lector["idLocal"], (string)lector["nomLocal"], (string)lector["campLocal"], (string)lector["municipiLocal"], (string)lector["escutLocal"]);
-                Equip visitant = new Equip((int)lector["idVisitant"], (string)lector["nomVisitant"], (string)lector["campVisitant"], (string)lector["municipiVisitant"], (string)lector["escutVisitant"]);
-                partit = new Partit((string)lector["Estat"],local,visitant, DateTime.Parse(lector["Moment"].ToString()));
+                    "where estat = 'Per Jugar' and moment = (select min(moment) from partit where estat = 'Per Jugar');", connexio);
+            MySqlDataReader lector = command.ExecuteReader();
+            Equip local = null, visitant = null;
+            Partit prova = null;
+            while (lector.Read())
+            {
+                local = new Equip((int)lector["idLocal"], (string)lector["nomLocal"], (string)lector["campLocal"], (string)lector["municipiLocal"], (string)lector["escutLocal"]);
+                visitant = new Equip((int)lector["idVisitant"], (string)lector["nomVisitant"], (string)lector["campVisitant"], (string)lector["municipiVisitant"], (string)lector["escutVisitant"]);
+                prova = new Partit((string)lector["Estat"], local, visitant, DateTime.Now);
             }
-            return partit;
+            return prova;
         }
 
     }

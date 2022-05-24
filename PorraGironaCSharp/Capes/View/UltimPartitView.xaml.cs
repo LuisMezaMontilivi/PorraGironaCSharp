@@ -27,9 +27,9 @@ namespace PorraGironaCSharp.Capes.View
         {
             InitializeComponent();
             //partits = new Partits();
-            //CarregarUltimPartit();
+            CarregarUltimPartit();
             //MessageBox.Show(partits.LlistarPartits()[0].Estat);
-            Proves();
+            //Proves();
         }
 
         private void Proves()
@@ -48,14 +48,12 @@ namespace PorraGironaCSharp.Capes.View
 
         private void CarregarUltimPartit()
         {
-            try
-            {
-                Partit ultim = DataBase.PartitBD.RecuperarUltim();
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+            Partit ultim = DataBase.PartitBD.RecuperarUltim();
+            textBlockLocal.Text = ultim.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
+            textBlockVisitant.Text = ultim.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
+            textBlockData.Text = Convert.ToString(ultim.Data);
+            imageLocal.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
+            imageVisitant.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
         }
 
         private void TypeNumericValidation(object sender, TextCompositionEventArgs e)

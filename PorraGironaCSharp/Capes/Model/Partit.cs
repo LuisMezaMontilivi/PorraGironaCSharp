@@ -45,7 +45,7 @@ namespace PorraGironaCSharp.Capes.Model
 
         public string Estat
         {
-            get => default;
+            get { return estat; }
         }
 
         public bool CanviarEstat(string NouEstat)
