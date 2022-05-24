@@ -22,9 +22,25 @@ namespace PorraGironaCSharp.Capes.Model
             return EquipBD.InsertarEquip(equip);
         }
 
+        public Equip RetornarEquip(string nom)
+        {
+            return llistatEquips.Find(x => x.NomEquip == nom);
+        }
+
         public bool EliminarEquip(int idEquip)
         {
-            throw new System.NotImplementedException();
+            bool eliminat = false;
+            try
+            {
+                EquipBD.EliminarEquip(idEquip);
+                llistatEquips.RemoveAt(llistatEquips.FindIndex(x => x.IdEquip == idEquip));
+                eliminat = true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            return eliminat;
         }
 
         public List<Equip> EquipsBaseDades()

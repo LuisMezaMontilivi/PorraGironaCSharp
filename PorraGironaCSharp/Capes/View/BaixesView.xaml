@@ -37,38 +37,43 @@
                            Margin="20,0,0,0"/>
                     <ComboBox x:Name="ComboBoxEliminarUsuari"
                               Margin="10,0,10,0"
-                              Style="{StaticResource ComboBoxRedondo}"/>
+                              Style="{StaticResource ComboBoxRedondo}"
+                              SelectionChanged="ComboBoxEliminarUsuari_SelectionChanged"/>
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,10,0,0">
                         <Label Content="Alias: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelAliasUsuari"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="21,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Nom: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelNomUsuari"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="20,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Cognom: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label  x:Name="labelCognomUsuari"
+                                Content="Holo"
                                Foreground="Gray"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="NIF: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelNifUsuari"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="28,0,0,0"/>
                     </StackPanel>
 
-                    <Button x:Name="Button" Margin="20"
-                            Content="Eliminar usuari"/>
+                    <Button x:Name="ButtonEliminarUsuari" Margin="20"
+                            Content="Eliminar usuari" Click="ButtonEliminarUsuari_Click"/>
 
                 </StackPanel>
 
@@ -79,31 +84,34 @@
                            Margin="20,0,0,0"/>
                     <ComboBox x:Name="ComboBoxEliminarEquip"
                               Margin="10,0,10,0"
-                              Style="{StaticResource ComboBoxRedondo}"/>
+                              Style="{StaticResource ComboBoxRedondo}" SelectionChanged="ComboBoxEliminarEquip_SelectionChanged"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Nom: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelNomEquip"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="20,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Camp: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelCampEquip"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="15,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Municipi: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelMunicipiEquip"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="0,0,0,0"/>
                     </StackPanel>
 
-                    <Button Margin="20,56,20,0"
-                            Content="Eliminar equip"/>
+                    <Button x:Name="ButtonEliminarEquip" Margin="20,56,20,0"
+                            Content="Eliminar equip" Click="ButtonEliminarEquip_Click"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2">
@@ -136,7 +144,8 @@
                                Margin="14,0,0,0"/>
                     </StackPanel>
 
-                    <Button Margin="20,56,20,0"
+                    <Button x:Name="ButtonEliminarPartit"
+                            Margin="20,56,20,0"
                             Content="Eliminar partit"/>
                 </StackPanel>
                 

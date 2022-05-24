@@ -32,7 +32,6 @@ namespace PorraGironaCSharp.Capes.View
             ComboBoxOpcio.Items.Add("Usuari");
             ComboBoxOpcio.Items.Add("Equip");
             ComboBoxOpcio.Items.Add("Partit");
-            ComboBoxOpcio.Items.Add("Categoria");
         }
 
         private void ComboBoxOpcio_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -47,8 +46,6 @@ namespace PorraGironaCSharp.Capes.View
                     break;
                 case 2:
                     FrameOpcions.Content = new AltaPartit();
-                    break;
-                case 3:
                     break;
             }
         }

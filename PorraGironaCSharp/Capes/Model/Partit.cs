@@ -12,11 +12,11 @@ namespace PorraGironaCSharp.Capes.Model
         private int golsLocal;
         private int golsVisitant;
         private int idPartit;
-        private int temporada;
+        private DateTime data;
 
-        public Partit(string estat, Equip local, Equip visitant, int temp)
+        public Partit(string estat, Equip local, Equip visitant, DateTime temps)
         {
-            this.estat = estat; EquipLocal = local; EquipVisitant = visitant; temporada = temp;
+            this.estat = estat; EquipLocal = local; EquipVisitant = visitant; data = temps;
             golsLocal = golsVisitant = 0;
         }
 

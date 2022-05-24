@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,24 @@ namespace PorraGironaCSharp.Capes.Model
 
         public Partits()
         {
-            llistatPartits = new List<Partit>();
+            llistatPartits = PartitBD.LlistarPartits();
         }
 
         public bool AfegirPartit(Partit p)
         {
-            llistatPartits.Add(p);
-
-            return true;
+            bool insercio = false;
+            try
+            {
+                llistatPartits.Add(p);
+                PartitBD.InsertarPartit(p);
+                insercio = true;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            
+            return insercio;
         }
 
         public bool EliminarPartit(int idPartit)
@@ -30,6 +41,11 @@ namespace PorraGironaCSharp.Capes.Model
         public bool ActualtizarPartit(int idPartit)
         {
             throw new System.NotImplementedException();
+        }
+
+        public List<Partit> LlistarPartits()
+        {
+            return llistatPartits;
         }
     }
 }
