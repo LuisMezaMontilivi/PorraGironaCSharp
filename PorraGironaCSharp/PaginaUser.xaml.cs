@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PorraGironaCSharp.Capes.Model;
+using PorraGironaCSharp.Capes.View;
 
 namespace PorraGironaCSharp
 {
@@ -22,7 +23,6 @@ namespace PorraGironaCSharp
     {
         private string alias ;
        
-
         public PaginaUser()
         {
             InitializeComponent();
@@ -32,7 +32,24 @@ namespace PorraGironaCSharp
             this.alias = alias;
             InitializeComponent();
             labelUsuari.Content = this.alias;
+            Prova();
+
         }
+        
+        private void Prova()
+        {
+            try
+            {
+                Prova1.Content = new UsuariPrincipalView();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -63,32 +80,6 @@ namespace PorraGironaCSharp
             this.DragMove();
         }
 
-        private void RadioButton_Checked_Principal(object sender, RoutedEventArgs e)
-        {
-            PaginaUser FinestraPaginaUser = new PaginaUser(alias);
-            FinestraPaginaUser.Owner = this;
-            this.Hide();
-            FinestraPaginaUser.ShowDialog();
-
-        }
-
-        private void RadioButton_Checked_Puntuacions(object sender, RoutedEventArgs e)
-        {
-            Puntuacions FinestraPuntuacions = new Puntuacions(alias);
-            FinestraPuntuacions.Owner = this;
-            this.Hide();
-            FinestraPuntuacions.ShowDialog();
-        }
-        private void RadioButton_Checked_Historic(object sender, RoutedEventArgs e)
-        {
-            Historic FinestraHistoric = new Historic(alias);
-            FinestraHistoric.Owner = this;
-            this.Hide();
-            FinestraHistoric.ShowDialog();
-        }
-        private void RadioButton_Checked_Donacions(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PorraGironaCSharp.Capes.Model;
 
 namespace PorraGironaCSharp.Capes.DataBase
 {
@@ -64,5 +65,42 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.ExecuteNonQuery();
             command.Connection.Close();
         }
+
+
+
+        public static List<Porrista> LlistaPorristes()
+        {
+            string query = $"select * from usuari where rol = 'user'";
+            MySqlCommand command = new MySqlCommand(query, Connexio.Connect());
+            command.CommandTimeout = 60; //Per que no es pengi la cosa
+            List<Porrista> output = new List<Porrista>();
+
+            using (Connexio.Connect())
+            {
+                Connexio.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    output.Add(new Porrista(
+                                                    (string)reader["Nom"],
+                                                    (string)reader["Cognom"],
+                                                    (string)reader["Nif"],
+                                                    (string)reader["Alias"],
+                                                    (string)reader["Contrasenya"],
+                                                    Convert.ToDateTime( reader["DataAlta"]),
+                                                    (int)reader["IdUsuari"],
+                                                    (int)reader["PuntuacioTotal"]
+                                                    ));
+                }
+
+            }
+
+            return output;
+
+ 
+        }
+
+
+
     }
 }

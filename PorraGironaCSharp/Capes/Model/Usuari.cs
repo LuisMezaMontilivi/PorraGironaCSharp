@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PorraGironaCSharp.Capes.Model
 {
    
-    class Usuari
+    public class Usuari
     {
         public string alias { get; set; }
         private string contrasenya { get; set; }
@@ -16,19 +16,26 @@ namespace PorraGironaCSharp.Capes.Model
         private string cognom { get; set; }
         private string nif { get; set; }
         private string rol { get; set; }
+       
 
         public Usuari(string alias, string contrasenya)
         {
             this.alias = alias;
             this.contrasenya = contrasenya;
         }
-        public Usuari(string nom, string cognom, string dni ,string alias, string contrasenya)
+
+        
+
+
+       
+        public Usuari(string nom, string cognom, string dni ,string alias, string contrasenya) //Algo he posat per aqui;
         {
             this.nom = nom;
             this.cognom = cognom;
             this.nif = dni;
             this.alias = alias;
             this.contrasenya = contrasenya;
+            
         }
 
         public string Verificar(string alias, string contrasenya)

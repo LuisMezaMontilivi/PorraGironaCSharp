@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PorraGironaCSharp.Core;
 
-namespace PorraGironaCSharp.Capes.Model
+namespace PorraGironaCSharp.Capes.ViewModel
 {
-   public  class Historic
+    class UserPuntuacionsVM
     {
-        private int puntuacioTotal;
-        private int temporada;
+
     }
 }

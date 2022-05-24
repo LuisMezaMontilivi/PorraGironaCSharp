@@ -7,7 +7,12 @@ namespace PorraGironaCSharp.Capes.ViewModel
     {
 
         public ContingutUserVM propContingutUserVM;
+        public UserPuntuacionsVM userPuntuacionsVM;
         private object _currentView;
+
+
+        public RelayCommand PuntuacionsCommanda { get; set; }
+        public RelayCommand ContingutsCommanda { get; set; }
 
         public object CurrentView
         {
@@ -21,8 +26,13 @@ namespace PorraGironaCSharp.Capes.ViewModel
 
         public UserPrincipalVM()
         {
-            propContingutUserVM = new ContingutUserVM();
-            _currentView = propContingutUserVM;
+            //propContingutUserVM = new ContingutUserVM();
+            //userPuntuacionsVM = new UserPuntuacionsVM();
+            //_currentView = propContingutUserVM;
+            //ContingutsCommanda = new RelayCommand(o => { CurrentView = propContingutUserVM; });
+            //PuntuacionsCommanda = new RelayCommand(o => { CurrentView = userPuntuacionsVM; });
+
+
 
 
         }

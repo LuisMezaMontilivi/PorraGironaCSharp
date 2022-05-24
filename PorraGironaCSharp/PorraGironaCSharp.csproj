@@ -207,14 +207,12 @@
     </ApplicationDefinition>
     <Compile Include="Capes\ViewModel\ContingutUserVM.cs" />
     <Compile Include="Capes\ViewModel\UserPrincipalVM.cs" />
+    <Compile Include="Capes\ViewModel\UserPuntuacionsVM.cs" />
+    <Compile Include="Capes\View\UserPuntuacionsView.xaml.cs">
+      <DependentUpon>UserPuntuacionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Capes\View\UsuariPrincipalView.xaml.cs">
       <DependentUpon>UsuariPrincipalView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Historic.xaml.cs">
-      <DependentUpon>Historic.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Puntuacions.xaml.cs">
-      <DependentUpon>Puntuacions.xaml</DependentUpon>
     </Compile>
     <Page Include="Capes\View\AltaEquip.xaml">
       <SubType>Designer</SubType>
@@ -240,11 +238,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Capes\View\UsuariPrincipalView.xaml">
+    <Page Include="Capes\View\UserPuntuacionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Historic.xaml">
+    <Page Include="Capes\View\UsuariPrincipalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -309,10 +307,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PaginaUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Puntuacions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

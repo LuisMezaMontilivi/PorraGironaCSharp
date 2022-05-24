@@ -13,9 +13,11 @@
         Background="Transparent"
         AllowsTransparency="True"
 		>
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <viewModel:UserPrincipalVM/>
-    </Window.DataContext>
+    </Window.DataContext>-->
+    
+    
     
     <Border
         Background="White"
@@ -113,34 +115,35 @@
                              Background="#005ecb"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}"
-                             Checked="RadioButton_Checked_Principal"/>
+                             />
                 <RadioButton Content="Puntuacions"
                              Height="103"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}"
-                             Checked="RadioButton_Checked_Puntuacions"/>
+                             />
                 <RadioButton Content="Històric "
                              Height="103"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}" 
-                             Checked="RadioButton_Checked_Historic"/>
+                             />
                 <RadioButton Content="Donacions"
                              Height="103"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}" 
-                             Checked="RadioButton_Checked_Donacions"/>
+                             />
             </StackPanel>
 
 
-            <ContentControl Grid.Row="1" 
+            <!--<ContentControl Grid.Row="1" 
                             Grid.Column="1"
                             Margin="10"
-                            Content ="{Binding CurrentView}"/>
+                            Content ="{Binding CurrentView}"/>-->
 
-
+            <Frame Grid.Row="1" Grid.Column="1"
+                   x:Name="Prova1"/>
 
 
 
