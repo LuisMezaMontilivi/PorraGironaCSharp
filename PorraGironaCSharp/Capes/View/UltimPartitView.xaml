@@ -19,7 +19,8 @@
                                Margin="30,0,12,38"
                                FontFamily="/Fonts/#Poppins"
                                Width="158"/>
-                    <TextBlock Text="22/02/2022"
+                    <TextBlock x:Name="textBlockData"
+                               Text="22/02/2022"
                                Foreground="White"
                                FontSize="28"
                                HorizontalAlignment="Center"
@@ -52,7 +53,8 @@
                 </Border.Clip>
 
                 <Grid>
-                    <TextBlock Text="Equip local"
+                    <TextBlock x:Name="textBlockLocal"
+                               Text="Equip local"
                                Foreground="White"
                                FontFamily="/Fonts/#Poppins"
                                FontSize="28"
@@ -70,7 +72,7 @@
                             Content="⏷"
                             Style="{DynamicResource BotonCircular}"
                             Margin="194,170,31,10" Click="ButtonDisminuirLocal_Click"/>
-                    <Image Source="/Images/Escut.png"
+                    <Image x:Name="imageLocal" Source="/Images/Escut.png"
                            Margin="10,31,158,10"/> <!-- A CAMBIAR CUANDO HAGAMOS CONNECT A BBDD-->
                 </Grid>
 
@@ -96,7 +98,8 @@
                 </Border.Clip>
 
                 <Grid>
-                    <TextBlock Text="Equip visitant"
+                    <TextBlock x:Name="textBlockVisitant"
+                               Text="Equip visitant"
                                Foreground="White"
                                FontFamily="/Fonts/#Poppins"
                                FontSize="28"
@@ -115,7 +118,7 @@
                             Content="⏷"
                             Style="{DynamicResource BotonCircular}"
                             Margin="44,170,181,10" Click="ButtonDisminuirVisitant_Click"/>
-                    <Image Source="/Images/Escut.png"
+                    <Image x:Name="imageVisitant" Source="/Images/Escut.png"
                            Margin="166,30,0,10"/><!-- A CAMBIAR CUANDO HAGAMOS CONNECT A BBDD-->
                 </Grid>
 

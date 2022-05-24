@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,26 @@ namespace PorraGironaCSharp.Capes.View
         public AltaUsuari()
         {
             InitializeComponent();
+        }
+
+        private void ButtonAltaUsuari_Click(object sender, RoutedEventArgs e)
+        {
+            string rol;
+            if ((bool)radioButtonPorrista.IsChecked)
+                rol = "user";
+            else
+                rol = "admin";
+
+            Usuari alta = new Usuari(textBoxNom.Text,textBoxCognom.Text,textBoxNif.Text,textBoxAlias.Text,passwordBoxContrasenya.Password,rol);
+            try
+            {
+                alta.AfegirABaseDades();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"ERROR: {ex.Message}");
+            }
+            
         }
     }
 }

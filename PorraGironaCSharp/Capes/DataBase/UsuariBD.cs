@@ -86,5 +86,15 @@ namespace PorraGironaCSharp.Capes.DataBase
             }
             return usuaris;
         }
+
+        static public void InsertarUsuariBD(Usuari u)
+        {
+            MySqlCommand command = new MySqlCommand($"Insert into Usuari(Nom, Cognom, Nif,Alias,Rol,Contrasenya,DataAlta,PuntuacioTotal)" +
+                $" Values ('{u.nom}','{u.cognom}','{u.nif}','{u.alias}','{u.rol}','{u.contrasenya}',current_timestamp,0);");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
     }
 }

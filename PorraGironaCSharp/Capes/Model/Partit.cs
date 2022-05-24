@@ -13,16 +13,18 @@ namespace PorraGironaCSharp.Capes.Model
         private int golsVisitant;
         private int idPartit;
         private DateTime data;
+        private Equip equipLocal;
+        private Equip equipVisitant;
 
         public Partit(string estat, Equip local, Equip visitant, DateTime temps)
         {
-            this.estat = estat; EquipLocal = local; EquipVisitant = visitant; data = temps;
+            this.estat = estat; equipLocal = local; equipVisitant = visitant; data = temps;
             golsLocal = golsVisitant = 0;
         }
 
         public Equip EquipVisitant
         {
-            get => default;
+            get { return equipVisitant; }
             set
             {
             }
@@ -30,10 +32,15 @@ namespace PorraGironaCSharp.Capes.Model
 
         public Equip EquipLocal
         {
-            get => default;
+            get { return equipLocal; }
             set
             {
             }
+        }
+
+        public DateTime Data
+        {
+            get { return data; }
         }
 
         public string Estat

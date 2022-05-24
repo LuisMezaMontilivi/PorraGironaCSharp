@@ -31,12 +31,17 @@ namespace PorraGironaCSharp.Capes.Model
             this.contrasenya = contrasenya;
         }
 
+        public Usuari(string nom, string cognom, string dni, string alias, string contrasenya, string rol) : this(nom, cognom, dni, alias, contrasenya)
+        {
+            this.rol = rol;
+        }
+
         public string Verificar(string alias, string contrasenya)
         {
             string rol="";
             try
             {
-                rol=UsuariBD.SelectRol(alias,contrasenya);
+                rol = UsuariBD.SelectRol(alias, contrasenya);
             }
             catch
             {
@@ -72,6 +77,21 @@ namespace PorraGironaCSharp.Capes.Model
                 throw e;
             }
             return eliminacio;
+        }
+
+        public bool AfegirABaseDades()
+        {
+            bool retorn = false;
+            try
+            {
+                UsuariBD.InsertarUsuariBD(this);
+                retorn = true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            return retorn;
         }
 
 

@@ -47,5 +47,18 @@ namespace PorraGironaCSharp.Capes.Model
         {
             return llistatPartits;
         }
+
+        public Partit UltimPartit()
+        {
+            try
+            {
+                return PartitBD.RecuperarUltim();
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
+        }
     }
 }
