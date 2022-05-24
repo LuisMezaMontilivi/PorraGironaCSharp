@@ -13,7 +13,15 @@ namespace PorraGironaCSharp.Capes.Model
 
         public Partits()
         {
-            llistatPartits = PartitBD.LlistarPartits();
+            try
+            {
+                llistatPartits = PartitBD.LlistarPartits();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public bool AfegirPartit(Partit p)

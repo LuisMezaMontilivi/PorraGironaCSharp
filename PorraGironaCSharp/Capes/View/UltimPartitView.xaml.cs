@@ -26,7 +26,7 @@ namespace PorraGironaCSharp.Capes.View
         public UltimPartitView()
         {
             InitializeComponent();
-            //partits = new Partits();
+            partits = new Partits();
             CarregarUltimPartit();
             //MessageBox.Show(partits.LlistarPartits()[0].Estat);
             //Proves();

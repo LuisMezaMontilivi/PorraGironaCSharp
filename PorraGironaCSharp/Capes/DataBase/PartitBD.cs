@@ -12,11 +12,11 @@ namespace PorraGironaCSharp.Capes.DataBase
     {
         static public bool InsertarPartit(Partit p)
         {
-            MySqlConnection connexio = new MySqlConnection($"server=localhost; port=3306; user=root; password=; database=porra");
+            MySqlConnection connexio = new MySqlConnection($"server=localhost; port=3306; user=root; password=; database=porra; convert zero datetime=True");
             bool resultatInsercio = true;
             try
             {
-                MySqlCommand command = new MySqlCommand($"INSERT INTO Partit (IdEquipLocal, IdEquipVisitant, Estat, Descripcio_Jornada) VALUES ({p.EquipLocal.IdEquip},{p.EquipLocal.IdEquip},'Per Jugar','Hola');");
+                MySqlCommand command = new MySqlCommand($"INSERT INTO Partit (IdEquipLocal, IdEquipVisitant, Estat, Moment) VALUES ({p.EquipLocal.IdEquip},{p.EquipVisitant.IdEquip},'Per Jugar','{p.Data.ToString("O")}');");
                 command.Connection = connexio;
                 connexio.Open();
                 command.ExecuteNonQuery();
@@ -42,20 +42,21 @@ namespace PorraGironaCSharp.Capes.DataBase
 
         static public List<Partit> LlistarPartits()
         {
+            MySqlConnection connexio = new MySqlConnection($"server=localhost; port=3306;user=root;password=;database=porra");
             List<Partit> partits = new List<Partit>();
-            string conexio = "server=localhost; port=3306; user=root; password=; database=porra; convert zero datetime=True";
-            using (MySqlConnection connect = new MySqlConnection(conexio))
+            connexio.Open();
+            MySqlCommand command = new MySqlCommand("select p.Idpartit, p.Estat, p.Gols_Local, p.Gols_Visitant, p.Moment, " +
+                    "e.IdEquip idLocal, e.Nom_Equip nomLocal, e.Nom_Camp campLocal, e.Municipi municipiLocal, e.Escut escutLocal, " +
+                    "ev.IdEquip idVisitant, ev.Nom_Equip nomVisitant, ev.Nom_Camp campVisitant, ev.Municipi municipiVisitant, ev.Escut escutVisitant " +
+                    "from partit p join equip e on (p.idEquipLocal = e.IdEquip) " +
+                    "join equip ev on (p.idEquipVisitant = ev.IdEquip);", connexio);
+            MySqlDataReader lector = command.ExecuteReader();
+            while (lector.Read())
             {
-                connect.Open();
-                MySqlCommand llegirEquips = new MySqlCommand("SELECT * FROM Partit", connect);
-                MySqlDataReader lector = llegirEquips.ExecuteReader();
-                while (lector.Read())
-                {
-                    partits.Add(new Partit((string)lector["Estat"],
-                                         new Equip((int)lector["IdEquipLocal"],"a","a","a","a"),
-                                         new Equip((int)lector["IdEquipVisitant"], "a", "a", "a", "a"),
-                                         DateTime.Parse(lector["Moment"].ToString())));
-                }
+                Equip local = new Equip((int)lector["idLocal"], (string)lector["nomLocal"], (string)lector["campLocal"], (string)lector["municipiLocal"], (string)lector["escutLocal"]);
+                Equip visitant = new Equip((int)lector["idVisitant"], (string)lector["nomVisitant"], (string)lector["campVisitant"], (string)lector["municipiVisitant"], (string)lector["escutVisitant"]);
+                Partit prova = new Partit((string)lector["Estat"], local, visitant, DateTime.Parse(lector["Moment"].ToString()));
+                partits.Add(prova);
             }
             return partits;
         }
@@ -71,13 +72,12 @@ namespace PorraGironaCSharp.Capes.DataBase
                     "join equip ev on (p.idEquipVisitant = ev.IdEquip) " +
                     "where estat = 'Per Jugar' and moment = (select min(moment) from partit where estat = 'Per Jugar');", connexio);
             MySqlDataReader lector = command.ExecuteReader();
-            Equip local = null, visitant = null;
             Partit prova = null;
             while (lector.Read())
             {
-                local = new Equip((int)lector["idLocal"], (string)lector["nomLocal"], (string)lector["campLocal"], (string)lector["municipiLocal"], (string)lector["escutLocal"]);
-                visitant = new Equip((int)lector["idVisitant"], (string)lector["nomVisitant"], (string)lector["campVisitant"], (string)lector["municipiVisitant"], (string)lector["escutVisitant"]);
-                prova = new Partit((string)lector["Estat"], local, visitant, DateTime.Now);
+                Equip local = new Equip((int)lector["idLocal"], (string)lector["nomLocal"], (string)lector["campLocal"], (string)lector["municipiLocal"], (string)lector["escutLocal"]);
+                Equip visitant = new Equip((int)lector["idVisitant"], (string)lector["nomVisitant"], (string)lector["campVisitant"], (string)lector["municipiVisitant"], (string)lector["escutVisitant"]);
+                prova = new Partit((string)lector["Estat"], local, visitant, DateTime.Parse(lector["Moment"].ToString()));
             }
             return prova;
         }
