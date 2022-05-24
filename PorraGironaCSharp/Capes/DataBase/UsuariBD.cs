@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using PorraGironaCSharp.Capes.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,9 +48,9 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
             
         }
-        static public void EliminarUsuari(string id)
+        static public void EliminarUsuari(string alias)
         {
-            MySqlCommand command = new MySqlCommand($"Delete from Usuari where IdUsuari={id};");
+            MySqlCommand command = new MySqlCommand($"Delete from Usuari where Alias = '{alias}';");
             command.Connection = Connexio.Connect();
             Connexio.Open();
             command.ExecuteNonQuery();
@@ -63,6 +64,27 @@ namespace PorraGironaCSharp.Capes.DataBase
             Connexio.Open();
             command.ExecuteNonQuery();
             command.Connection.Close();
+        }
+
+        static public List<Usuari> LlistatUsuaris()
+        {
+            List<Usuari> usuaris = new List<Usuari>();
+            string conexio = "server=localhost; port=3306; user=root; password=; database=porra";
+            using (MySqlConnection connect = new MySqlConnection(conexio))
+            {
+                connect.Open();
+                MySqlCommand llegirEquips = new MySqlCommand("SELECT * FROM Usuari", connect);
+                MySqlDataReader lector = llegirEquips.ExecuteReader();
+                while (lector.Read())
+                {
+                    usuaris.Add(new Usuari((string)lector["Nom"],
+                                         (string)lector["Cognom"],
+                                         (string)lector["Nif"],
+                                         (string)lector["Alias"],
+                                         (string)lector["Contrasenya"]));
+                }
+            }
+            return usuaris;
         }
     }
 }

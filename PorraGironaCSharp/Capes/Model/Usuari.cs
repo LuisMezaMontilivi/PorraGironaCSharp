@@ -11,11 +11,11 @@ namespace PorraGironaCSharp.Capes.Model
     class Usuari
     {
         public string alias { get; set; }
-        private string contrasenya { get; set; }
-        private string nom { get; set; }
-        private string cognom { get; set; }
-        private string nif { get; set; }
-        private string rol { get; set; }
+        public string contrasenya { get; set; }
+        public string nom { get; set; }
+        public string cognom { get; set; }
+        public string nif { get; set; }
+        public string rol { get; set; }
 
         public Usuari(string alias, string contrasenya)
         {
@@ -68,6 +68,21 @@ namespace PorraGironaCSharp.Capes.Model
             return funciona;
 
             
+        }
+
+        public bool Eliminar()
+        {
+            bool eliminacio = false;
+            try
+            {
+                UsuariBD.EliminarUsuari(alias);
+                eliminacio = true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            return eliminacio;
         }
 
 

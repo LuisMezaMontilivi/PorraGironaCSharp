@@ -48,7 +48,15 @@ namespace PorraGironaCSharp.Capes.View
                 equips.RetornarEquip((string)ComboBoxLocal.SelectedItem),
                 equips.RetornarEquip((string)ComboBoxVisitant.SelectedItem),
                 (DateTime)DateTimePartit.SelectedDateTime);
-            partits.AfegirPartit(p);
+            try
+            {
+                partits.AfegirPartit(p);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             MessageBox.Show("Ha lelgado hasta aquí");
         }
     }
