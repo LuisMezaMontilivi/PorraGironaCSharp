@@ -29,7 +29,7 @@ namespace PorraGironaCSharp.Capes.View
             InitializeComponent();
             LlistarUsuaris();
             LlistarEquips();
-            //LlistarPartits();
+            LlistarPartits();
         }
 
         private void LlistarUsuaris()
@@ -55,7 +55,7 @@ namespace PorraGironaCSharp.Capes.View
             partits = new Partits();
             foreach (Partit X in partits.LlistarPartits())
             {
-                ComboBoxEliminarPartit.Items.Add(X.EquipLocal.NomEquip +" "+ X.EquipVisitant.NomEquip);
+                ComboBoxEliminarPartit.Items.Add(X.EquipLocal.NomEquip + " " + X.EquipVisitant.NomEquip + " " + X.Data);
             }
         }
 
@@ -105,6 +105,24 @@ namespace PorraGironaCSharp.Capes.View
             equips.EliminarEquip(eliminar.IdEquip);
             labelNomEquip.Content = labelMunicipiEquip.Content = labelCampEquip.Content = ComboBoxEliminarEquip.Text = "";
             ComboBoxEliminarEquip.Items.Remove(eliminar.NomEquip);
+        }
+
+        private void ComboBoxEliminarPartit_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(ComboBoxEliminarPartit.Text != "")
+            {
+                Partit eliminar = partits.LlistarPartits()[ComboBoxEliminarPartit.SelectedIndex];
+                labelData.Content = eliminar.Data;
+                labelEquipLocal.Content = eliminar.EquipLocal.NomEquip;
+                labelEquipVisitant.Content = eliminar.EquipVisitant.NomEquip;
+            }
+        }
+
+        private void ButtonEliminarPartit_Click(object sender, RoutedEventArgs e)
+        {
+            Partit eliminar = partits.LlistarPartits()[ComboBoxEliminarPartit.SelectedIndex];
+            labelData.Content = labelEquipLocal.Content = labelEquipVisitant.Content = "";
+            
         }
     }
 }

@@ -121,32 +121,37 @@
                            Margin="20,0,0,0"/>
                     <ComboBox x:Name="ComboBoxEliminarPartit"
                               Margin="10,0,10,0"
-                              Style="{StaticResource ComboBoxRedondo}"/>
+                              Style="{StaticResource ComboBoxRedondo}"
+                              SelectionChanged="ComboBoxEliminarPartit_SelectionChanged"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Local: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelEquipLocal"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="12,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Visitant: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelEquipVisitant"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="0,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Data: "
                            Foreground="White"/>
-                        <Label Content="Holo"
+                        <Label x:Name="labelData"
+                               Content="Holo"
                                Foreground="Gray"
                                Margin="14,0,0,0"/>
                     </StackPanel>
 
                     <Button x:Name="ButtonEliminarPartit"
                             Margin="20,56,20,0"
-                            Content="Eliminar partit"/>
+                            Content="Eliminar partit"
+                            Click="ButtonEliminarPartit_Click"/>
                 </StackPanel>
                 
             </Grid>
