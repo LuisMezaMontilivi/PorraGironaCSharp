@@ -22,7 +22,7 @@ namespace PorraGironaCSharp.Capes.Model
             this.alias = alias;
             this.contrasenya = contrasenya;
         }
-        public Usuari(string nom, string cognom, string dni ,string alias, string contrasenya)
+        public Usuari(string nom, string cognom, string dni, string alias, string contrasenya)
         {
             this.nom = nom;
             this.cognom = cognom;
@@ -34,40 +34,29 @@ namespace PorraGironaCSharp.Capes.Model
         public string Verificar(string alias, string contrasenya)
         {
             string rol="";
-            
-
             try
             {
                 rol=UsuariBD.SelectRol(alias,contrasenya);
-               
             }
             catch
             {
                 rol = "No Funciona";
             }
-            
-
             return rol;
         }
         public bool Afegir(string nom, string cognom, string dni, string alias, string contrasenya)
         {
             bool funciona;
-            
-
             try
             {
                UsuariBD.InsertUsuari(nom,cognom,dni,alias, contrasenya);
                funciona = true;
-               
             }
             catch
             {
                 funciona = false;
             }
-            
             return funciona;
-
-            
         }
 
         public bool Eliminar()

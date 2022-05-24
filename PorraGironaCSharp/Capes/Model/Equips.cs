@@ -29,7 +29,18 @@ namespace PorraGironaCSharp.Capes.Model
 
         public bool EliminarEquip(int idEquip)
         {
-            throw new System.NotImplementedException();
+            bool eliminat = false;
+            try
+            {
+                EquipBD.EliminarEquip(idEquip);
+                llistatEquips.RemoveAt(llistatEquips.FindIndex(x => x.IdEquip == idEquip));
+                eliminat = true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            return eliminat;
         }
 
         public List<Equip> EquipsBaseDades()

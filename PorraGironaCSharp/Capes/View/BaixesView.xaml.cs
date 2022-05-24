@@ -61,22 +61,42 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonEliminarUsuari_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Usuari eliminar = usuaris.Find(x => x.alias == ComboBoxEliminarUsuari.Text);
-                eliminar.Eliminar();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            Usuari eliminar = usuaris.Find(x => x.alias == ComboBoxEliminarUsuari.Text);
+            eliminar.Eliminar();
+            LlistarUsuaris();
+            labelAliasUsuari.Content = labelNomUsuari.Content = labelCognomUsuari.Content = labelNifUsuari.Content = "";
         }
 
         private void ComboBoxEliminarUsuari_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Usuari eliminar = usuaris.Find(x => x.alias == ComboBoxEliminarUsuari.Text);
-            labelAliasUsuari.Content = ComboBoxEliminarUsuari.Text;
+            if (ComboBoxEliminarUsuari.Text != "")
+            {
+                Usuari eliminar = usuaris[ComboBoxEliminarUsuari.SelectedIndex];
+                labelAliasUsuari.Content = eliminar.alias;
+                labelNomUsuari.Content = eliminar.nom;
+                labelCognomUsuari.Content = eliminar.cognom;
+                labelNifUsuari.Content = eliminar.nif;
+            }
+            
+        }
+
+        private void ComboBoxEliminarEquip_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(ComboBoxEliminarEquip.Text != "")
+            {
+                Equip eliminar = equips.EquipsBaseDades()[ComboBoxEliminarEquip.SelectedIndex];
+                labelNomEquip.Content = eliminar.NomEquip;
+                labelMunicipiEquip.Content = eliminar.Municipi;
+                labelCampEquip.Content = eliminar.NomCamp;
+            }
+        }
+
+        private void ButtonEliminarEquip_Click(object sender, RoutedEventArgs e)
+        {
+            Equip eliminar = equips.EquipsBaseDades()[ComboBoxEliminarEquip.SelectedIndex];
+            equips.EliminarEquip(eliminar.IdEquip);
+            labelNomEquip.Content = labelMunicipiEquip.Content = labelCampEquip.Content = ComboBoxEliminarEquip.Text = "";
+            ComboBoxEliminarEquip.Items.RemoveAt(ComboBoxEliminarEquip.SelectedIndex);
         }
     }
 }

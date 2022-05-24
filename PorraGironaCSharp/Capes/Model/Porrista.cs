@@ -8,18 +8,8 @@ namespace PorraGironaCSharp.Capes.Model
 {
     class Porrista
     {
-        private DateTime dataAlta;
         private int idPorrista;
-        private int puntuacioTotal;
-        private List<Historic> historics;
-
-        public int Puntuacio
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        private int puntuacio;
 
         public bool AugmentarPuntuacio(int punts)
         {
