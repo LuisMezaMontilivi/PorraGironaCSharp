@@ -19,12 +19,17 @@ namespace PorraGironaCSharp
     /// </summary>
     public partial class PaginaUser : Window
     {
+        public PaginaUser(string alias)
+        {
+            InitializeComponent();
+
+        }
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
-        
+
         public PaginaUser()
         {
             InitializeComponent();

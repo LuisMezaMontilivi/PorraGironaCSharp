@@ -30,6 +30,16 @@ namespace PorraGironaCSharp.Capes.DataBase
             return resultatInsercio;
         }
 
+        static public void EliminarPartit(string id)
+        {
+            MySqlCommand command = new MySqlCommand($"Delete from Partit where IdPartit={id};");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
+
         static public List<Partit> LlistarPartits()
         {
             List<Partit> partits = new List<Partit>();
