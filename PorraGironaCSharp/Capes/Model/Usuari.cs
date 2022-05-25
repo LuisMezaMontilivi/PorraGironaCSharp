@@ -10,9 +10,6 @@ namespace PorraGironaCSharp.Capes.Model
    
     public class Usuari
     {
-        private string dni;
-        private string alias1;
-
         public string alias { get; set; }
         private string contrasenya { get; set; }
         private string nom { get; set; }
@@ -31,7 +28,7 @@ namespace PorraGironaCSharp.Capes.Model
 
 
        
-        public Usuari(string nom, string cognom, string dni ,string alias, string contrasenya) //Algo he posat per aqui;
+        public Usuari(string nom, string cognom, string dni ,string alias) //Algo he posat per aqui;
         {
             this.nom = nom;
             this.cognom = cognom;
@@ -40,11 +37,14 @@ namespace PorraGironaCSharp.Capes.Model
             this.contrasenya = contrasenya;
             
         }
-
-        public Usuari(string alias, string contrasenya, string dni, string alias1) : this(alias, contrasenya)
+        public Usuari(string nom, string cognom, string dni, string alias, string contrasenya) //Algo he posat per aqui;
         {
-            this.dni = dni;
-            this.alias1 = alias1;
+            this.nom = nom;
+            this.cognom = cognom;
+            this.nif = dni;
+            this.alias = alias;
+            this.contrasenya = contrasenya;
+
         }
 
         public string Verificar(string alias, string contrasenya)

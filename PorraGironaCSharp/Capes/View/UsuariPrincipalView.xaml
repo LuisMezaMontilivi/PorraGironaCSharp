@@ -14,7 +14,7 @@
                         >
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -50,6 +50,7 @@
                 </Border>
 
 
+
                 <Border Grid.Row="1" Grid.Column="1"  
                                 CornerRadius="5" 
                                 BorderThickness="3" 
@@ -75,7 +76,7 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontWeight="Bold"
-                                   FontSize="33"/>
+                                   FontSize="25"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="1"
                                    Text="-" 
@@ -83,7 +84,7 @@
                                    HorizontalAlignment="Center"
                                    Foreground="#cf0c2e"
                                    FontWeight="Bold"
-                                   FontSize="33"
+                                   FontSize="25"
                                    />
 
                         <TextBlock Grid.Row="1" Grid.Column="2"
@@ -93,7 +94,7 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontWeight="Bold"
-                                   FontSize="33"/>
+                                   FontSize="25"/>
 
 
 
@@ -153,7 +154,20 @@
 
         </Border>
 
-        <Border Grid.Row="1" ></Border>
+
+        <Border Grid.Row="1" >
+            <Button Grid.Column="1" Grid.Row="1" Content="Guarda la Previsió"
+                                        Style="{DynamicResource BotonCircular}"
+                                        HorizontalAlignment="Center"
+                                        x:Name="EnviarPorraButton"
+                                        FontFamily="/Fonts/#Poppins"
+                                        Height="25" 
+                                        Width="200"
+                                        FontSize="14"
+                                        Background="#448AFF"
+                                        Foreground="White"
+                        />
+        </Border>
 
         <Border Grid.Row="2" CornerRadius="15" 
                         BorderThickness="3" 
@@ -201,19 +215,23 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="17"/>
+                            <RowDefinition Height="20"/>
                             <RowDefinition />
-                            <RowDefinition Height="17"/>
+                            <RowDefinition Height="20"/>
                         </Grid.RowDefinitions>
 
                         <Button Grid.Row="0"
                                                                Grid.Column="0"
                                                                Content="⏶"
+                                
                                                                Style="{DynamicResource BotonCircular}"
-                                                               Foreground="Black"
+                                                               Foreground="White"
                                                                HorizontalAlignment="Center"
+                                
                                                                x:Name="IncrementarLocal"
-                                                               Click="IncrementarLocal_Click"
+                                                               Click="IncrementarLocal_Click" Width="50" Height="15" VerticalAlignment="Top" Panel.ZIndex="-1"
+                                                               Background="#448AFF" Margin="3,3,0,0"
+                                                               
                                                                >
                         </Button>
 
@@ -223,19 +241,21 @@
                                                                Style="{DynamicResource BotonCircular}"
                                                                HorizontalAlignment="Center"
                                                                x:Name="DisminuirLocal"
-                                                               Click="DisminuirLocal_Click"
-                                                               >
-                        </Button>
+                                                               Click="DisminuirLocal_Click" Width="50" Height="15" VerticalAlignment="Bottom"
+                                                               Background="#448AFF"
+                                                               Foreground="White" Margin="3,0,0,3"
+                                />
 
                         <Button Grid.Row="0"
-                                                               Grid.Column="1"
+                                                               Grid.Column="2"
                                                                Content="⏶"
                                                                Style="{DynamicResource BotonCircular}"
                                                                HorizontalAlignment="Center"
                                                                x:Name="IncrementarVisitant"
-                                                               Click="IncrementarVisitant_Click" Grid.ColumnSpan="2" Margin="46,0,-4,0" Grid.RowSpan="2" VerticalAlignment="Top"
-                                                               >
-                        </Button>
+                                                               Click="IncrementarVisitant_Click"  Width="50" Height="15" VerticalAlignment="Top" Panel.ZIndex="-1"
+                                                               Background="#448AFF"
+                                                               Foreground="White" Margin="0,3,3,0"
+                                />
 
                         <Button Grid.Row="2"
                                                                Grid.Column="2"
@@ -243,9 +263,12 @@
                                                                Style="{DynamicResource BotonCircular}"
                                                                HorizontalAlignment="Center"
                                                                x:Name="DisminuirVisitant"
-                                                                Click="DisminuirVisitant_Click"
-                                                               >
-                        </Button>
+                                                               Click="DisminuirVisitant_Click" Width="50" Height="15" VerticalAlignment="Bottom" 
+                                                               Background="#448AFF"
+                                                               Foreground="White" Margin="0,0,3,3"
+                                
+                                />
+
 
 
                         <TextBlock Grid.Row="1" Grid.Column="0"
@@ -255,7 +278,7 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontWeight="Bold"
-                                   FontSize="33"/>
+                                   FontSize="25" Panel.ZIndex="1"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="1"
                                    Text="-" 
@@ -263,7 +286,7 @@
                                    HorizontalAlignment="Center"
                                    Foreground="#448AFF"
                                    FontWeight="Bold"
-                                   FontSize="33"
+                                   FontSize="25"
                                    />
 
                         <TextBlock Grid.Row="1" Grid.Column="2"
@@ -273,7 +296,7 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontWeight="Bold"
-                                   FontSize="33"/>
+                                   FontSize="25" Panel.ZIndex="1"/>
                     </Grid>
 
                 </Border>

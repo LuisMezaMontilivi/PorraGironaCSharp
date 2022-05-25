@@ -35,7 +35,7 @@ namespace PorraGironaCSharp
             this.alias = alias;
             InitializeComponent();
             labelUsuari.Content = this.alias;
-            FramePrincipal.Content = new UsuariPrincipalView();
+            FramePrincipal.Content = new UsuariPrincipalView(alias);
 
         }
 
@@ -78,7 +78,7 @@ namespace PorraGironaCSharp
         {
 
             var ClickedButton = e.OriginalSource as NavButton;
-            FramePrincipal.Content = new UsuariPrincipalView();
+            FramePrincipal.Content = new UsuariPrincipalView(alias);
             //FramePrincipal.Content = ClickedButton.NavUri;
 
             //NavigationService nav = NavigationService.GetNavigationService(this);
@@ -88,13 +88,13 @@ namespace PorraGironaCSharp
         private void NavButtonPuntuacions_Click(object sender, RoutedEventArgs e)
         {
             var ClickedButton = e.OriginalSource as NavButton;
-            FramePrincipal.Content = new UserPuntuacionsView();
+            FramePrincipal.Content = new UserPuntuacionsView(alias);
 
         }
         private void NavButtonHistoric_Click(object sender, RoutedEventArgs e)
         {
             var ClickedButton = e.OriginalSource as NavButton;
-            FramePrincipal.Content = new UsuariPrincipalView();
+            FramePrincipal.Content = new UsuariPrincipalView(alias);
 
         }
     }

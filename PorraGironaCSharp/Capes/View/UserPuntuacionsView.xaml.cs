@@ -22,28 +22,29 @@ namespace PorraGironaCSharp.Capes.View
     public partial class UserPuntuacionsView : UserControl
     {
         private Porristes porristes;
-        public UserPuntuacionsView()
+        private string alias;
+
+
+        public UserPuntuacionsView(string alias)
         {
             InitializeComponent();
-            //porristes = new Porristes();
+            this.alias = alias;
+            porristes = new Porristes();
 
-            //List<Porrista> llistaPorristes = porristes.RecuperarPorristes();
+            List<Porrista> llistaPorristes = porristes.RecuperarPorristes();
 
-            //BindGrid(llistaPorristes);
+            BindGrid(llistaPorristes);
 
-            
+
 
         }
 
-        
 
-        //private void BindGrid(List<Porrista> llistaPorristes)
-        //{
-        //    DGPuntuacions = new DataGrid();
-        //    DGPuntuacions.ItemsSource = null;
-        //    DGPuntuacions.DataContext = llistaPorristes;
-        //    DGPuntuacions.ItemsSource = llistaPorristes;
-        //}
+
+        private void BindGrid(List<Porrista> llistaPorristes)
+        {
+            DataGridPuntuacions.ItemsSource = llistaPorristes;
+        }
 
 
     }

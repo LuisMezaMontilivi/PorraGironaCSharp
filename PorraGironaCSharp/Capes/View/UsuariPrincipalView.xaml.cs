@@ -22,10 +22,12 @@ namespace PorraGironaCSharp.Capes.View
     public partial class UsuariPrincipalView : UserControl
     {
         private Porra porra;
+        private string alias;
         
-        public UsuariPrincipalView()
+        public UsuariPrincipalView(string alias)
         {
             InitializeComponent();
+            this.alias = alias;
             porra = new Porra();
 
             
