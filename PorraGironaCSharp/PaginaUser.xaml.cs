@@ -10,9 +10,11 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PorraGironaCSharp.Capes.Model;
 using PorraGironaCSharp.Capes.View;
+using PorraGironaCSharp.Capes.ViewModel;
 
 namespace PorraGironaCSharp
 {
@@ -23,6 +25,7 @@ namespace PorraGironaCSharp
     {
         private string alias ;
        
+       
         public PaginaUser()
         {
             InitializeComponent();
@@ -32,22 +35,13 @@ namespace PorraGironaCSharp
             this.alias = alias;
             InitializeComponent();
             labelUsuari.Content = this.alias;
-            Prova();
+            FramePrincipal.Content = new UsuariPrincipalView();
 
         }
+
         
-        private void Prova()
-        {
-            try
-            {
-                Prova1.Content = new UsuariPrincipalView();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
+        
+
 
 
         protected override void OnClosed(EventArgs e)
@@ -80,6 +74,28 @@ namespace PorraGironaCSharp
             this.DragMove();
         }
 
-       
+        private void NavButtonPrincipal_Click(object sender, RoutedEventArgs e)
+        {
+
+            var ClickedButton = e.OriginalSource as NavButton;
+            FramePrincipal.Content = new UsuariPrincipalView();
+            //FramePrincipal.Content = ClickedButton.NavUri;
+
+            //NavigationService nav = NavigationService.GetNavigationService(this);
+            //nav.Navigate(ClickedButton.NavUri);
+        }
+
+        private void NavButtonPuntuacions_Click(object sender, RoutedEventArgs e)
+        {
+            var ClickedButton = e.OriginalSource as NavButton;
+            FramePrincipal.Content = new UserPuntuacionsView();
+
+        }
+        private void NavButtonHistoric_Click(object sender, RoutedEventArgs e)
+        {
+            var ClickedButton = e.OriginalSource as NavButton;
+            FramePrincipal.Content = new UsuariPrincipalView();
+
+        }
     }
 }

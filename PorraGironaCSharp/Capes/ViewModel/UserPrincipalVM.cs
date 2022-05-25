@@ -6,13 +6,15 @@ namespace PorraGironaCSharp.Capes.ViewModel
     class UserPrincipalVM : ObservableObject
     {
 
-        public ContingutUserVM propContingutUserVM;
-        public UserPuntuacionsVM userPuntuacionsVM;
+        private ContingutUserVM propContingutUserVM;
+        public RelayCommand PrincipalCommand { get; set; }
+
+        public RelayCommand PuntuacionsCommand { get; set; }
+
         private object _currentView;
 
+        private UserPuntuacionsVM userPuntuacionsVM;
 
-        public RelayCommand PuntuacionsCommanda { get; set; }
-        public RelayCommand ContingutsCommanda { get; set; }
 
         public object CurrentView
         {
@@ -24,16 +26,17 @@ namespace PorraGironaCSharp.Capes.ViewModel
             }
         }
 
+        internal UserPuntuacionsVM UserPuntuacionsVM { get => userPuntuacionsVM; set => userPuntuacionsVM = value; }
+        internal ContingutUserVM PropContingutUserVM { get => propContingutUserVM; set => propContingutUserVM = value; }
+
         public UserPrincipalVM()
         {
-            //propContingutUserVM = new ContingutUserVM();
-            //userPuntuacionsVM = new UserPuntuacionsVM();
-            //_currentView = propContingutUserVM;
-            //ContingutsCommanda = new RelayCommand(o => { CurrentView = propContingutUserVM; });
-            //PuntuacionsCommanda = new RelayCommand(o => { CurrentView = userPuntuacionsVM; });
+            PropContingutUserVM = new ContingutUserVM();
+            _currentView = PropContingutUserVM;
+            UserPuntuacionsVM = new UserPuntuacionsVM();
 
-
-
+            PrincipalCommand = new RelayCommand(o => { CurrentView = propContingutUserVM; });
+            PuntuacionsCommand = new RelayCommand(o => { CurrentView = userPuntuacionsVM; });
 
         }
 

@@ -6,14 +6,16 @@
              xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <DataGrid 
-              AlternatingRowBackground="#83b9ff"
-              
-              
+    
+    
+    
+    
+    <!--<DataGrid 
+              AlternatingRowBackground="#83b9ff
               x:Name="DGPuntuacions">
         
         
-        <DataGrid.Columns>
+        --><!--<DataGrid.Columns>
             <DataGridTextColumn Header="Alias" Width="300" 
                                 />
             <DataGridTextColumn Header="Puntuacio" Width="300"  
@@ -21,8 +23,18 @@
             
 
 
-        </DataGrid.Columns>
+        </DataGrid.Columns>--><!--
        
         
-    </DataGrid>
+    </DataGrid>-->
+    
+    
+    
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" 
+                   Text="Puntuacions" Foreground="Red"/>
+    </Grid>-->
 </UserControl>

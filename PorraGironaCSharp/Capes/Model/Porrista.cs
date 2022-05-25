@@ -23,6 +23,14 @@ namespace PorraGironaCSharp.Capes.Model
            
         }
 
+        public Porrista(string nom, string cognom, string dni, string alias,  int idPorrista, int puntuacioTotal) : base(nom, cognom, dni, alias)
+        {
+            
+            this.idPorrista = idPorrista;
+            this.puntuacioTotal = puntuacioTotal;
+
+        }
+
         public DateTime DataAlta { get => dataAlta; set => dataAlta = value; }
         public int IdPorrista { get => idPorrista; set => idPorrista = value; }
         public int PuntuacioTotal { get => puntuacioTotal; set => puntuacioTotal = value; }

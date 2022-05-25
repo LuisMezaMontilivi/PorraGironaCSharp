@@ -25,11 +25,11 @@ namespace PorraGironaCSharp.Capes.View
         public UserPuntuacionsView()
         {
             InitializeComponent();
-            porristes = new Porristes();
+            //porristes = new Porristes();
 
-            List<Porrista> llistaPorristes = porristes.RecuperarPorristes();
+            //List<Porrista> llistaPorristes = porristes.RecuperarPorristes();
 
-            BindGrid(llistaPorristes);
+            //BindGrid(llistaPorristes);
 
             
 
@@ -37,13 +37,13 @@ namespace PorraGironaCSharp.Capes.View
 
         
 
-        private void BindGrid(List<Porrista> llistaPorristes)
-        {
-            DGPuntuacions = new DataGrid();
-            DGPuntuacions.ItemsSource = null;
-            DGPuntuacions.DataContext = llistaPorristes;
-            this.DGPuntuacions.ItemsSource = llistaPorristes;
-        }
+        //private void BindGrid(List<Porrista> llistaPorristes)
+        //{
+        //    DGPuntuacions = new DataGrid();
+        //    DGPuntuacions.ItemsSource = null;
+        //    DGPuntuacions.DataContext = llistaPorristes;
+        //    DGPuntuacions.ItemsSource = llistaPorristes;
+        //}
 
 
     }

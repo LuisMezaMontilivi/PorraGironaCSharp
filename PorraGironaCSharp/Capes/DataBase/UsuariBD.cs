@@ -87,7 +87,7 @@ namespace PorraGironaCSharp.Capes.DataBase
                                                     (string)reader["Nif"],
                                                     (string)reader["Alias"],
                                                     (string)reader["Contrasenya"],
-                                                    Convert.ToDateTime( reader["DataAlta"]),
+                                                    DateTime.Parse( reader["DataAlta"].ToString()),
                                                     (int)reader["IdUsuari"],
                                                     (int)reader["PuntuacioTotal"]
                                                     ));

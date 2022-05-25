@@ -310,6 +310,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Theme\BotonCircular.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -336,6 +340,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NavButton.cs" />
     <Compile Include="PaginaAdmin.xaml.cs">
       <DependentUpon>PaginaAdmin.xaml</DependentUpon>
     </Compile>

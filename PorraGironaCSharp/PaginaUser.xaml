@@ -16,13 +16,11 @@
     <!--<Window.DataContext>
         <viewModel:UserPrincipalVM/>
     </Window.DataContext>-->
-    
-    
-    
+
     <Border
         Background="White"
         CornerRadius= "20">
-        <Grid>
+        <Grid x:Name="GridBarraLateral">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="200"/>
 
@@ -107,45 +105,101 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" Grid.Column="0" >
 
-                <RadioButton Content="Pantalla Principal"
+                <local:NavButton Text="Principal"
+                                 Height="103"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                  FontSize="14" 
+                                 NavUri="Capes/View/UsuariPrincipalView.xaml"
+                                 Click="NavButtonPrincipal_Click"/>
+
+                <local:NavButton x:Name="NavButtonPuntuacions" 
+                                 Text="Puntuacions" 
+                                 Height="103"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                 Width="200"
+                                 FontSize="14" 
+                                 NavUri="Capes/View/UserPuntuacionsView.xaml"
+                                 Click="NavButtonPuntuacions_Click"
+                                 />
+                <local:NavButton x:Name="NavButtonHistoric" 
+                                 Text="Historic" 
+                                 Height="103"
+                                 VerticalAlignment="Center"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                 FontSize="14"
+                                 Click="NavButtonHistoric_Click"/>
+                <local:NavButton x:Name="NavButtonAltres" 
+                                 Text="Altres" 
+                                 Height="103"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                 Width="200"
+                                 FontSize="14"/>
+
+                <!--<RadioButton Content="Pantalla Principal"
                              Height="103"
                              Foreground="White"
                              Background="#005ecb"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}"
+                             x:Name="ButtonPrincipal"
+                             Checked="ButtonPrincipal_Checked"
                              />
                 <RadioButton Content="Puntuacions"
                              Height="103"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}"
+                             x:Name="ButonPuntuacions" Checked="ButonPuntuacions_Checked"
+                             
+                            
+                            
                              />
                 <RadioButton Content="Històric "
                              Height="103"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}" 
+                             x:Name="ButtonHistoric"
+                             
                              />
                 <RadioButton Content="Donacions"
                              Height="103"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource PaginaUser}" 
-                             />
+                             
+                             />-->
             </StackPanel>
+
+
+
+            <Frame Grid.Row="1" Grid.Column="1" Margin="10" 
+                   Content="/PorraGironaCSharp;component/Capes/View/UsuariPrincipalView.xaml"
+                   NavigationUIVisibility="Hidden"
+                   
+                   x:Name="FramePrincipal" />
+            <!--<Frame.ContentTemplate>
+                    <DataTemplate>
+                        <ContentControl Content="{Binding }"
+                    </DataTemplate>
+                </Frame.ContentTemplate>
+            </Frame>-->
 
 
             <!--<ContentControl Grid.Row="1" 
                             Grid.Column="1"
                             Margin="10"
                             Content ="{Binding CurrentView}"/>-->
-
-            <Frame Grid.Row="1" Grid.Column="1"
-                   x:Name="Prova1"/>
-
-
 
         </Grid>
     </Border>
