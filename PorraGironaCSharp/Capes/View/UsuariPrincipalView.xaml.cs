@@ -31,9 +31,9 @@ namespace PorraGironaCSharp.Capes.View
         {
             InitializeComponent();
             this.alias = alias;
-            //darrerPartit = new Partit();
             
 
+            darrerPartit = CarregarUltimPartit();
 
             porra = new Porra();
             
@@ -42,13 +42,31 @@ namespace PorraGironaCSharp.Capes.View
 
         }
 
-        //private Partit CarregarUltimPartit()
-        //{
-        //    Partit ultim = partits.
+        private Partit CarregarUltimPartit()
+        {
+            Partit ultim = partits.RecuperarUltimPartitNoJugat();
+            ImatgeLocalSeguent.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
+            ImatgeVisitantSeguent.Source =  new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+            NomLocalSeguent.Text = ultim.EquipLocal.NomEquip;
+            NomVisitantSeguent.Text = ultim.EquipVisitant.NomEquip;
+            DataPartitSeguent.Text = ultim.Data.ToString();
+
+            return ultim;
+        }
+
+        private void CarregarAnteriorPartit()
+        {
+            Partit anterior = partits.RecuperarUltimPartitJugat();
+            ImatgeLocalAnterior.Source = new BitmapImage(new Uri(anterior.EquipLocal.RutaEscut, UriKind.Relative));
+            ImatgeVisitantAnterior.Source = new BitmapImage(new Uri(anterior.EquipVisitant.RutaEscut, UriKind.Relative));
+            NomLocalAnterior.Text = anterior.EquipLocal.NomEquip;
+            NomVisitantSeguent.Text = anterior.EquipVisitant.NomEquip;
+            DataPartitAnterior.Text = anterior.Data.ToString();
+            TextBGolsLocalAnterior.Text = anterior.GolsLocal.ToString();
+            TextBGolsVisitantAnterior.Text = anterior.GolsVisitant.ToString();
 
 
-        //}
-
+        }
 
 
 

@@ -42,7 +42,7 @@
                                 x:Name="EtiquetaJornadaAnterior"
                                 >
                     <TextBlock x:Name="NumJornadaAnterior"
-                               Text="JORNADA 15"
+                               Text="JORNADA ANTERIOR"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
                                FontWeight="Bold"
@@ -195,7 +195,7 @@
                                 x:Name="EtiquetaJornadaSeguent"
                                 >
                     <TextBlock x:Name="NumJornadaSeguent"
-                               Text="JORNADA 15"
+                               Text="JORNADA ACTUAL"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
                                FontWeight="Bold"
@@ -342,7 +342,7 @@
                                    FontSize="20"
                                    FontFamily="/Fonts/#Poppins"
                                    Foreground="#448AFF"
-                                   x:Name="NomVisitantGirona"
+                                   x:Name="NomVisitantSeguent"
                                    />
 
 
