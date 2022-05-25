@@ -111,6 +111,16 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
         }
 
+        static public void ActualitzarUsuariBD(Usuari u)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE Usuari SET Nom='{u.nom}', Cognom='{u.cognom}', Nif='{u.nif}' where Alias='{u.alias}';");
+            //update usuari set Nom = 'Jorge', Cognom = 'Curioso', Nif = '41654422H', DataAlta = current_timestamp, PuntuacioTotal = 5 where IdUsuari = 5;
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
         static public void AugmentarPuntuacio(int augment, int usuari)
         {
             MySqlCommand command = new MySqlCommand($"UPDATE Usuari SET PuntuacioTotal = PuntuacioTotal + {augment} WHERE IdUsuari = {usuari} ;");

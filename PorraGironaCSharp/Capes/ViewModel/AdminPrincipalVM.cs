@@ -15,11 +15,15 @@ namespace PorraGironaCSharp.Capes.ViewModel
 
         public RelayCommand BaixesComanda { get; set; }
 
+        public RelayCommand ActualitzacionsComanda { get; set; }
+
         public UltimPartitViewModel UltimVm { get; set; }
 
         public AltesViewModel AltesVm { get; set; }
 
         public BaixesViewModel BaixesVm { get; set; }
+
+        public ActualitzacionsViewModel ActualitzacionsVm { get; set; }
 
         private object vistaActual;
 
@@ -38,10 +42,12 @@ namespace PorraGironaCSharp.Capes.ViewModel
             AltesVm = new AltesViewModel();
             UltimVm = new UltimPartitViewModel();
             BaixesVm = new BaixesViewModel();
+            ActualitzacionsVm = new ActualitzacionsViewModel();
             CurrentView = UltimVm;
             UltimPartitComanda = new RelayCommand(o => { CurrentView = UltimVm; });
             AltesComanda = new RelayCommand(o => { CurrentView = AltesVm; });
             BaixesComanda = new RelayCommand(o => { CurrentView = BaixesVm; });
+            ActualitzacionsComanda = new RelayCommand(o => { CurrentView = ActualitzacionsVm; });
         }
     }
 }

@@ -205,6 +205,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Capes\View\ActualitzacioEquip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\ActualitzacionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\ActualitzacioPartit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\ActualitzacioUsuari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Capes\View\AltaEquip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -243,12 +259,23 @@
     <Compile Include="Capes\DataBase\PorraBD.cs" />
     <Compile Include="Capes\DataBase\UsuariBD.cs" />
     <Compile Include="Capes\Model\Usuaris.cs" />
+    <Compile Include="Capes\ViewModel\ActualitzacionsViewModel.cs" />
     <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
-    <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />
-    <Compile Include="Capes\ViewModel\AltaUsuariViewModel.cs" />
     <Compile Include="Capes\ViewModel\AltesViewModel.cs" />
     <Compile Include="Capes\ViewModel\BaixesViewModel.cs" />
     <Compile Include="Capes\ViewModel\UltimPartitViewModel.cs" />
+    <Compile Include="Capes\View\ActualitzacioEquip.xaml.cs">
+      <DependentUpon>ActualitzacioEquip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\ActualitzacionsView.xaml.cs">
+      <DependentUpon>ActualitzacionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\ActualitzacioPartit.xaml.cs">
+      <DependentUpon>ActualitzacioPartit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\ActualitzacioUsuari.xaml.cs">
+      <DependentUpon>ActualitzacioUsuari.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Capes\View\AltaEquip.xaml.cs">
       <DependentUpon>AltaEquip.xaml</DependentUpon>
     </Compile>

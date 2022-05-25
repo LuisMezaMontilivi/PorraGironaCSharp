@@ -51,6 +51,15 @@ namespace PorraGironaCSharp.Capes.DataBase
             return retorn;
         }
 
+        internal static void ActualitzarEquipBD(Equip actualitzar)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE Equip SET Nom_Camp = '{actualitzar.NomCamp}', Escut = '{actualitzar.RutaEscut}' WHERE idEquip = {actualitzar.IdEquip};");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
         public static void EliminarEquip(int idEquip)
         {
             MySqlCommand command = new MySqlCommand($"DELETE FROM Equip WHERE IdEquip = '{idEquip}';");

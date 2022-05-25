@@ -42,6 +42,14 @@ namespace PorraGironaCSharp.Capes.Model
             UsuariBD.EliminarUsuari(del.alias);
         }
 
+        public void ActualitzarUsuari(Usuari actualitzar)
+        {
+            //el que està comentat no cal perquè com s'accedeix a la posició de memòria ho editem directament on sigui
+            //Usuari enllacActu = usuaris.Find(x => x.alias == actualitzar.alias);
+            //enllacActu = actualitzar; //substituim directament tota la informació
+            UsuariBD.ActualitzarUsuariBD(actualitzar);
+        }
+
         public List<string> AliesUsuaris()
         {
             List<string> alies = new List<string>();

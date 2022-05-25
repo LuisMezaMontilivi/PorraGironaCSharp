@@ -33,6 +33,7 @@ namespace PorraGironaCSharp.Capes.Model
         public string NomCamp
         {
             get { return nomCamp; }
+            set { nomCamp = value; }
         }
         public string NomEquip
         {
@@ -42,6 +43,7 @@ namespace PorraGironaCSharp.Capes.Model
         public string RutaEscut
         {
             get { return rutaImatge; }
+            set { rutaImatge = value; }
         }
     }
 }

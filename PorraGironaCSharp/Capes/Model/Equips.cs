@@ -44,6 +44,13 @@ namespace PorraGironaCSharp.Capes.Model
             return eliminat;
         }
 
+        public void ActualitzarEquip(Equip actualitzar)
+        {
+            //Usuari enllacActu = usuaris.Find(x => x.alias == actualitzar.alias);
+            //enllacActu = actualitzar; //substituim directament tota la informació
+            EquipBD.ActualitzarEquipBD(actualitzar);
+        }
+
         public List<string> NomsEquips()
         {
             List<string> noms = new List<string>();
