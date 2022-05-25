@@ -33,7 +33,7 @@ namespace PorraGironaCSharp.Capes.View
         }
 
         private void Proves()
-        {   //Esto es para testear Equipo, funka ya
+        {   //Esto es para testear las clases, funka ya
             Equip local = new Equip(1, "San Pep", "Figueres", "Co co", "/Images/EscutAlcorcon.png");
             Equip visitant = new Equip(2, "F Sota", "Girona", "Fu fu", "/Images/EscutAlmeria.png");
             DateTime hola = DateTime.Now;
@@ -48,7 +48,7 @@ namespace PorraGironaCSharp.Capes.View
 
         private void CarregarUltimPartit()
         {
-            Partit ultim = DataBase.PartitBD.RecuperarUltim();
+            Partit ultim = partits.RecuperarUltimPartitNoJugat();
             textBlockLocal.Text = ultim.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
             textBlockVisitant.Text = ultim.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
             textBlockData.Text = Convert.ToString(ultim.Data);

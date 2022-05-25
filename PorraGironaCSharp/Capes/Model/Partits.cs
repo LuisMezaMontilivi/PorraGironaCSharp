@@ -46,6 +46,12 @@ namespace PorraGironaCSharp.Capes.Model
             return partits[posicio];
         }
 
+        public Partit RecuperarUltimPartitNoJugat()
+        {
+            List<Partit> noJugats = partits.FindAll(p => p.Estat == "Per Jugar");
+            return noJugats.Find(p => p.Data == noJugats.Min(t => t.Data));
+        }
+
         public void EliminarPartit(Partit p)
         {
             partits.Remove(p);
