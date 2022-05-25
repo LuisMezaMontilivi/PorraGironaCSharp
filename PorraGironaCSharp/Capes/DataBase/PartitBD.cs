@@ -49,6 +49,15 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
         }
 
+        static public void ActualitzarPartit(Partit p)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE Partit SET Estat = '{p.Estat}', Gols_Local = {p.GolsLocal}, Gols_Visitant = {p.GolsVisitant} WHERE Idpartit = {p.Id} ;");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
 
         static public List<Partit> LlistarPartits()
         {
