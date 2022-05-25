@@ -109,5 +109,6 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.ExecuteNonQuery();
             command.Connection.Close();
         }
+
     }
 }
