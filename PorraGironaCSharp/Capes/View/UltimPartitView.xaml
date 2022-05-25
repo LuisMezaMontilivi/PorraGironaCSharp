@@ -129,7 +129,7 @@
         <Button x:Name="buttonFinalitzarPartit" Style="{DynamicResource BotonCircular}"
                 Content="Posar fi partit"
                 FontFamily="/Fonts/#Poppins"
-                Height="40" Width="250"/>
+                Height="40" Width="250" Click="buttonFinalitzarPartit_Click"/>
         <TextBlock x:Name="textBlockNoExisteix"
                    FontSize="25"
                    Foreground="White"

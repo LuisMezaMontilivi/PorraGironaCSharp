@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
-    class Porrista
+    public class Porrista
     {
         private int idPorrista;
         private int puntuacio;

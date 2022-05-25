@@ -61,8 +61,13 @@ namespace PorraGironaCSharp.Capes.View
             else
             {
                 textBlockNoExisteix.Text = "No hi ha cap partit pendent";
-                TextBoxPuntsLocal.IsEnabled = TextBoxPuntsVisitant.IsEnabled = buttonFinalitzarPartit.IsEnabled = ButtonAugmentarLocal.IsEnabled = ButtonAugmentarVisitant.IsEnabled = ButtonDisminuirLocal.IsEnabled = ButtonDisminuirVisitant.IsEnabled = false;
+                DeshabilitarEdicions();
             }
+        }
+
+        private void DeshabilitarEdicions()
+        {
+            TextBoxPuntsLocal.IsEnabled = TextBoxPuntsVisitant.IsEnabled = buttonFinalitzarPartit.IsEnabled = ButtonAugmentarLocal.IsEnabled = ButtonAugmentarVisitant.IsEnabled = ButtonDisminuirLocal.IsEnabled = ButtonDisminuirVisitant.IsEnabled = false;
         }
 
         private void TypeNumericValidation(object sender, TextCompositionEventArgs e)
@@ -110,6 +115,27 @@ namespace PorraGironaCSharp.Capes.View
                 TextBoxPuntsVisitant.Text = "0";
             if (TextBoxPuntsVisitant.Text != "0")
                 TextBoxPuntsVisitant.Text = (Convert.ToInt32(TextBoxPuntsVisitant.Text) - 1).ToString();
+        }
+
+        private void buttonFinalitzarPartit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Partit ultim = partits.RecuperarUltimPartitNoJugat();
+                ultim.ActualitzarMarcador(Convert.ToInt32(TextBoxPuntsLocal.Text),Convert.ToInt32(TextBoxPuntsVisitant.Text));
+                ultim.CanviarEstat("Acabat");
+                Porres porres = new Porres();
+                porres.ActualitzarResultatsPorra(ultim);
+                ultim.EnviarCanvis();
+                DeshabilitarEdicions();
+                MessageBox.Show("S'ha acabat el partit.");
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
