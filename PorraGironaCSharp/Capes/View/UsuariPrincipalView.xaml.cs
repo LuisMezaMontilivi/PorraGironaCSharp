@@ -23,23 +23,60 @@ namespace PorraGironaCSharp.Capes.View
     {
         private Porra porra;
         private string alias;
+        private Porrista Porrista;
+        //List<Porrista> llistaPorristes;
         
-        private Partit darrerPartit;
+        private Partit ultim;
+        private Partit anterior;
         private Partits partits;
 
+        //Primer click
         public UsuariPrincipalView(string alias)
         {
             InitializeComponent();
             this.alias = alias;
             
 
-            darrerPartit = CarregarUltimPartit();
-            CarregarAnteriorPartit();
+            ultim = CarregarUltimPartit();
+            anterior = CarregarAnteriorPartit();
 
-            //porra = new Porra(DateTime.Now,darrerPartit.GolsLocal, darrerPartit.GolsVisitant,  );
-            
+            Porrista = new Porrista();
+            porra = new Porra( );
 
         }
+
+        //Click sobre si mateix
+        //public UsuariPrincipalView(string alias, Partit ultim, Partit anterior)
+        //{
+        //    InitializeComponent();
+        //    this.alias = alias;
+        //    this.ultim = ultim;
+        //    this.anterior = anterior;
+        //    CarregarAnteriorPartit();
+        //    CarregarUltimPartit();
+
+
+        //}
+
+        //2on Click extern
+
+
+        //public UsuariPrincipalView(string alias, Partit ultim, Partit anterior, List<Porrista> llistaPorristes)
+        //{
+        //    InitializeComponent();
+        //    this.alias = alias;
+        //    this.ultim = ultim;
+        //    this.anterior = anterior;
+        //    this.llistaPorristes = llistaPorristes;
+        //    CarregarAnteriorPartit();
+        //    CarregarUltimPartit();
+
+
+        //}
+
+
+
+
 
         private Partit CarregarUltimPartit()
         {
@@ -55,7 +92,17 @@ namespace PorraGironaCSharp.Capes.View
             return ultim;
         }
 
-        private void CarregarAnteriorPartit()
+        private void ConfigurarUltimPartit()
+        {
+            ImatgeLocalSeguent.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
+            ImatgeVisitantSeguent.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+            NomLocalSeguent.Text = ultim.EquipLocal.NomEquip;
+            NomVisitantSeguent.Text = ultim.EquipVisitant.NomEquip;
+            DataPartitSeguent.Text = ultim.Data.ToString();
+
+        }
+
+        private Partit CarregarAnteriorPartit()
         {
             Partits partits = new Partits();
 
@@ -68,6 +115,18 @@ namespace PorraGironaCSharp.Capes.View
             TextBGolsLocalAnterior.Text = anterior.GolsLocal.ToString();
             TextBGolsVisitantAnterior.Text = anterior.GolsVisitant.ToString();
 
+            return anterior;
+        }
+
+        private void ConfigurarAnteriorPartit()
+        {
+            ImatgeLocalAnterior.Source = new BitmapImage(new Uri(anterior.EquipLocal.RutaEscut, UriKind.Relative));
+            ImatgeVisitantAnterior.Source = new BitmapImage(new Uri(anterior.EquipVisitant.RutaEscut, UriKind.Relative));
+            NomLocalAnterior.Text = anterior.EquipLocal.NomEquip;
+            NomVisitantSeguent.Text = anterior.EquipVisitant.NomEquip;
+            DataPartitAnterior.Text = anterior.Data.ToString();
+            TextBGolsLocalAnterior.Text = anterior.GolsLocal.ToString();
+            TextBGolsVisitantAnterior.Text = anterior.GolsVisitant.ToString();
 
         }
 
@@ -99,7 +158,7 @@ namespace PorraGironaCSharp.Capes.View
         private void DisminuirVisitant_Click(object sender, RoutedEventArgs e)
         {
             int gols = porra.PrevisioGolsVisitant;
-            gols += 1;
+            gols -= 1;
             ComprovaGols(ref gols);
             porra.PrevisioGolsVisitant = gols;
             TextBGolsVisitantActual.Text = porra.PrevisioGolsVisitant.ToString();
@@ -108,7 +167,7 @@ namespace PorraGironaCSharp.Capes.View
         private void IncrementarVisitant_Click(object sender, RoutedEventArgs e)
         {
             int gols = porra.PrevisioGolsVisitant;
-            gols -= 1;
+            gols += 1;
             ComprovaGols(ref gols);
             porra.PrevisioGolsVisitant = gols;
             TextBGolsVisitantActual.Text = porra.PrevisioGolsVisitant.ToString();
@@ -121,6 +180,14 @@ namespace PorraGironaCSharp.Capes.View
 
         }
 
-        
+        private void EnviarPorraButton_Click(object sender, RoutedEventArgs e)
+        {
+            porra.Partit = ultim;
+            porra.PrevisioGolsLocal = int.Parse(TextBGolsLocalActual.Text);
+            porra.PrevisioGolsVisitant = int.Parse(TextBGolsVisitantActual.Text);
+
+            Porrista.FerPrediccio(porra, alias);
+
+        }
     }
 }

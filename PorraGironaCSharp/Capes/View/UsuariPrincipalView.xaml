@@ -165,7 +165,7 @@
                                         Width="200"
                                         FontSize="14"
                                         Background="#448AFF"
-                                        Foreground="White"
+                                        Foreground="White" Click="EnviarPorraButton_Click"
                         />
         </Border>
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
-    class Porra
+    public class Porra
     {
         private DateTime dataPorra;
         private int previsioGolsLocal;
@@ -23,30 +23,18 @@ namespace PorraGironaCSharp.Capes.Model
             this.dataPorra = dataPorra;
             this.previsioGolsLocal = previsioGolsLocal;
             this.previsioGolsVisitant = previsioGolsVisitant;
-            this.porrista = porrista;
-            this.partit = partit;
+            this.Porrista = porrista;
+            this.Partit = partit;
 
         }
 
-        public Porrista Porrista
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Partit Partit
-        {
-            get => default;
-            set
-            {
-            }
-        }
+  
 
         public DateTime DataPorra { get => dataPorra; set => dataPorra = value; }
         public int PrevisioGolsLocal { get => previsioGolsLocal; set => previsioGolsLocal = value; }
         public int PrevisioGolsVisitant { get => previsioGolsVisitant; set => previsioGolsVisitant = value; }
+        public Partit Partit { get => partit; set => partit = value; }
+        public Porrista Porrista { get => porrista; set => porrista = value; }
 
         public bool ModificarPrevisio(int previsioLocal, int previsioVisitant)
         {

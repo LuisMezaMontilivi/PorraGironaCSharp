@@ -23,7 +23,9 @@ namespace PorraGironaCSharp.Capes.View
     {
         private Porristes porristes;
         private string alias;
-
+        //private Partit ultim;
+        //private Partit anterior;
+        private List<Porrista> llistaPorristes;
 
         public UserPuntuacionsView(string alias)
         {
@@ -38,6 +40,39 @@ namespace PorraGironaCSharp.Capes.View
 
 
         }
+        //Constructor de 1er Click des de principal
+        //public UserPuntuacionsView(string alias, Partit ultim, Partit anterior)
+        //{
+        //    InitializeComponent();
+        //    this.alias = alias;
+        //    porristes = new Porristes();
+
+        //    llistaPorristes = porristes.RecuperarPorristes();
+
+        //    BindGrid(llistaPorristes);
+
+        //    this.ultim = ultim;
+        //    this.anterior = anterior;
+
+
+        //}
+
+        //Constructor més tard
+        //public UserPuntuacionsView(string alias, Partit ultim, Partit anterior, List<Porrista> llistaPorristes)
+        //{
+        //    InitializeComponent();
+        //    this.alias = alias;
+        //    this.ultim = ultim;
+        //    this.anterior = anterior;
+        //    this.llistaPorristes = llistaPorristes;
+        //    BindGrid(llistaPorristes);
+
+        //    //Afegir després pel tema històric
+
+
+        //}
+
+
 
 
 

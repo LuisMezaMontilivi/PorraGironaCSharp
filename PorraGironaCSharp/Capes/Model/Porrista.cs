@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace PorraGironaCSharp.Capes.Model
        // private List<Historic> historics;
 
        
-
+        public Porrista() { }
         public Porrista(string nom, string cognom, string dni, string alias, string contrasenya, int idPorrista, int puntuacioTotal) : base(nom, cognom, dni, alias)
         {
             
@@ -51,9 +52,14 @@ namespace PorraGironaCSharp.Capes.Model
             throw new System.NotImplementedException();
         }
 
-        public void FerPrediccio()
+        public void FerPrediccio(Porra porra, string alias)
         {
-            throw new System.NotImplementedException();
+
+           if(!UsuariBD.InsertarPorra(porra, alias))
+            {
+                UsuariBD.ModificarPorra(porra, alias);
+            }
+            
         }
 
         public void VeurePrediccions()

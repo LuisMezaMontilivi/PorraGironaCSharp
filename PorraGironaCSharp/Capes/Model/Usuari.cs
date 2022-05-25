@@ -21,7 +21,7 @@ namespace PorraGironaCSharp.Capes.Model
         public int idUsuari { get; set; }
 
 
-
+        public Usuari() { }
         public Usuari(string alias, string contrasenya)
         {
             this.alias = alias;

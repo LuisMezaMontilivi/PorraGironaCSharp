@@ -25,8 +25,11 @@ namespace PorraGironaCSharp
     {
 
         private string alias ;
-       
-       
+        private Partit ultim;
+        private Partit anterior;
+        private List<Porrista> llistaPorristes;
+
+
         public PaginaUser()
         {
             InitializeComponent();
@@ -79,6 +82,7 @@ namespace PorraGironaCSharp
         {
 
             var ClickedButton = e.OriginalSource as NavButton;
+
             FramePrincipal.Content = new UsuariPrincipalView(alias);
             //FramePrincipal.Content = ClickedButton.NavUri;
 

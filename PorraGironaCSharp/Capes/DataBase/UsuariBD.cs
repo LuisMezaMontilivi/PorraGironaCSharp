@@ -111,6 +111,43 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
         }
 
+        static public bool InsertarPorra(Porra porra, string alias) //Faig que retorni true o false perquè em serà interessant per saber si puc insertar o modificar
+        {
+            bool output=true;
+            MySqlCommand command = new MySqlCommand($"Insert into porra((select IdUsuari from usuari where alias = '{alias}'), {porra.Partit.Id}, {porra.PrevisioGolsLocal}, " +
+                $"{porra.PrevisioGolsLocal}, current_timestamp, 0 )");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                output = false;
+            }
+           
+            command.Connection.Close();
+            return output;
+        }
+
+        static public void ModificarPorra(Porra porra, string alias)
+        {
+           
+            
+
+            MySqlCommand command = new MySqlCommand($"update porra set GolsLocal ={porra.PrevisioGolsLocal}, GolsVisitant = {porra.PrevisioGolsVisitant}, " +
+                $"DataPorra = current_timestamp()" +
+                $"where IdUsuari = (select IdUsuari from usuari where alias = '{alias}'); ");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+
+
+
+        }
 
 
         //public static List<Porrista> LlistaPorristes()
