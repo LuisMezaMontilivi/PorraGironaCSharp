@@ -125,10 +125,14 @@
             </Border>
 
         </StackPanel>
-        <Button Style="{DynamicResource BotonCircular}"
+        <Button x:Name="buttonFinalitzarPartit" Style="{DynamicResource BotonCircular}"
                 Content="Posar fi partit"
                 FontFamily="/Fonts/#Poppins"
                 Height="40" Width="250"/>
+        <TextBlock x:Name="textBlockNoExisteix"
+                   FontSize="25"
+                   Foreground="White"
+                   TextAlignment="Center"/>
 
     </StackPanel>
 </UserControl>
