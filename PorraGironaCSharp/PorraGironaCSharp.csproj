@@ -208,6 +208,9 @@
     <Compile Include="Capes\ViewModel\ContingutUserVM.cs" />
     <Compile Include="Capes\ViewModel\UserPrincipalVM.cs" />
     <Compile Include="Capes\ViewModel\UserPuntuacionsVM.cs" />
+    <Compile Include="Capes\View\UserHistoric.xaml.cs">
+      <DependentUpon>UserHistoric.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Capes\View\UserPuntuacionsView.xaml.cs">
       <DependentUpon>UserPuntuacionsView.xaml</DependentUpon>
     </Compile>
@@ -235,6 +238,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Capes\View\UltimPartitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\UserHistoric.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

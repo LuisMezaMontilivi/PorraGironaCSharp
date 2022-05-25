@@ -23,16 +23,31 @@ namespace PorraGironaCSharp.Capes.View
     {
         private Porra porra;
         private string alias;
-        
+
+        private Partit darrerPartit;
+        private Partits partits;
+
         public UsuariPrincipalView(string alias)
         {
             InitializeComponent();
             this.alias = alias;
+            //darrerPartit = new Partit();
+            
+
+
             porra = new Porra();
+            
 
             
 
         }
+
+        //private Partit CarregarUltimPartit()
+        //{
+        //    Partit ultim = partits.
+
+
+        //}
 
 
 

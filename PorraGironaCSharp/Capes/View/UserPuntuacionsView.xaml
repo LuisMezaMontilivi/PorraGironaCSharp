@@ -14,8 +14,10 @@
               AutoGenerateColumns="False">
         <DataGrid.Columns>
             
-            <DataGridTextColumn Header="Alias" Binding="{Binding Path=alias}"/>
-            <DataGridTextColumn Header="Puntuacio" Binding="{Binding Path=PuntuacioTotal}"/>
+            <DataGridTextColumn Header="Alias" Binding="{Binding Path=alias}"
+                                Width="200"/>
+            <DataGridTextColumn Header="Puntuacio" Binding="{Binding Path=PuntuacioTotal}"
+                                Width="200"/>
         </DataGrid.Columns>
         
         
