@@ -23,7 +23,7 @@ namespace PorraGironaCSharp.Capes.View
     {
         private Porra porra;
         private string alias;
-
+        
         private Partit darrerPartit;
         private Partits partits;
 
@@ -36,9 +36,7 @@ namespace PorraGironaCSharp.Capes.View
             darrerPartit = CarregarUltimPartit();
             CarregarAnteriorPartit();
 
-            porra = new Porra();
-            
-
+            //porra = new Porra(DateTime.Now,darrerPartit.GolsLocal, darrerPartit.GolsVisitant,  );
             
 
         }
