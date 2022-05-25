@@ -22,8 +22,9 @@
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"/>
             <ComboBox x:Name="ComboBoxLocal"
-                      Style="{StaticResource ComboBoxRedondo}"
-                      Margin="19,0,0,0" Width="163"/>
+                      Margin="19,0,0,0"
+                      Width="163"
+                      Style="{StaticResource ComboBoxRedondo}"/>
             <Label Content="Equip visitant"
                    Foreground="White"
                    FontFamily="/Fonts/#Poppins"

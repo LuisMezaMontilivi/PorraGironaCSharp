@@ -265,6 +265,7 @@
     <Compile Include="Capes\DataBase\PartitBD.cs" />
     <Compile Include="Capes\DataBase\Connexio.cs" />
     <Compile Include="Capes\DataBase\UsuariBD.cs" />
+    <Compile Include="Capes\Model\Usuaris.cs" />
     <Compile Include="Capes\ViewModel\AdminPrincipalVM.cs" />
     <Compile Include="Capes\ViewModel\AltaEquipViewModel.cs" />
     <Compile Include="Capes\ViewModel\AltaUsuariViewModel.cs" />

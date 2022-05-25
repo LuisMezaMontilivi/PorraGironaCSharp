@@ -22,9 +22,13 @@ namespace PorraGironaCSharp
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        Color original1;
+        Color original2;
         public MainWindow()
         {
             InitializeComponent();
+           original1 = Color1.Color;
+           original2 = Color2.Color;
         }
         protected override void OnClosed(EventArgs e)
         {
@@ -56,8 +60,10 @@ namespace PorraGironaCSharp
 
                 if (prova == "user")
                 {
+
                     PaginaUser FinestraPaginaUser = new PaginaUser(alias);
                     FinestraPaginaUser.Owner = this;
+
                     this.Hide();
                     FinestraPaginaUser.ShowDialog();
                 }
@@ -128,8 +134,7 @@ namespace PorraGironaCSharp
 
         private void BotoToolbarModeNit_Click(object sender, RoutedEventArgs e)
         {
-            Color original1 = Color1.Color;
-            Color original2 = Color2.Color;
+            
             Color negre = Color3Negre.Color;
             Color blanc = Color2.Color;
 
@@ -139,6 +144,7 @@ namespace PorraGironaCSharp
                 Color1.Color = blanc;
                 Color2.Color = negre;
                 BotoToolbarModeNit.Name = "Canvi";
+                
             }
             else if(BotoToolbarModeNit.Name == "Canvi")
             {

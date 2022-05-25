@@ -8,6 +8,10 @@ namespace PorraGironaCSharp.Capes.Model
 {
     public class Porrista: Usuari
     {
+
+        private int idPorrista;
+        private int puntuacio;
+
        
        
         private int puntuacioTotal;
@@ -30,6 +34,7 @@ namespace PorraGironaCSharp.Capes.Model
             this.puntuacioTotal = puntuacioTotal;
 
         }
+
 
        
         

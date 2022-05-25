@@ -23,6 +23,7 @@ namespace PorraGironaCSharp
     /// </summary>
     public partial class PaginaUser : Window
     {
+
         private string alias ;
        
        
@@ -42,15 +43,15 @@ namespace PorraGironaCSharp
         
         
 
-
-
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
 
+
         private void ButtonCerrar_Click(object sender, RoutedEventArgs e)
+
         {
             this.Close();
         }

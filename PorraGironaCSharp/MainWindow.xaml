@@ -161,7 +161,7 @@
                     Opacity="0.75" 
                     Background="Black" Click="BotoToolbarModeNit_Click"
                     >
-                <iconPacks:PackIconMaterial Kind="WeatherNight"
+                <iconPacks:PackIconMaterial x:Name="IconeNit" Kind="WeatherNight"
                                             Width="16"
                                             Height="15"
                                             VerticalAlignment="Center"

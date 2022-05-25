@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,25 +7,55 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
-    class Partits
+    public class Partits
     {
-        private List<Partit> llistatPartits;
+        private List<Partit> partits;
 
         public Partits()
         {
-            llistatPartits = new List<Partit>();
+            try
+            {
+                partits = PartitBD.LlistarPartits();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public bool AfegirPartit(Partit p)
         {
-            llistatPartits.Add(p);
-
-            return true;
+            bool insercio = false;
+            try
+            {
+                partits.Add(p);
+                PartitBD.InsertarPartit(p);
+                insercio = true;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            
+            return insercio;
         }
 
-        public bool EliminarPartit(int idPartit)
+        public Partit RecuperarPartit(int posicio)
         {
-            throw new System.NotImplementedException();
+            return partits[posicio];
+        }
+
+        public Partit RecuperarUltimPartitNoJugat()
+        {
+            List<Partit> noJugats = partits.FindAll(p => p.Estat == "Per Jugar");
+            return noJugats.Find(p => p.Data == noJugats.Min(t => t.Data));
+        }
+
+        public void EliminarPartit(Partit p)
+        {
+            partits.Remove(p);
+            PartitBD.EliminarPartit(p.Id);
         }
 
         public bool ActualtizarPartit(int idPartit)
@@ -32,6 +63,24 @@ namespace PorraGironaCSharp.Capes.Model
             throw new System.NotImplementedException();
         }
 
-       
+
+        public List<Partit> LlistarPartits()
+        {
+            return partits;
+        }
+
+        public Partit UltimPartit()
+        {
+            try
+            {
+                return PartitBD.RecuperarUltim();
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
+        }
+
     }
 }

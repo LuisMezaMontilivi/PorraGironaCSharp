@@ -23,11 +23,11 @@ namespace PorraGironaCSharp.Capes.View
     {
         private Partits partits;
         private Equips equips;
-        public AltaPartit()
+        public AltaPartit(Equips e, Partits p)
         {
             InitializeComponent();
-            equips = new Equips();
-            partits = new Partits();
+            partits = p;
+            equips = e;
             List<Equip> llistatEquips = equips.EquipsBaseDades();
             foreach(Equip X in llistatEquips)
             {
@@ -38,7 +38,19 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonCrearPartit_Click(object sender, RoutedEventArgs e)
         {
-            
+            Partit p = new Partit("Per jugar",
+                equips.RetornarEquip((string)ComboBoxLocal.SelectedItem),
+                equips.RetornarEquip((string)ComboBoxVisitant.SelectedItem),
+                (DateTime)DateTimePartit.SelectedDateTime);
+            try
+            {
+                partits.AfegirPartit(p);
+                MessageBox.Show("S'ha insertat "+p.Estat + " " + p.EquipLocal.NomEquip + " contra " + p.EquipVisitant.NomEquip+" el dia i l'hora "+p.Data.ToString("yyyy-MM-dd HH-mm-ss"));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

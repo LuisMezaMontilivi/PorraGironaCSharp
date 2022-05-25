@@ -17,15 +17,19 @@ namespace PorraGironaCSharp.Capes.Model
         public string nif { get; set; }
         public string rol { get; set; }
 
+
         public int idUsuari { get; set; }
 
-       
+
 
         public Usuari(string alias, string contrasenya)
         {
             this.alias = alias;
             this.contrasenya = contrasenya;
         }
+
+      
+
 
         
         public Usuari(string nom, string cognom, string  nif, string alias,string contrasenya)
@@ -48,6 +52,7 @@ namespace PorraGironaCSharp.Capes.Model
             
         }
         public Usuari(string nom, string cognom, string dni, string alias) //Algo he posat per aqui;
+
         {
             this.nom = nom;
             this.cognom = cognom;
@@ -57,43 +62,67 @@ namespace PorraGironaCSharp.Capes.Model
 
         }
 
+        public Usuari(string nom, string cognom, string dni, string alias, string contrasenya, string rol) : this(nom, cognom, dni, alias, contrasenya)
+        {
+            this.rol = rol;
+        }
+
         public string Verificar(string alias, string contrasenya)
         {
             string rol="";
-            
-
             try
             {
-                rol=UsuariBD.SelectRol(alias,contrasenya);
-               
+                rol = UsuariBD.SelectRol(alias, contrasenya);
             }
             catch
             {
                 rol = "No Funciona";
             }
-            
-
             return rol;
         }
         public bool Afegir(string nom, string cognom, string dni, string alias, string contrasenya)
         {
             bool funciona;
-            
-
             try
             {
                UsuariBD.InsertUsuari(nom,cognom,dni,alias, contrasenya);
                funciona = true;
-               
             }
             catch
             {
                 funciona = false;
             }
-            
             return funciona;
+        }
 
-            
+        public bool Eliminar()
+        {
+            bool eliminacio = false;
+            try
+            {
+                UsuariBD.EliminarUsuari(alias);
+                eliminacio = true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            return eliminacio;
+        }
+
+        public bool AfegirABaseDades()
+        {
+            bool retorn = false;
+            try
+            {
+                UsuariBD.InsertarUsuariBD(this);
+                retorn = true;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            return retorn;
         }
 
 

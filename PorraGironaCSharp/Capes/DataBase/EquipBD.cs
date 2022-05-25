@@ -50,6 +50,21 @@ namespace PorraGironaCSharp.Capes.DataBase
             }
             return retorn;
         }
+
+        public static void EliminarEquip(int idEquip)
+        {
+            MySqlCommand command = new MySqlCommand($"DELETE FROM Equip WHERE IdEquip = '{idEquip}';");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
     }
 
 

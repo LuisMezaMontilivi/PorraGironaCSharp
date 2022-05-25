@@ -15,7 +15,7 @@
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-            <TextBox Margin="10,0,0,0"
+            <TextBox x:Name="textBoxAlias" Margin="10,0,0,0"
                      Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
         </StackPanel>
 
@@ -26,7 +26,7 @@
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-            <TextBox Margin="60,0,0,0"
+            <TextBox x:Name="textBoxNom" Margin="60,0,0,0"
                      Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
             <Label Content="Cognom"
                    Foreground="White"
@@ -34,7 +34,7 @@
                    RenderTransformOrigin="1.458,0.679"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center" Margin="50,0,0,0"/>
-            <TextBox Margin="10,0,0,0"
+            <TextBox x:Name="textBoxCognom" Margin="10,0,0,0"
                      Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
@@ -45,15 +45,17 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Margin="0,0,10,0"/>
-            <TextBox Margin="60,0,0,0"
+            <TextBox x:Name="textBoxNif" Margin="60,0,0,0"
                      Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
-            <RadioButton Content="Porrista"
+            <RadioButton x:Name="radioButtonPorrista" Content="Porrista"
                          Foreground="White"
                          Background="Transparent"
                          Width="74"
                          Margin="100,0,0,0"
-                         FontFamily="/Fonts/#Poppins"/>
-            <RadioButton Content="Administrador"
+                         FontFamily="/Fonts/#Poppins"
+                         IsChecked="True"/>
+            <RadioButton x:Name="radioButtonAdministrador"
+                         Content="Administrador"
                          Foreground="White"
                          Background="Transparent"
                          Width="120"
@@ -69,17 +71,19 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Margin="0,0,10,0"/>
-            <PasswordBox Style="{StaticResource MahApps.Styles.PasswordBox.Button.Revealed}"
+            <PasswordBox x:Name="passwordBoxContrasenya"
+                         Style="{StaticResource MahApps.Styles.PasswordBox.Button.Revealed}"
                          Background="Gray"
                          BorderThickness="0" Width="198"/>
 
         </StackPanel>
 
         <Border CornerRadius="10">
-            <Button Margin="50,20,50,0"
+            <Button x:Name="ButtonAltaUsuari"
+                    Margin="50,20,50,0"
                     Content="Crear usuari"
                     FontFamily="/Fonts/#Poppins"
-                    FontSize="20"/>
+                    FontSize="20" Click="ButtonAltaUsuari_Click"/>
         </Border>
         
     </StackPanel>
