@@ -15,5 +15,11 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style.Setters>
 
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="#74adc0"/>
+            </Trigger>
+        </Style.Triggers>
+
     </Style>
 </ResourceDictionary>

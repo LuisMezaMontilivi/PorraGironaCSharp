@@ -20,7 +20,7 @@
                                FontFamily="/Fonts/#Poppins"
                                Width="158"/>
                     <TextBlock x:Name="textBlockData"
-                               Text="22/02/2022"
+                               Text="----------"
                                Foreground="White"
                                FontSize="28"
                                HorizontalAlignment="Center"

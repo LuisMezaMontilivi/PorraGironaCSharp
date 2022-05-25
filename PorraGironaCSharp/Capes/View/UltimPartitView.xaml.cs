@@ -60,7 +60,7 @@ namespace PorraGironaCSharp.Capes.View
             else
             {
                 textBlockNoExisteix.Text = "No hi ha cap partit pendent";
-                buttonFinalitzarPartit.IsEnabled = ButtonAugmentarLocal.IsEnabled = ButtonAugmentarVisitant.IsEnabled = ButtonDisminuirLocal.IsEnabled = ButtonDisminuirVisitant.IsEnabled = false;
+                TextBoxPuntsLocal.IsEnabled = TextBoxPuntsVisitant.IsEnabled = buttonFinalitzarPartit.IsEnabled = ButtonAugmentarLocal.IsEnabled = ButtonAugmentarVisitant.IsEnabled = ButtonDisminuirLocal.IsEnabled = ButtonDisminuirVisitant.IsEnabled = false;
             }
         }
 
