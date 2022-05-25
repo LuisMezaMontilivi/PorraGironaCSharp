@@ -62,6 +62,7 @@ namespace PorraGironaCSharp.Capes.Model
         public DateTime Data
         {
             get { return data; }
+            set { data = value; }
         }
 
         public string Estat

@@ -69,6 +69,11 @@ namespace PorraGironaCSharp.Capes.Model
             return partits;
         }
 
+        public void ActualitzarPartit(Partit p)
+        {
+            PartitBD.ActualitzarPartitBD(p);
+        }
+
         public Partit UltimPartit()
         {
             try

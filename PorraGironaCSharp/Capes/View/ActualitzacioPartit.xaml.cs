@@ -28,6 +28,32 @@ namespace PorraGironaCSharp.Capes.View
             InitializeComponent();
             equips = e;
             partits = p;
+            LlistarPartits();
+        }
+
+        private void ButtonModificarPartit_Click(object sender, RoutedEventArgs e)
+        {
+            Partit modificar = partits.RecuperarPartit(comboBoxModPartit.SelectedIndex);
+            modificar.Data = (DateTime)dateTimePartit.SelectedDateTime;
+            partits.ActualitzarPartit(modificar);
+            MessageBox.Show("S'ha modificat la data del partit correctament");
+        }
+
+        private void comboBoxModPartit_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Partit recuperar = partits.RecuperarPartit(comboBoxModPartit.SelectedIndex);
+            dateTimePartit.SelectedDateTime = recuperar.Data;
+            labelLocal.Content = recuperar.EquipLocal.NomEquip;
+            labelVisitant.Content = recuperar.EquipVisitant.NomEquip;
+        }
+
+        private void LlistarPartits()
+        {
+            partits = new Partits();
+            foreach (Partit X in partits.LlistarPartits())
+            {
+                comboBoxModPartit.Items.Add(X.EquipLocal.NomEquip + " " + X.EquipVisitant.NomEquip + " " + X.Data);
+            }
         }
     }
 }
