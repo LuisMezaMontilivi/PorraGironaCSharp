@@ -49,11 +49,20 @@ namespace PorraGironaCSharp.Capes.View
         private void CarregarUltimPartit()
         {
             Partit ultim = partits.RecuperarUltimPartitNoJugat();
-            textBlockLocal.Text = ultim.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
-            textBlockVisitant.Text = ultim.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
-            textBlockData.Text = Convert.ToString(ultim.Data);
-            imageLocal.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
-            imageVisitant.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+            if (!(ultim is null))
+            {
+                textBlockLocal.Text = ultim.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
+                textBlockVisitant.Text = ultim.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
+                textBlockData.Text = Convert.ToString(ultim.Data);
+                imageLocal.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
+                imageVisitant.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+                textBlockTitol.Text = "Següent";
+            }
+            else
+            {
+                textBlockNoExisteix.Text = "No hi ha cap partit pendent";
+                TextBoxPuntsLocal.IsEnabled = TextBoxPuntsVisitant.IsEnabled = buttonFinalitzarPartit.IsEnabled = ButtonAugmentarLocal.IsEnabled = ButtonAugmentarVisitant.IsEnabled = ButtonDisminuirLocal.IsEnabled = ButtonDisminuirVisitant.IsEnabled = false;
+            }
         }
 
         private void TypeNumericValidation(object sender, TextCompositionEventArgs e)

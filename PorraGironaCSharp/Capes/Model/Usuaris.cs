@@ -35,6 +35,7 @@ namespace PorraGironaCSharp.Capes.Model
         public void EliminarUsuari(Usuari del)
         {
             usuaris.Remove(del);
+            PorraBD.EliminarPorresUsuari(del.alias);
             UsuariBD.EliminarUsuari(del.alias);
         }
 

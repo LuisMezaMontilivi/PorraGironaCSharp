@@ -11,7 +11,8 @@
             <Border Width="200"
                     Height="80">
                 <Grid>
-                    <TextBlock Text="Últim partit"
+                    <TextBlock x:Name="textBlockTitol"
+                               Text="Últim partit"
                                Foreground="White"
                                FontSize="28"
                                VerticalAlignment="Center"
@@ -20,7 +21,7 @@
                                FontFamily="/Fonts/#Poppins"
                                Width="158"/>
                     <TextBlock x:Name="textBlockData"
-                               Text="22/02/2022"
+                               Text="----------"
                                Foreground="White"
                                FontSize="28"
                                HorizontalAlignment="Center"
@@ -125,10 +126,14 @@
             </Border>
 
         </StackPanel>
-        <Button Style="{DynamicResource BotonCircular}"
+        <Button x:Name="buttonFinalitzarPartit" Style="{DynamicResource BotonCircular}"
                 Content="Posar fi partit"
                 FontFamily="/Fonts/#Poppins"
                 Height="40" Width="250"/>
+        <TextBlock x:Name="textBlockNoExisteix"
+                   FontSize="25"
+                   Foreground="White"
+                   TextAlignment="Center"/>
 
     </StackPanel>
 </UserControl>
