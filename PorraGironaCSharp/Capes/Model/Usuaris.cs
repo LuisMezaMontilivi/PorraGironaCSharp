@@ -18,13 +18,16 @@ namespace PorraGironaCSharp.Capes.Model
 
         public bool AfegirUsuari(Usuari u)
         {
-            bool existeixAlias = usuaris.FindIndex(x => x.alias == u.alias) != -1;
-            if (!existeixAlias)
-            {
-                UsuariBD.InsertarUsuariBD(u);
-                usuaris.Add(u);
-            }
-            return !existeixAlias;
+            //codi que falla
+            //bool existeixAlias = usuaris.FindIndex(x => x.alias == u.alias) != -1;
+            //if (!existeixAlias)
+            //{
+            //    UsuariBD.InsertarUsuariBD(u);
+            //    usuaris.Add(u);
+            //}
+            //return !existeixAlias;
+            UsuariBD.InsertarUsuariBD(u); //falla inclós només amb això, referencia a objeto no establecida como instancia de un objeto
+            return true;
         }
 
         public Usuari RecuperarUsuari(int posicio)

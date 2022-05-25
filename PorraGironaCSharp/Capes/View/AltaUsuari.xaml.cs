@@ -39,10 +39,13 @@ namespace PorraGironaCSharp.Capes.View
             Usuari alta = new Usuari(textBoxNom.Text,textBoxCognom.Text,textBoxNif.Text,textBoxAlias.Text,passwordBoxContrasenya.Password,rol);
             try
             {
-                if (usuaris.AfegirUsuari(alta))
-                    MessageBox.Show("Usuari afegit amb èxit");
-                else
-                    MessageBox.Show("Usuari no afegit, revisa les dades");
+                //el codi desitjat, però que no funciona pas, error referència objecte, ni idea perquè només posant el métode de UsuariBD.Insertarusuari a la classe Usuaris falla
+                //if (usuaris.AfegirUsuari(alta))
+                //    MessageBox.Show("Usuari afegit amb èxit");
+                //else
+                //    MessageBox.Show("Usuari no afegit, revisa les dades");
+                DataBase.UsuariBD.InsertarUsuariBD(alta);
+                MessageBox.Show("Usuari insertat correctament");
             }
             catch(Exception ex)
             {

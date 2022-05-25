@@ -94,7 +94,8 @@ namespace PorraGironaCSharp.Capes.DataBase
                                          (string)lector["Cognom"],
                                          (string)lector["Nif"],
                                          (string)lector["Alias"],
-                                         (string)lector["Contrasenya"]));
+                                         (string)lector["Contrasenya"],
+                                         (string)lector["rol"]));
                 }
             }
             return usuaris;
@@ -109,5 +110,6 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.ExecuteNonQuery();
             command.Connection.Close();
         }
+
     }
 }
