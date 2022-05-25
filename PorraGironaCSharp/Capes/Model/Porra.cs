@@ -8,9 +8,25 @@ namespace PorraGironaCSharp.Capes.Model
 {
     class Porra
     {
-        private int dataPorra;
+        private DateTime dataPorra;
         private int previsioGolsLocal;
         private int previsioGolsVisitant;
+        private Porrista porrista;
+        private Partit partit;
+
+
+        public Porra() => dataPorra = DateTime.Now;
+
+
+        public Porra(DateTime dataPorra, int previsioGolsLocal, int previsioGolsVisitant, Porrista porrista, Partit partit)
+        {
+            this.dataPorra = dataPorra;
+            this.previsioGolsLocal = previsioGolsLocal;
+            this.previsioGolsVisitant = previsioGolsVisitant;
+            this.porrista = porrista;
+            this.partit = partit;
+
+        }
 
         public Porrista Porrista
         {
@@ -27,6 +43,10 @@ namespace PorraGironaCSharp.Capes.Model
             {
             }
         }
+
+        public DateTime DataPorra { get => dataPorra; set => dataPorra = value; }
+        public int PrevisioGolsLocal { get => previsioGolsLocal; set => previsioGolsLocal = value; }
+        public int PrevisioGolsVisitant { get => previsioGolsVisitant; set => previsioGolsVisitant = value; }
 
         public bool ModificarPrevisio(int previsioLocal, int previsioVisitant)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
-    class Historic
+   public  class Historic
     {
         private int temporada;
         private int puntuacioTotal;

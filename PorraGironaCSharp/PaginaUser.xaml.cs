@@ -10,7 +10,11 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PorraGironaCSharp.Capes.Model;
+using PorraGironaCSharp.Capes.View;
+using PorraGironaCSharp.Capes.ViewModel;
 
 namespace PorraGironaCSharp
 {
@@ -19,20 +23,80 @@ namespace PorraGironaCSharp
     /// </summary>
     public partial class PaginaUser : Window
     {
-        public PaginaUser(string alias)
+
+        private string alias ;
+       
+       
+        public PaginaUser()
         {
             InitializeComponent();
+        }
+        public PaginaUser(string alias)
+        {
+            this.alias = alias;
+            InitializeComponent();
+            labelUsuari.Content = this.alias;
+            FramePrincipal.Content = new UsuariPrincipalView(alias);
 
         }
+
+        
+        
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
 
-        public PaginaUser()
+
+        private void ButtonCerrar_Click(object sender, RoutedEventArgs e)
+
         {
-            InitializeComponent();
+            this.Close();
+        }
+
+        private void ButtonMaximizar_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState != WindowState.Maximized)
+                this.WindowState = WindowState.Maximized;
+            else
+                this.WindowState = WindowState.Normal;
+        }
+
+        private void ButtonMinimizar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            this.DragMove();
+        }
+
+        private void NavButtonPrincipal_Click(object sender, RoutedEventArgs e)
+        {
+
+            var ClickedButton = e.OriginalSource as NavButton;
+            FramePrincipal.Content = new UsuariPrincipalView(alias);
+            //FramePrincipal.Content = ClickedButton.NavUri;
+
+            //NavigationService nav = NavigationService.GetNavigationService(this);
+            //nav.Navigate(ClickedButton.NavUri);
+        }
+
+        private void NavButtonPuntuacions_Click(object sender, RoutedEventArgs e)
+        {
+            var ClickedButton = e.OriginalSource as NavButton;
+            FramePrincipal.Content = new UserPuntuacionsView(alias);
+
+        }
+        private void NavButtonHistoric_Click(object sender, RoutedEventArgs e)
+        {
+            var ClickedButton = e.OriginalSource as NavButton;
+            FramePrincipal.Content = new UsuariPrincipalView(alias);
+
         }
     }
 }

@@ -63,6 +63,7 @@ namespace PorraGironaCSharp.Capes.Model
             throw new System.NotImplementedException();
         }
 
+
         public List<Partit> LlistarPartits()
         {
             return partits;
@@ -80,5 +81,6 @@ namespace PorraGironaCSharp.Capes.Model
             }
             
         }
+
     }
 }

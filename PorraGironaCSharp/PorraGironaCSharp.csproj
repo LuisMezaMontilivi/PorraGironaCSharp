@@ -205,6 +205,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Capes\ViewModel\ContingutUserVM.cs" />
+    <Compile Include="Capes\ViewModel\UserPrincipalVM.cs" />
+    <Compile Include="Capes\ViewModel\UserPuntuacionsVM.cs" />
+    <Compile Include="Capes\View\UserHistoric.xaml.cs">
+      <DependentUpon>UserHistoric.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\UserPuntuacionsView.xaml.cs">
+      <DependentUpon>UserPuntuacionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Capes\View\UsuariPrincipalView.xaml.cs">
+      <DependentUpon>UsuariPrincipalView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Capes\View\AltaEquip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +238,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Capes\View\UltimPartitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\UserHistoric.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\UserPuntuacionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Capes\View\UsuariPrincipalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -294,6 +318,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Theme\BotonCircular.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -310,12 +338,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Theme\PaginaUserTema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\TextBoxEstiloso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NavButton.cs" />
     <Compile Include="PaginaAdmin.xaml.cs">
       <DependentUpon>PaginaAdmin.xaml</DependentUpon>
     </Compile>

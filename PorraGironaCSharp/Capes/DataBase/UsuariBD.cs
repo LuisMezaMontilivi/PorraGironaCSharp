@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PorraGironaCSharp.Capes.Model;
 
 namespace PorraGironaCSharp.Capes.DataBase
 {
@@ -109,5 +110,61 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.ExecuteNonQuery();
             command.Connection.Close();
         }
+
+
+
+        //public static List<Porrista> LlistaPorristes()
+        //{
+        //    string query = $"select * from usuari where rol = 'user'";
+        //    MySqlCommand command = new MySqlCommand(query, Connexio.Connect());
+        //    command.CommandTimeout = 60; //Per que no es pengi la cosa
+        //    List<Porrista> output = new List<Porrista>();
+
+        //    using (Connexio.Connect())
+        //    {
+        //        Connexio.Open();
+        //        MySqlDataReader reader = command.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            output.Add(new Porrista(
+        //                                            (string)reader["Nom"],
+        //                                            (string)reader["Cognom"],
+        //                                            (string)reader["Nif"],
+        //                                            (string)reader["Alias"],
+        //                                            (string)reader["IdUsuari"],
+        //                                            (Int32)reader["PuntuacioTotal"]
+        //                                            ));
+        //        }
+
+        //    }
+
+        //    return output;
+
+
+        //}
+        public static List<Porrista> LlistaPorristes()
+        {
+            string conexio = "server=localhost; port=3306; user=root; password=; database=porra";
+            List<Porrista> retorn = new List<Porrista>();
+            using (MySqlConnection connect = new MySqlConnection(conexio))
+            {
+                connect.Open();
+                MySqlCommand llegirEquips = new MySqlCommand("SELECT * FROM usuari where rol = 'user' order by PuntuacioTotal DESC", connect);
+                MySqlDataReader lector = llegirEquips.ExecuteReader();
+                while (lector.Read())
+                {
+                    retorn.Add(new Porrista( (string)lector["Nom"],
+                                         (string)lector["Cognom"],
+                                         (string)lector["Nif"],
+                                         (string)lector["Alias"],
+                                         (int)lector["IdUsuari"],
+                                         (int)lector["PuntuacioTotal"]));
+                }
+            }
+            return retorn;
+        }
+
+
+
     }
 }
