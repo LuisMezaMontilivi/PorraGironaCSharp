@@ -57,6 +57,14 @@
                              Style="{StaticResource Menu}"
                              Command="{Binding AltesComanda}"/>
 
+
+                <RadioButton Content="Actualitzacions"
+                             Height="70"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource Menu}"
+                             Command="{Binding ActualitzacionsComanda}"/>
+                
                 <RadioButton Content="Baixes"
                              Height="70"
                              Foreground="White"
@@ -64,11 +72,6 @@
                              Style="{StaticResource Menu}"
                              Command="{Binding BaixesComanda}"/>
 
-                <RadioButton Content="Fi temporada"
-                             Height="70"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource Menu}"/>
 
             </StackPanel>
 
