@@ -8,7 +8,21 @@ namespace PorraGironaCSharp.Capes.Model
 {
     class Historic
     {
-        private int puntuacioTotal;
         private int temporada;
+        private int puntuacioTotal;
+
+        public Historic(int temp, int punts)
+        {
+            temporada = temp;
+            puntuacioTotal = punts;
+        }
+
+        public int Puntuacio
+        {
+            get { return puntuacioTotal; }
+            set { puntuacioTotal = value; }
+        }
+
+        
     }
 }
