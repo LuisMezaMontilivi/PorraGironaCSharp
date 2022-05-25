@@ -34,6 +34,7 @@ namespace PorraGironaCSharp.Capes.View
             
 
             darrerPartit = CarregarUltimPartit();
+            CarregarAnteriorPartit();
 
             porra = new Porra();
             
@@ -44,6 +45,8 @@ namespace PorraGironaCSharp.Capes.View
 
         private Partit CarregarUltimPartit()
         {
+            Partits partits = new Partits();
+
             Partit ultim = partits.RecuperarUltimPartitNoJugat();
             ImatgeLocalSeguent.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
             ImatgeVisitantSeguent.Source =  new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
@@ -56,6 +59,8 @@ namespace PorraGironaCSharp.Capes.View
 
         private void CarregarAnteriorPartit()
         {
+            Partits partits = new Partits();
+
             Partit anterior = partits.RecuperarUltimPartitJugat();
             ImatgeLocalAnterior.Source = new BitmapImage(new Uri(anterior.EquipLocal.RutaEscut, UriKind.Relative));
             ImatgeVisitantAnterior.Source = new BitmapImage(new Uri(anterior.EquipVisitant.RutaEscut, UriKind.Relative));
