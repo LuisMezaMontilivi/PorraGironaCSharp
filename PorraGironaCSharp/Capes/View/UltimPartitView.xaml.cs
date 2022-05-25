@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,47 @@ namespace PorraGironaCSharp.Capes.View
     /// </summary>
     public partial class UltimPartitView : UserControl
     {
+        Partits partits;
         public UltimPartitView()
         {
             InitializeComponent();
+            partits = new Partits();
+            CarregarUltimPartit();
+            //MessageBox.Show(partits.LlistarPartits()[0].Estat);
+            //Proves();
+        }
+
+        private void Proves()
+        {   //Esto es para testear las clases, funka ya
+            Equip local = new Equip(1, "San Pep", "Figueres", "Co co", "/Images/EscutAlcorcon.png");
+            Equip visitant = new Equip(2, "F Sota", "Girona", "Fu fu", "/Images/EscutAlmeria.png");
+            DateTime hola = DateTime.Now;
+            Partit prova = new Partit("Per Jugar", local, visitant, hola);
+
+            textBlockLocal.Text = prova.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
+            textBlockVisitant.Text = prova.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
+            textBlockData.Text = Convert.ToString(prova.Data);
+            imageLocal.Source = new BitmapImage(new Uri(prova.EquipLocal.RutaEscut, UriKind.Relative));
+            imageVisitant.Source = new BitmapImage(new Uri(prova.EquipVisitant.RutaEscut, UriKind.Relative));
+        }
+
+        private void CarregarUltimPartit()
+        {
+            Partit ultim = partits.RecuperarUltimPartitNoJugat();
+            if (!(ultim is null))
+            {
+                textBlockLocal.Text = ultim.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
+                textBlockVisitant.Text = ultim.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
+                textBlockData.Text = Convert.ToString(ultim.Data);
+                imageLocal.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
+                imageVisitant.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+                textBlockTitol.Text = "Següent";
+            }
+            else
+            {
+                textBlockNoExisteix.Text = "No hi ha cap partit pendent";
+                TextBoxPuntsLocal.IsEnabled = TextBoxPuntsVisitant.IsEnabled = buttonFinalitzarPartit.IsEnabled = ButtonAugmentarLocal.IsEnabled = ButtonAugmentarVisitant.IsEnabled = ButtonDisminuirLocal.IsEnabled = ButtonDisminuirVisitant.IsEnabled = false;
+            }
         }
 
         private void TypeNumericValidation(object sender, TextCompositionEventArgs e)
