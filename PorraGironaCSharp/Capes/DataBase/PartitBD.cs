@@ -40,6 +40,15 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
         }
 
+        static public void EliminarPartitOnHaJugat(int idEquip)
+        {
+            MySqlCommand command = new MySqlCommand($"DELETE FROM Partit WHERE idEquipLocal = {idEquip} OR idEquipVisitant =  {idEquip};");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
 
         static public List<Partit> LlistarPartits()
         {

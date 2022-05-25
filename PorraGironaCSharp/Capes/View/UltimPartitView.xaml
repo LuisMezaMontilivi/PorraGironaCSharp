@@ -11,7 +11,8 @@
             <Border Width="200"
                     Height="80">
                 <Grid>
-                    <TextBlock Text="Últim partit"
+                    <TextBlock x:Name="textBlockTitol"
+                               Text="Últim partit"
                                Foreground="White"
                                FontSize="28"
                                VerticalAlignment="Center"

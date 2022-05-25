@@ -32,6 +32,7 @@ namespace PorraGironaCSharp.Capes.Model
             bool eliminat = false;
             try
             {
+                PartitBD.EliminarPartitOnHaJugat(e.IdEquip);
                 EquipBD.EliminarEquip(e.IdEquip);
                 equips.Remove(e);
                 eliminat = true;

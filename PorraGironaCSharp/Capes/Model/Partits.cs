@@ -55,6 +55,7 @@ namespace PorraGironaCSharp.Capes.Model
         public void EliminarPartit(Partit p)
         {
             partits.Remove(p);
+            PorraBD.EliminarPorresPartit(p.Id);
             PartitBD.EliminarPartit(p.Id);
         }
 

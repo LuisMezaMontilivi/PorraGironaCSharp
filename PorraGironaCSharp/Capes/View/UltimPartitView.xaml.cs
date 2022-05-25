@@ -56,6 +56,7 @@ namespace PorraGironaCSharp.Capes.View
                 textBlockData.Text = Convert.ToString(ultim.Data);
                 imageLocal.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
                 imageVisitant.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+                textBlockTitol.Text = "Següent";
             }
             else
             {
