@@ -23,18 +23,11 @@ namespace PorraGironaCSharp.Capes.View
     {
         private Partits partits;
         private Equips equips;
-        public AltaPartit()
+        public AltaPartit(Equips e, Partits p)
         {
             InitializeComponent();
-            equips = new Equips();
-            try
-            {
-                partits = new Partits();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            partits = p;
+            equips = e;
             List<Equip> llistatEquips = equips.EquipsBaseDades();
             foreach(Equip X in llistatEquips)
             {
@@ -52,14 +45,12 @@ namespace PorraGironaCSharp.Capes.View
             try
             {
                 partits.AfegirPartit(p);
-                MessageBox.Show(p.Estat + " " + p.EquipLocal.NomEquip + " " + p.EquipVisitant.NomEquip+" "+p.Data.ToString("O"));
+                MessageBox.Show("S'ha insertat "+p.Estat + " " + p.EquipLocal.NomEquip + " contra " + p.EquipVisitant.NomEquip+" el dia i l'hora "+p.Data.ToString("yyyy-MM-dd HH-mm-ss"));
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
-            MessageBox.Show("Ha lelgado hasta aquí");
         }
     }
 }

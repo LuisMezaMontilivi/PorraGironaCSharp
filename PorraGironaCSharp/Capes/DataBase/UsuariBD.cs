@@ -20,7 +20,6 @@ namespace PorraGironaCSharp.Capes.DataBase
             string rol = command.ExecuteScalar().ToString();
             command.Connection.Close();
             Connexio.Close();
-
             return rol;
 
         }
@@ -53,8 +52,14 @@ namespace PorraGironaCSharp.Capes.DataBase
             MySqlCommand command = new MySqlCommand($"Delete from Usuari where Alias = '{alias}';");
             command.Connection = Connexio.Connect();
             Connexio.Open();
-            command.ExecuteNonQuery();
-            command.Connection.Close();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
         }
         static public void ActualitzarUsuari(string id, string nom, string cognom, string nif, string dataAlta, string puntuacio)
         {

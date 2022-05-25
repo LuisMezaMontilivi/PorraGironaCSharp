@@ -21,7 +21,7 @@ namespace PorraGironaCSharp.Capes.View
     /// </summary>
     public partial class BaixesView : UserControl
     {
-        List<Usuari> usuaris;
+        Usuaris usuaris;
         Equips equips;
         Partits partits;
         public BaixesView()
@@ -34,19 +34,19 @@ namespace PorraGironaCSharp.Capes.View
 
         private void LlistarUsuaris()
         {
-            usuaris = DataBase.UsuariBD.LlistatUsuaris();
-            foreach (Usuari X in usuaris)
+            usuaris = new Usuaris();
+            foreach (string X in usuaris.AliesUsuaris())
             {
-                ComboBoxEliminarUsuari.Items.Add(X.alias);
+                ComboBoxEliminarUsuari.Items.Add(X);
             }
         }
 
         private void LlistarEquips()
         {
             equips = new Equips();
-            foreach (Equip X in equips.EquipsBaseDades())
+            foreach (string X in equips.NomsEquips())
             {
-                ComboBoxEliminarEquip.Items.Add(X.NomEquip);
+                ComboBoxEliminarEquip.Items.Add(X);
             }
         }
 
@@ -61,12 +61,17 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonEliminarUsuari_Click(object sender, RoutedEventArgs e)
         {
-            Usuari eliminar = usuaris.Find(x => x.alias == ComboBoxEliminarUsuari.Text);
-            eliminar.Eliminar();
-            usuaris.Remove(eliminar);
-            labelAliasUsuari.Content = labelNomUsuari.Content = labelCognomUsuari.Content = labelNifUsuari.Content = ComboBoxEliminarUsuari.Text = "";
-            ComboBoxEliminarUsuari.Items.Remove(eliminar.alias);
-
+            try
+            {
+                Usuari del = usuaris.RecuperarUsuari(ComboBoxEliminarUsuari.SelectedIndex);
+                usuaris.EliminarUsuari(del);
+                labelAliasUsuari.Content = labelNomUsuari.Content = labelCognomUsuari.Content = labelNifUsuari.Content = ComboBoxEliminarUsuari.Text = "";
+                ComboBoxEliminarUsuari.Items.Remove(del.alias);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ComboBoxEliminarUsuari_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -75,7 +80,7 @@ namespace PorraGironaCSharp.Capes.View
             {
                 if (ComboBoxEliminarUsuari.Text != "")
                 {
-                    Usuari eliminar = usuaris[ComboBoxEliminarUsuari.SelectedIndex];
+                    Usuari eliminar = usuaris.RecuperarUsuari(ComboBoxEliminarUsuari.SelectedIndex);
                     labelAliasUsuari.Content = eliminar.alias;
                     labelNomUsuari.Content = eliminar.nom;
                     labelCognomUsuari.Content = eliminar.cognom;
@@ -92,7 +97,7 @@ namespace PorraGironaCSharp.Capes.View
         {
             if(ComboBoxEliminarEquip.Text != "")
             {
-                Equip eliminar = equips.EquipsBaseDades()[ComboBoxEliminarEquip.SelectedIndex];
+                Equip eliminar = equips.RecuperarEquip(ComboBoxEliminarEquip.SelectedIndex);
                 labelNomEquip.Content = eliminar.NomEquip;
                 labelMunicipiEquip.Content = eliminar.Municipi;
                 labelCampEquip.Content = eliminar.NomCamp;
@@ -101,17 +106,25 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonEliminarEquip_Click(object sender, RoutedEventArgs e)
         {
-            Equip eliminar = equips.EquipsBaseDades()[ComboBoxEliminarEquip.SelectedIndex];
-            equips.EliminarEquip(eliminar.IdEquip);
-            labelNomEquip.Content = labelMunicipiEquip.Content = labelCampEquip.Content = ComboBoxEliminarEquip.Text = "";
-            ComboBoxEliminarEquip.Items.Remove(eliminar.NomEquip);
+            try
+            {
+                Equip eliminar = equips.RecuperarEquip(ComboBoxEliminarEquip.SelectedIndex);
+                equips.EliminarEquip(eliminar);
+                labelNomEquip.Content = labelMunicipiEquip.Content = labelCampEquip.Content = ComboBoxEliminarEquip.Text = "";
+                ComboBoxEliminarEquip.Items.Remove(eliminar.NomEquip);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void ComboBoxEliminarPartit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(ComboBoxEliminarPartit.Text != "")
             {
-                Partit eliminar = partits.LlistarPartits()[ComboBoxEliminarPartit.SelectedIndex];
+                Partit eliminar = partits.RecuperarPartit(ComboBoxEliminarPartit.SelectedIndex);
                 labelData.Content = eliminar.Data;
                 labelEquipLocal.Content = eliminar.EquipLocal.NomEquip;
                 labelEquipVisitant.Content = eliminar.EquipVisitant.NomEquip;
@@ -120,8 +133,17 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonEliminarPartit_Click(object sender, RoutedEventArgs e)
         {
-            Partit eliminar = partits.LlistarPartits()[ComboBoxEliminarPartit.SelectedIndex];
-            labelData.Content = labelEquipLocal.Content = labelEquipVisitant.Content = "";
+            Partit eliminar = partits.RecuperarPartit(ComboBoxEliminarPartit.SelectedIndex);
+            labelData.Content = labelEquipLocal.Content = labelEquipVisitant.Content = ComboBoxEliminarPartit.Text = "";
+            ComboBoxEliminarPartit.Items.Remove(eliminar.EquipLocal.NomEquip + " " + eliminar.EquipVisitant.NomEquip + " " + eliminar.Data);
+            try
+            {
+                partits.EliminarPartit(eliminar);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
         }
     }

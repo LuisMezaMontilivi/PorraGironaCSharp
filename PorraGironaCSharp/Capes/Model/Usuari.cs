@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PorraGironaCSharp.Capes.Model
 {
    
-    class Usuari
+    public class Usuari
     {
         public string alias { get; set; }
         public string contrasenya { get; set; }

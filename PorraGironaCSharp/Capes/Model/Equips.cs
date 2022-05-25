@@ -9,38 +9,53 @@ namespace PorraGironaCSharp.Capes.Model
 {
     public class Equips
     {
-        private List<Equip> llistatEquips;
+        private List<Equip> equips;
 
         public Equips()
         {
-            llistatEquips = EquipBD.LlistatEquips();
+            equips = EquipBD.LlistatEquips();
         }
 
         public bool AfegirEquip(Equip equip)
         {
-            llistatEquips.Add(equip);
+            equips.Add(equip);
             return EquipBD.InsertarEquip(equip);
         }
 
         public Equip RetornarEquip(string nom)
         {
-            return llistatEquips.Find(x => x.NomEquip == nom);
+            return equips.Find(x => x.NomEquip == nom);
         }
 
-        public bool EliminarEquip(int idEquip)
+        public bool EliminarEquip(Equip e)
         {
             bool eliminat = false;
             try
             {
-                EquipBD.EliminarEquip(idEquip);
-                llistatEquips.RemoveAt(llistatEquips.FindIndex(x => x.IdEquip == idEquip));
+                EquipBD.EliminarEquip(e.IdEquip);
+                equips.Remove(e);
                 eliminat = true;
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
-                throw e;
+                throw ex;
             }
             return eliminat;
+        }
+
+        public List<string> NomsEquips()
+        {
+            List<string> noms = new List<string>();
+            foreach(Equip X in equips)
+            {
+                noms.Add(X.NomEquip);
+            }
+            return noms;
+        }
+
+        public Equip RecuperarEquip(int posicio)
+        {
+            return equips[posicio];
         }
 
         public List<Equip> EquipsBaseDades()

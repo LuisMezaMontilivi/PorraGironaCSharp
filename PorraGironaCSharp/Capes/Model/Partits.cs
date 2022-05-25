@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
-    class Partits
+    public class Partits
     {
-        private List<Partit> llistatPartits;
+        private List<Partit> partits;
 
         public Partits()
         {
             try
             {
-                llistatPartits = PartitBD.LlistarPartits();
+                partits = PartitBD.LlistarPartits();
             }
             catch(Exception ex)
             {
@@ -29,7 +29,7 @@ namespace PorraGironaCSharp.Capes.Model
             bool insercio = false;
             try
             {
-                llistatPartits.Add(p);
+                partits.Add(p);
                 PartitBD.InsertarPartit(p);
                 insercio = true;
             }
@@ -41,9 +41,15 @@ namespace PorraGironaCSharp.Capes.Model
             return insercio;
         }
 
-        public bool EliminarPartit(int idPartit)
+        public Partit RecuperarPartit(int posicio)
         {
-            throw new System.NotImplementedException();
+            return partits[posicio];
+        }
+
+        public void EliminarPartit(Partit p)
+        {
+            partits.Remove(p);
+            PartitBD.EliminarPartit(p.Id);
         }
 
         public bool ActualtizarPartit(int idPartit)
@@ -53,7 +59,7 @@ namespace PorraGironaCSharp.Capes.Model
 
         public List<Partit> LlistarPartits()
         {
-            return llistatPartits;
+            return partits;
         }
 
         public Partit UltimPartit()

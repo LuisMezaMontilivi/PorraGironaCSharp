@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.Model
 {
-    class Partit
+    public class Partit
     {
         private string estat;
         private int golsLocal;
@@ -20,6 +20,26 @@ namespace PorraGironaCSharp.Capes.Model
         {
             this.estat = estat; equipLocal = local; equipVisitant = visitant; data = temps;
             golsLocal = golsVisitant = 0;
+        }
+
+        public Partit(int id, string estat, Equip local, Equip visitant, DateTime temps) : this(estat, local, visitant, temps)
+        {
+            idPartit = id;
+        }
+
+        public int GolsLocal
+        {
+            get { return golsLocal; }
+        }
+
+        public int GolsVisitant
+        {
+            get { return golsVisitant; }
+        }
+
+        public int Id
+        {
+            get { return idPartit; }
         }
 
         public Equip EquipVisitant
