@@ -12,11 +12,19 @@ namespace PorraGironaCSharp.Capes.DataBase
         //MySqlConnection connexio = new MySqlConnection($"server=localhost; port=3306; user=root; password=; database=porra");
         static public string SelectRol(string usuari, string contrasenya)
         {
-           
+            string rol = "";
             MySqlCommand command = new MySqlCommand($"Select Rol from Usuari where Alias='{usuari}' and Contrasenya = '{contrasenya}';");
             command.Connection=Connexio.Connect();
             Connexio.Open();
-            string rol = command.ExecuteScalar().ToString();
+            if (command.ExecuteScalar() != null)
+            {
+                rol = command.ExecuteScalar().ToString();
+            }
+            else
+            {
+                rol = null;
+            }
+           
             command.Connection.Close();
             Connexio.Close();
 
