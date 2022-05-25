@@ -6,7 +6,54 @@
              xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <StackPanel>
+        <Label Content="Selecciona l'equip a modificar"
+               Foreground="White"
+               VerticalContentAlignment="Center"
+               HorizontalAlignment="Center"/>
+        <ComboBox x:Name="comboBoxActualitzarEquip"
+                  Style="{DynamicResource ComboBoxRedondo}"
+                  Width="300" SelectionChanged="comboBoxActualitzarEquip_SelectionChanged"/>
+        
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
             
-    </Grid>
+            <Label Content="Nom del camp"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   RenderTransformOrigin="1.458,0.679"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Margin="0,0,20,0"/>
+            <TextBox x:Name="TextBoxCamp"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+            <Label Content="Imatge"
+                   Foreground="White"
+                   FontFamily="/Fonts/#Poppins"
+                   RenderTransformOrigin="1.458,0.679"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,54,0"/>
+            <TextBox x:Name="TextBoxImatge"
+                     Style="{StaticResource ResourceKey=TextBoxEstiloso}"
+                     Margin="12,0,0,0"/>
+            <Button x:Name="ButtonAfegirImatge"
+                    Content="Cercar"
+                    Height="10"
+                    Width="50"
+                    Margin="20,0,0,0" Click="ButtonAfegirImatge_Click"/>
+
+        </StackPanel>
+
+        <Border CornerRadius="10">
+            <Button x:Name="buttonModEquip"
+                    Margin="50,20,50,0"
+                    Content="modificar equip"
+                    FontFamily="/Fonts/#Poppins"
+                    FontSize="20" Click="ButtonModEquip_Click"/>
+        </Border>
+
+    </StackPanel>
 </UserControl>

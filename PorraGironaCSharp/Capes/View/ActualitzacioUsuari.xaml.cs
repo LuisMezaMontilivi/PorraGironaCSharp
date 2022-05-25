@@ -55,7 +55,6 @@ namespace PorraGironaCSharp.Capes.View
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void comboBoxUsuari_SelectionChanged(object sender, SelectionChangedEventArgs e)
