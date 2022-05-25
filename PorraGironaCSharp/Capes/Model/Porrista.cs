@@ -9,7 +9,7 @@ namespace PorraGironaCSharp.Capes.Model
     public class Porrista: Usuari
     {
        
-        private int idPorrista;
+       
         private int puntuacioTotal;
        // private List<Historic> historics;
 
@@ -18,21 +18,21 @@ namespace PorraGironaCSharp.Capes.Model
         public Porrista(string nom, string cognom, string dni, string alias, string contrasenya, int idPorrista, int puntuacioTotal) : base(nom, cognom, dni, alias)
         {
             
-            this.idPorrista = idPorrista;
+           
             this.puntuacioTotal = puntuacioTotal;
            
         }
 
-        public Porrista(string nom, string cognom, string dni, string alias,  int idPorrista, int puntuacioTotal) : base(nom, cognom, dni, alias)
+        public Porrista(string nom, string cognom, string dni, string alias,int idUsuari, int puntuacioTotal) : base(nom, cognom, dni, alias, idUsuari )
         {
             
-            this.idPorrista = idPorrista;
+            
             this.puntuacioTotal = puntuacioTotal;
 
         }
 
        
-        public int IdPorrista { get => idPorrista; set => idPorrista = value; }
+        
         public int PuntuacioTotal { get => puntuacioTotal; set => puntuacioTotal = value; }
        // internal List<Historic> Historics { get => historics; set => historics = value; }
 

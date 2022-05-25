@@ -8,7 +8,15 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
 
-    <DataGrid x:Name="DataGridPuntuacions">
+    <DataGrid x:Name="DataGridPuntuacions" 
+              AlternatingRowBackground="#83b9ff"
+              CanUserAddRows="False"
+              AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            
+            <DataGridTextColumn Header="Alias" Binding="{Binding Path=alias}"/>
+            <DataGridTextColumn Header="Puntuacio" Binding="{Binding Path=PuntuacioTotal}"/>
+        </DataGrid.Columns>
         
         
     </DataGrid>

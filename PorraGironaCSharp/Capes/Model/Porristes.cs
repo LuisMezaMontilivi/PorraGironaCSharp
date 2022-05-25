@@ -42,7 +42,7 @@ namespace PorraGironaCSharp.Capes.Model
             bool outcome=true;
             try
             {
-                llistatPorristes.RemoveAt(llistatPorristes.FindIndex(x => x.IdPorrista == idPorrista));
+                llistatPorristes.RemoveAt(llistatPorristes.FindIndex(x => x.idUsuari == idPorrista));
             }
             catch (Exception ex)
             {
