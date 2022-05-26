@@ -1,12 +1,209 @@
 ﻿<Window x:Class="PorraGironaCSharp.PaginaUser"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:PorraGironaCSharp"
+        xmlns:viewModel="clr-namespace:PorraGironaCSharp.Capes.ViewModel"
         mc:Ignorable="d"
-        Title="PaginaUser" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="VistaUSR1" Height="450" Width="800"
+        ResizeMode="CanResizeWithGrip"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+		>
+    <!--<Window.DataContext>
+        <viewModel:UserPrincipalVM/>
+    </Window.DataContext>-->
+
+    <Border
+        Background="White"
+        CornerRadius= "20">
+        <Grid x:Name="GridBarraLateral">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="200"/>
+
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.ColumnSpan="2"
+                    Background="#252525">
+            </Border>
+
+            <Grid HorizontalAlignment="Left" >
+                <Label 
+                       Foreground="White"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       x:Name="labelUsuari"/>
+
+
+            </Grid>
+            <StackPanel HorizontalAlignment="Right"
+                        Orientation="Horizontal"
+                            Grid.Column="2">
+
+                <Button Width="37" Height="37" Margin="0, 0, 0, 0"
+                       
+                        Foreground="Wheat"
+                        Background="Transparent"
+                        FontWeight="Bold"
+                        FontSize="19"
+                        BorderThickness="0" 
+                        x:Name="ButtonMinimitzar"
+                        Click="ButtonMinimizar_Click"
+                        >
+                    <iconPacks:PackIconMaterial Kind="WindowMinimize"  
+                                             Width="20"
+                                            Height="23"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+
+                </Button>
+                <Button Width="37" Margin="0,0,0,2"
+                     
+                        Foreground="Wheat"
+                        Background="Transparent"
+                        FontWeight="Bold"
+                        FontSize="25"
+                        BorderThickness="0"
+                        x:Name="ButtonMaximizar" 
+                        Click="ButtonMaximizar_Click"
+                        >
+                    <iconPacks:PackIconMaterial Kind="WindowMaximize"  
+                                            Width="20"
+                                            Height="23"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"/>
+
+                </Button>
+
+                <Button Width="37" Height="37" 
+                        
+                        Foreground="White"
+                        Background="Transparent"
+                        FontWeight="Bold"
+                        FontSize="19"
+                        BorderThickness="0" 
+                        x:Name="ButtonCerrar"
+                        Click="ButtonCerrar_Click">
+
+                    <iconPacks:PackIconMaterial Kind="Close"
+                                            Width="20"
+                                            Height="23"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"
+                                            />
+
+                </Button>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" >
+
+                <local:NavButton Text="Principal"
+                                 Height="103"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                  FontSize="14" 
+                                 NavUri="Capes/View/UsuariPrincipalView.xaml"
+                                 Click="NavButtonPrincipal_Click"/>
+
+                <local:NavButton x:Name="NavButtonPuntuacions" 
+                                 Text="Puntuacions" 
+                                 Height="103"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                 Width="200"
+                                 FontSize="14" 
+                                 NavUri="Capes/View/UserPuntuacionsView.xaml"
+                                 Click="NavButtonPuntuacions_Click"
+                                 
+                                 />
+                <local:NavButton x:Name="NavButtonHistoric" 
+                                 Text="Historic" 
+                                 Height="103"
+                                 VerticalAlignment="Center"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                 FontSize="14"
+                                 Click="NavButtonHistoric_Click"/>
+                <local:NavButton x:Name="NavButtonAltres" 
+                                 Text="Altres" 
+                                 Height="103"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Foreground="White"
+                                 Background="#448AFF"
+                                 Width="200"
+                                 FontSize="14"/>
+
+                <!--<RadioButton Content="Pantalla Principal"
+                             Height="103"
+                             Foreground="White"
+                             Background="#005ecb"
+                             FontSize="14"
+                             Style="{StaticResource PaginaUser}"
+                             x:Name="ButtonPrincipal"
+                             Checked="ButtonPrincipal_Checked"
+                             />
+                <RadioButton Content="Puntuacions"
+                             Height="103"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource PaginaUser}"
+                             x:Name="ButonPuntuacions" Checked="ButonPuntuacions_Checked"
+                             
+                            
+                            
+                             />
+                <RadioButton Content="Històric "
+                             Height="103"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource PaginaUser}" 
+                             x:Name="ButtonHistoric"
+                             
+                             />
+                <RadioButton Content="Donacions"
+                             Height="103"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource PaginaUser}" 
+                             
+                             />-->
+            </StackPanel>
+
+
+
+            <Frame Grid.Row="1" Grid.Column="1" Margin="10" 
+                   Content="/PorraGironaCSharp;component/Capes/View/UsuariPrincipalView.xaml"
+                   NavigationUIVisibility="Hidden"
+                   
+                   x:Name="FramePrincipal" />
+            <!--<Frame.ContentTemplate>
+                    <DataTemplate>
+                        <ContentControl Content="{Binding }"
+                    </DataTemplate>
+                </Frame.ContentTemplate>
+            </Frame>-->
+
+
+            <!--<ContentControl Grid.Row="1" 
+                            Grid.Column="1"
+                            Margin="10"
+                            Content ="{Binding CurrentView}"/>-->
+
+        </Grid>
+    </Border>
+
+
 </Window>

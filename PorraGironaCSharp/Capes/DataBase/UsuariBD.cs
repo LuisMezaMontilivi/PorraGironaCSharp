@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PorraGironaCSharp.Capes.Model;
 
 namespace PorraGironaCSharp.Capes.DataBase
 {
@@ -111,6 +112,39 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
         }
 
+
+        static public bool InsertarPorra(Porra porra, string alias) //Faig que retorni true o false perquè em serà interessant per saber si puc insertar o modificar
+        {
+            bool output=true;
+            MySqlCommand command = new MySqlCommand($"Insert into porra((select IdUsuari from usuari where alias = '{alias}'), {porra.Partit.Id}, {porra.PrevisioGolsLocal}, " +
+                $"{porra.PrevisioGolsLocal}, current_timestamp, 0 )");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                output = false;
+            }
+           
+            command.Connection.Close();
+            return output;
+        }
+
+        static public void ModificarPorra(Porra porra, string alias)
+        {
+            MySqlCommand command = new MySqlCommand($"update porra set GolsLocal ={porra.PrevisioGolsLocal}, GolsVisitant = {porra.PrevisioGolsVisitant}, " +
+                $"DataPorra = current_timestamp()" +
+                $"where IdUsuari = (select IdUsuari from usuari where alias = '{alias}'); ");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+      
         static public void ActualitzarUsuariBD(Usuari u)
         {
             MySqlCommand command = new MySqlCommand($"UPDATE Usuari SET Nom='{u.nom}', Cognom='{u.cognom}', Nif='{u.nif}' where Alias='{u.alias}';");
@@ -128,7 +162,90 @@ namespace PorraGironaCSharp.Capes.DataBase
             Connexio.Open();
             command.ExecuteNonQuery();
             command.Connection.Close();
+
         }
+
+
+        //public static List<Porrista> LlistaPorristes()
+        //{
+        //    string query = $"select * from usuari where rol = 'user'";
+        //    MySqlCommand command = new MySqlCommand(query, Connexio.Connect());
+        //    command.CommandTimeout = 60; //Per que no es pengi la cosa
+        //    List<Porrista> output = new List<Porrista>();
+
+        //    using (Connexio.Connect())
+        //    {
+        //        Connexio.Open();
+        //        MySqlDataReader reader = command.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            output.Add(new Porrista(
+        //                                            (string)reader["Nom"],
+        //                                            (string)reader["Cognom"],
+        //                                            (string)reader["Nif"],
+        //                                            (string)reader["Alias"],
+        //                                            (string)reader["IdUsuari"],
+        //                                            (Int32)reader["PuntuacioTotal"]
+        //                                            ));
+        //        }
+
+        //    }
+
+        //    return output;
+
+
+        //}
+        public static List<Porrista> LlistaPorristes()
+        {
+            string conexio = "server=localhost; port=3306; user=root; password=; database=porra";
+            List<Porrista> retorn = new List<Porrista>();
+            using (MySqlConnection connect = new MySqlConnection(conexio))
+            {
+                connect.Open();
+                MySqlCommand llegirEquips = new MySqlCommand("SELECT * FROM usuari where rol = 'user' order by PuntuacioTotal DESC", connect);
+                MySqlDataReader lector = llegirEquips.ExecuteReader();
+                while (lector.Read())
+                {
+                    retorn.Add(new Porrista( (string)lector["Nom"],
+                                         (string)lector["Cognom"],
+                                         (string)lector["Nif"],
+                                         (string)lector["Alias"],
+                                         (int)lector["IdUsuari"],
+                                         (int)lector["PuntuacioTotal"]));
+                }
+            }
+            return retorn;
+        }
+
+
+        public static List<Historic> LlistaHistorics(string alias)
+        {
+            string conexio = "server=localhost; port=3306; user=root; password=; database=porra";
+            List<Historic> retorn = new List<Historic>();
+            using (MySqlConnection connect = new MySqlConnection(conexio))
+            {
+                connect.Open();
+                MySqlCommand llegirHistorics = new MySqlCommand($"SELECT * FROM historic where IdUsuari = (select IdUsuari from usuari where alias = '{alias}')", connect);
+                MySqlDataReader lector = llegirHistorics.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    retorn.Add(new Historic(
+                                            (int)lector["IdUsuari"],
+                                            (string)lector["Temporada"],
+                                            (int)lector["PuntuacioTotal"],
+                                            (int)lector["Posicio"]
+                        )
+                        );
+
+
+                }
+
+                return retorn;
+
+            }
+
+          }
 
     }
 }

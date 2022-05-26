@@ -18,6 +18,8 @@
                 <ResourceDictionary Source="Theme/BotonCircular.xaml"/>
                 <ResourceDictionary Source="Theme/Marcador.xaml"/>
                 <ResourceDictionary Source="Theme/ComboBoxRedondo.xaml"/>
+                <ResourceDictionary Source="Theme/PaginaUserTema.xaml"/>
+                <ResourceDictionary Source="Themes/Generic.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:UltimPartitViewModel}">
@@ -32,6 +34,13 @@
                 <view:BaixesView/>
             </DataTemplate>
 
+            <!--<DataTemplate DataType="{x:Type viewModel:ContingutUserVM}">
+                <view:UsuariPrincipalView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UserPuntuacionsVM}">
+                <view:UserHistoric/>
+            </DataTemplate>-->
+          
             <DataTemplate DataType="{x:Type viewModel:ActualitzacionsViewModel}">
                 <view:ActualitzacionsView/>
             </DataTemplate>

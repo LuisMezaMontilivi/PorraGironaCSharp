@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="PorraGironaCSharp.Capes.View.UserPuntuacionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <DataGrid x:Name="DataGridPuntuacions" 
+              AlternatingRowBackground="#83b9ff"
+              CanUserAddRows="False"
+              AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            
+            <DataGridTextColumn Header="Alias" Binding="{Binding Path=alias}"
+                                Width="200"/>
+            <DataGridTextColumn Header="Puntuacio" Binding="{Binding Path=PuntuacioTotal}"
+                                Width="200"/>
+            <DataGridTextColumn Header="Posició" Binding="{Binding Path=PosicioRanking}"
+                                Width="200"/>
+        </DataGrid.Columns>
+        
+        
+    </DataGrid>
+    
+    <!--<DataGrid 
+              AlternatingRowBackground="#83b9ff
+              x:Name="DGPuntuacions">
+        
+        
+        --><!--<DataGrid.Columns>
+            <DataGridTextColumn Header="Alias" Width="300" 
+                                />
+            <DataGridTextColumn Header="Puntuacio" Width="300"  
+                                />
+            
+
+
+        </DataGrid.Columns>--><!--
+       
+        
+    </DataGrid>-->
+    
+    
+    
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" 
+                   Text="Puntuacions" Foreground="Red"/>
+    </Grid>-->
+</UserControl>
