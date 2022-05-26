@@ -17,18 +17,49 @@ namespace PorraGironaCSharp.Capes.Model
         public string nif { get; set; }
         public string rol { get; set; }
 
+
+        public int idUsuari { get; set; }
+
+
+        public Usuari() { }
         public Usuari(string alias, string contrasenya)
         {
             this.alias = alias;
             this.contrasenya = contrasenya;
         }
-        public Usuari(string nom, string cognom, string dni, string alias, string contrasenya)
+
+      
+
+
+        
+        public Usuari(string nom, string cognom, string  nif, string alias,string contrasenya)
+        {
+            this.nom = nom;
+            this.cognom = cognom;
+            this.nif = nif;
+            this.alias = alias;
+            this.contrasenya = contrasenya;
+        }
+
+       
+        public Usuari(string nom, string cognom, string dni ,string alias, int idUsuari) //Algo he posat per aqui;
+        {
+            this.nom = nom;
+            this.cognom = cognom;
+            this.nif = dni;
+            this.alias = alias;
+            this.idUsuari = idUsuari;
+            
+        }
+        public Usuari(string nom, string cognom, string dni, string alias) //Algo he posat per aqui;
+
         {
             this.nom = nom;
             this.cognom = cognom;
             this.nif = dni;
             this.alias = alias;
             this.contrasenya = contrasenya;
+
         }
 
         public Usuari(string nom, string cognom, string dni, string alias, string contrasenya, string rol) : this(nom, cognom, dni, alias, contrasenya)

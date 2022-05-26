@@ -52,6 +52,12 @@ namespace PorraGironaCSharp.Capes.Model
             return noJugats.Find(p => p.Data == noJugats.Min(t => t.Data));
         }
 
+        public Partit RecuperarUltimPartitJugat()
+        {
+            List<Partit> Jugats = partits.FindAll(p => p.Estat == "Acabat");
+            return Jugats.Find(p => p.Data == Jugats.Max(t => t.Data));
+        }
+
         public void EliminarPartit(Partit p)
         {
             partits.Remove(p);
@@ -63,6 +69,7 @@ namespace PorraGironaCSharp.Capes.Model
         {
             throw new System.NotImplementedException();
         }
+
 
         public List<Partit> LlistarPartits()
         {
@@ -86,5 +93,6 @@ namespace PorraGironaCSharp.Capes.Model
             }
             
         }
+
     }
 }

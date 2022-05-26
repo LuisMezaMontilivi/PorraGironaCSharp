@@ -1,0 +1,357 @@
+﻿<UserControl x:Class="PorraGironaCSharp.Capes.View.UsuariPrincipalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
+             xmlns:wpfx="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             Background="Transparent"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <Grid  Margin="40, 30, 30, 40"
+                        >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" CornerRadius="15" BorderThickness="3" 
+                        BorderBrush="#cf0c2e" 
+                        x:Name="BorderInteriorAnterior" >
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Grid.Column="1" 
+                                Height="25"
+                                BorderThickness="3"
+                                BorderBrush=" #cf0c2e"
+                                CornerRadius="5"
+                                x:Name="EtiquetaJornadaAnterior"
+                                >
+                    <TextBlock x:Name="NumJornadaAnterior"
+                               Text="JORNADA ANTERIOR"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontWeight="Bold"
+                               Foreground="#cf0c2e"/>
+                </Border>
+
+
+
+                <Border Grid.Row="1" Grid.Column="1"  
+                                CornerRadius="5" 
+                                BorderThickness="3" 
+                                BorderBrush="#cf0c2e" 
+                        x:Name="InternAnterior">
+                    <Grid x:Name="GridInternaAnterior">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="17"/>
+                            <RowDefinition />
+                            <RowDefinition Height="17"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0"
+                                   x:Name="TextBGolsLocalAnterior"
+                                   Text="0"
+                                   Foreground="#cf0c2e"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   FontSize="25"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="1"
+                                   Text="-" 
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#cf0c2e"
+                                   FontWeight="Bold"
+                                   FontSize="25"
+                                   />
+
+                        <TextBlock Grid.Row="1" Grid.Column="2"
+                                   x:Name="TextBGolsVisitantAnterior"
+                                   Text="0"
+                                   Foreground="#cf0c2e"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   FontSize="25"/>
+
+
+
+                    </Grid>
+
+                </Border>
+                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                           Source="/Images/Escut.png"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,0"
+                           x:Name="ImatgeLocalAnterior"
+                       />
+                <Image Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"
+                           Source="/Images/Escut.png"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,0"
+                           x:Name="ImatgeVisitantAnterior"
+                       />
+
+
+
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="EquipLocal"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Foreground="#cf0c2e"
+                                   x:Name="NomLocalAnterior"
+                                   
+                                   />
+                <TextBlock Grid.Row="2" Grid.Column="1"
+                                   Text="DataPartit"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Foreground="#cf0c2e"
+                                   x:Name="DataPartitAnterior"
+                                   />
+
+                <TextBlock Grid.Row="2" Grid.Column="2"
+                                   Text="EquipVisitant"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Foreground="#cf0c2e"
+                                   x:Name="NomVisitantAnterior"
+                                   />
+
+
+
+            </Grid>
+
+        </Border>
+
+
+        <Border Grid.Row="1" >
+            <Button Grid.Column="1" Grid.Row="1" Content="Guarda la Previsió"
+                                        Style="{DynamicResource BotonCircular}"
+                                        HorizontalAlignment="Center"
+                                        x:Name="EnviarPorraButton"
+                                        FontFamily="/Fonts/#Poppins"
+                                        Height="25" 
+                                        Width="200"
+                                        FontSize="14"
+                                        Background="#448AFF"
+                                        Foreground="White" Click="EnviarPorraButton_Click"
+                        />
+        </Border>
+
+        <Border Grid.Row="2" CornerRadius="15" 
+                        BorderThickness="3" 
+                        BorderBrush="#448AFF" 
+                        x:Name="PartitActual" >
+
+            <Grid x:Name="GridInternaSeguent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+
+
+                <Border Grid.Row="0" Grid.Column="1" 
+                                Height="25"
+                                BorderThickness="3"
+                                BorderBrush="#448AFF"
+                                CornerRadius="5"
+                                x:Name="EtiquetaJornadaSeguent"
+                                >
+                    <TextBlock x:Name="NumJornadaSeguent"
+                               Text="JORNADA ACTUAL"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontWeight="Bold"
+                               Foreground="#448AFF"/>
+                </Border>
+
+
+                <Border Grid.Row="1" Grid.Column="1"  
+                                CornerRadius="5" 
+                                BorderThickness="3" 
+                                BorderBrush="#448AFF" 
+                        x:Name="BorderInternSeguent">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition />
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0"
+                                                               Grid.Column="0"
+                                                               Content="⏶"
+                                
+                                                               Style="{DynamicResource BotonCircular}"
+                                                               Foreground="White"
+                                                               HorizontalAlignment="Center"
+                                
+                                                               x:Name="IncrementarLocal"
+                                                               Click="IncrementarLocal_Click" Width="50" Height="15" VerticalAlignment="Top" Panel.ZIndex="-1"
+                                                               Background="#448AFF" Margin="3,3,0,0"
+                                                               
+                                                               >
+                        </Button>
+
+                        <Button Grid.Row="2"
+                                                               Grid.Column="0"
+                                                               Content="⏷"
+                                                               Style="{DynamicResource BotonCircular}"
+                                                               HorizontalAlignment="Center"
+                                                               x:Name="DisminuirLocal"
+                                                               Click="DisminuirLocal_Click" Width="50" Height="15" VerticalAlignment="Bottom"
+                                                               Background="#448AFF"
+                                                               Foreground="White" Margin="3,0,0,3"
+                                />
+
+                        <Button Grid.Row="0"
+                                                               Grid.Column="2"
+                                                               Content="⏶"
+                                                               Style="{DynamicResource BotonCircular}"
+                                                               HorizontalAlignment="Center"
+                                                               x:Name="IncrementarVisitant"
+                                                               Click="IncrementarVisitant_Click"  Width="50" Height="15" VerticalAlignment="Top" Panel.ZIndex="-1"
+                                                               Background="#448AFF"
+                                                               Foreground="White" Margin="0,3,3,0"
+                                />
+
+                        <Button Grid.Row="2"
+                                                               Grid.Column="2"
+                                                               Content="⏷"
+                                                               Style="{DynamicResource BotonCircular}"
+                                                               HorizontalAlignment="Center"
+                                                               x:Name="DisminuirVisitant"
+                                                               Click="DisminuirVisitant_Click" Width="50" Height="15" VerticalAlignment="Bottom" 
+                                                               Background="#448AFF"
+                                                               Foreground="White" Margin="0,0,3,3"
+                                
+                                />
+
+
+
+                        <TextBlock Grid.Row="1" Grid.Column="0"
+                                   x:Name="TextBGolsLocalActual"
+                                   Text="0"
+                                   Foreground="#448AFF"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   FontSize="25" Panel.ZIndex="1"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="1"
+                                   Text="-" 
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#448AFF"
+                                   FontWeight="Bold"
+                                   FontSize="25"
+                                   />
+
+                        <TextBlock Grid.Row="1" Grid.Column="2"
+                                   x:Name="TextBGolsVisitantActual"
+                                   Text="0"
+                                   Foreground="#448AFF"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   FontSize="25" Panel.ZIndex="1"/>
+                    </Grid>
+
+                </Border>
+
+                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                           Source="/Images/Escut.png"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,0"
+                           x:Name="ImatgeLocalSeguent"
+                       />
+                <Image Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"
+                           Source="/Images/Escut.png"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,0"
+                           x:Name="ImatgeVisitantSeguent"
+                       />
+
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="EquipLocal"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Foreground="#448AFF"
+                                   x:Name="NomLocalSeguent"
+                                   />
+                <TextBlock Grid.Row="2" Grid.Column="1"
+                                   Text="DataPartit"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Foreground="#448AFF"
+                                   x:Name="DataPartitSeguent"
+                                   />
+
+                <TextBlock Grid.Row="2" Grid.Column="2"
+                                   Text="EquipVisitant"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   FontSize="20"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Foreground="#448AFF"
+                                   x:Name="NomVisitantSeguent"
+                                   />
+
+
+            </Grid>
+
+        </Border>
+
+
+
+
+    </Grid>
+</UserControl>
