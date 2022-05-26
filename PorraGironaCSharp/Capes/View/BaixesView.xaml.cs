@@ -61,16 +61,19 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonEliminarUsuari_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (ComboBoxEliminarUsuari.Text != "")
             {
-                Usuari del = usuaris.RecuperarUsuari(ComboBoxEliminarUsuari.SelectedIndex);
-                usuaris.EliminarUsuari(del);
-                labelAliasUsuari.Content = labelNomUsuari.Content = labelCognomUsuari.Content = labelNifUsuari.Content = ComboBoxEliminarUsuari.Text = "";
-                ComboBoxEliminarUsuari.Items.Remove(del.alias);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    Usuari del = usuaris.RecuperarUsuari(ComboBoxEliminarUsuari.SelectedIndex);
+                    usuaris.EliminarUsuari(del);
+                    labelAliasUsuari.Content = labelNomUsuari.Content = labelCognomUsuari.Content = labelNifUsuari.Content = ComboBoxEliminarUsuari.Text = "";
+                    ComboBoxEliminarUsuari.Items.Remove(del.alias);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -106,18 +109,21 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonEliminarEquip_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (ComboBoxEliminarEquip.Text != "")
             {
-                Equip eliminar = equips.RecuperarEquip(ComboBoxEliminarEquip.SelectedIndex);
-                equips.EliminarEquip(eliminar);
-                labelNomEquip.Content = labelMunicipiEquip.Content = labelCampEquip.Content = ComboBoxEliminarEquip.Text = "";
-                ComboBoxEliminarEquip.Items.Remove(eliminar.NomEquip);
+                try
+                {
+                    Equip eliminar = equips.RecuperarEquip(ComboBoxEliminarEquip.SelectedIndex);
+                    equips.EliminarEquip(eliminar);
+                    labelNomEquip.Content = labelMunicipiEquip.Content = labelCampEquip.Content = ComboBoxEliminarEquip.Text = "";
+                    ComboBoxEliminarEquip.Items.Remove(eliminar.NomEquip);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+             
         }
 
         private void ComboBoxEliminarPartit_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -133,18 +139,20 @@ namespace PorraGironaCSharp.Capes.View
 
         private void ButtonEliminarPartit_Click(object sender, RoutedEventArgs e)
         {
-            Partit eliminar = partits.RecuperarPartit(ComboBoxEliminarPartit.SelectedIndex);
-            labelData.Content = labelEquipLocal.Content = labelEquipVisitant.Content = ComboBoxEliminarPartit.Text = "";
-            ComboBoxEliminarPartit.Items.Remove(eliminar.EquipLocal.NomEquip + " " + eliminar.EquipVisitant.NomEquip + " " + eliminar.Data);
-            try
+            if (ComboBoxEliminarPartit.Text != "")
             {
-                partits.EliminarPartit(eliminar);
+                Partit eliminar = partits.RecuperarPartit(ComboBoxEliminarPartit.SelectedIndex);
+                labelData.Content = labelEquipLocal.Content = labelEquipVisitant.Content = ComboBoxEliminarPartit.Text = "";
+                ComboBoxEliminarPartit.Items.Remove(eliminar.EquipLocal.NomEquip + " " + eliminar.EquipVisitant.NomEquip + " " + eliminar.Data);
+                try
+                {
+                    partits.EliminarPartit(eliminar);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
         }
     }
 }

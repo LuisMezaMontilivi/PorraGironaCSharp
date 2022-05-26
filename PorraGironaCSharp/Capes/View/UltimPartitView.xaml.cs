@@ -49,11 +49,25 @@ namespace PorraGironaCSharp.Capes.View
         private void CarregarUltimPartit()
         {
             Partit ultim = partits.RecuperarUltimPartitNoJugat();
-            textBlockLocal.Text = ultim.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
-            textBlockVisitant.Text = ultim.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
-            textBlockData.Text = Convert.ToString(ultim.Data);
-            imageLocal.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
-            imageVisitant.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+            if (!(ultim is null))
+            {
+                textBlockLocal.Text = ultim.EquipLocal.NomCamp;//prova.EquipLocal.NomEquip
+                textBlockVisitant.Text = ultim.EquipVisitant.NomCamp;//prova.EquipVisitant.NomEquip
+                textBlockData.Text = Convert.ToString(ultim.Data);
+                imageLocal.Source = new BitmapImage(new Uri(ultim.EquipLocal.RutaEscut, UriKind.Relative));
+                imageVisitant.Source = new BitmapImage(new Uri(ultim.EquipVisitant.RutaEscut, UriKind.Relative));
+                textBlockTitol.Text = "Següent";
+            }
+            else
+            {
+                textBlockNoExisteix.Text = "No hi ha cap partit pendent";
+                DeshabilitarEdicions();
+            }
+        }
+
+        private void DeshabilitarEdicions()
+        {
+            TextBoxPuntsLocal.IsEnabled = TextBoxPuntsVisitant.IsEnabled = buttonFinalitzarPartit.IsEnabled = ButtonAugmentarLocal.IsEnabled = ButtonAugmentarVisitant.IsEnabled = ButtonDisminuirLocal.IsEnabled = ButtonDisminuirVisitant.IsEnabled = false;
         }
 
         private void TypeNumericValidation(object sender, TextCompositionEventArgs e)
@@ -101,6 +115,27 @@ namespace PorraGironaCSharp.Capes.View
                 TextBoxPuntsVisitant.Text = "0";
             if (TextBoxPuntsVisitant.Text != "0")
                 TextBoxPuntsVisitant.Text = (Convert.ToInt32(TextBoxPuntsVisitant.Text) - 1).ToString();
+        }
+
+        private void buttonFinalitzarPartit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Partit ultim = partits.RecuperarUltimPartitNoJugat();
+                ultim.ActualitzarMarcador(Convert.ToInt32(TextBoxPuntsLocal.Text),Convert.ToInt32(TextBoxPuntsVisitant.Text));
+                ultim.CanviarEstat("Acabat");
+                Porres porres = new Porres();
+                porres.ActualitzarResultatsPorra(ultim);
+                ultim.EnviarCanvis();
+                DeshabilitarEdicions();
+                MessageBox.Show("S'ha acabat el partit.");
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

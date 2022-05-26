@@ -40,6 +40,34 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.Connection.Close();
         }
 
+        static public void EliminarPartitOnHaJugat(int idEquip)
+        {
+            MySqlCommand command = new MySqlCommand($"DELETE FROM Partit WHERE idEquipLocal = {idEquip} OR idEquipVisitant =  {idEquip};");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
+        public static void ActualitzarPartitBD(Partit p)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE Partit SET Moment = '{p.Data.ToString("yyyy-MM-dd HH-mm-ss")}' WHERE Idpartit = {p.Id} ;");
+            //update usuari set Nom = 'Jorge', Cognom = 'Curioso', Nif = '41654422H', DataAlta = current_timestamp, PuntuacioTotal = 5 where IdUsuari = 5;
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
+        static public void ActualitzarPartit(Partit p)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE Partit SET Estat = '{p.Estat}', Gols_Local = {p.GolsLocal}, Gols_Visitant = {p.GolsVisitant} WHERE Idpartit = {p.Id} ;");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
 
         static public List<Partit> LlistarPartits()
         {

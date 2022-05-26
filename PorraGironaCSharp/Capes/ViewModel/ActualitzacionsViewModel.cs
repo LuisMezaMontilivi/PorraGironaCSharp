@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PorraGironaCSharp.Capes.ViewModel
 {
-    class AltaUsuariViewModel
+    class ActualitzacionsViewModel
     {
     }
 }

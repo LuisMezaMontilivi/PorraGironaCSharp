@@ -18,13 +18,16 @@ namespace PorraGironaCSharp.Capes.Model
 
         public bool AfegirUsuari(Usuari u)
         {
-            bool existeixAlias = usuaris.FindIndex(x => x.alias == u.alias) != -1;
-            if (!existeixAlias)
-            {
-                UsuariBD.InsertarUsuariBD(u);
-                usuaris.Add(u);
-            }
-            return !existeixAlias;
+            //codi que falla
+            //bool existeixAlias = usuaris.FindIndex(x => x.alias == u.alias) != -1;
+            //if (!existeixAlias)
+            //{
+            //    UsuariBD.InsertarUsuariBD(u);
+            //    usuaris.Add(u);
+            //}
+            //return !existeixAlias;
+            UsuariBD.InsertarUsuariBD(u); //falla inclós només amb això, referencia a objeto no establecida como instancia de un objeto
+            return true;
         }
 
         public Usuari RecuperarUsuari(int posicio)
@@ -35,7 +38,16 @@ namespace PorraGironaCSharp.Capes.Model
         public void EliminarUsuari(Usuari del)
         {
             usuaris.Remove(del);
+            PorraBD.EliminarPorresUsuari(del.alias);
             UsuariBD.EliminarUsuari(del.alias);
+        }
+
+        public void ActualitzarUsuari(Usuari actualitzar)
+        {
+            //el que està comentat no cal perquè com s'accedeix a la posició de memòria ho editem directament on sigui
+            //Usuari enllacActu = usuaris.Find(x => x.alias == actualitzar.alias);
+            //enllacActu = actualitzar; //substituim directament tota la informació
+            UsuariBD.ActualitzarUsuariBD(actualitzar);
         }
 
         public List<string> AliesUsuaris()

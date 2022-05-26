@@ -1,4 +1,4 @@
-﻿using PorraGironaCSharp.Capes.DataBase;
+using PorraGironaCSharp.Capes.DataBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;

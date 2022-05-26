@@ -32,6 +32,7 @@ namespace PorraGironaCSharp.Capes.Model
             bool eliminat = false;
             try
             {
+                PartitBD.EliminarPartitOnHaJugat(e.IdEquip);
                 EquipBD.EliminarEquip(e.IdEquip);
                 equips.Remove(e);
                 eliminat = true;
@@ -41,6 +42,13 @@ namespace PorraGironaCSharp.Capes.Model
                 throw ex;
             }
             return eliminat;
+        }
+
+        public void ActualitzarEquip(Equip actualitzar)
+        {
+            //Usuari enllacActu = usuaris.Find(x => x.alias == actualitzar.alias);
+            //enllacActu = actualitzar; //substituim directament tota la informació
+            EquipBD.ActualitzarEquipBD(actualitzar);
         }
 
         public List<string> NomsEquips()

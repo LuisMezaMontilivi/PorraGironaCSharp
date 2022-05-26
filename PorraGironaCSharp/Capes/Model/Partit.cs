@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,6 +62,7 @@ namespace PorraGironaCSharp.Capes.Model
         public DateTime Data
         {
             get { return data; }
+            set { data = value; }
         }
 
         public string Estat
@@ -68,14 +70,20 @@ namespace PorraGironaCSharp.Capes.Model
             get { return estat; }
         }
 
-        public bool CanviarEstat(string NouEstat)
+        public void CanviarEstat(string NouEstat)
         {
-            throw new System.NotImplementedException();
+            estat = NouEstat;
         }
 
-        public bool ActualitzarMarcador(int local, int visitant)
+        public void ActualitzarMarcador(int local, int visitant)
         {
-            throw new System.NotImplementedException();
+            golsLocal = local;
+            golsVisitant = visitant;
+        }
+
+        public void EnviarCanvis()
+        {
+            PartitBD.ActualitzarPartit(this);
         }
     }
 }

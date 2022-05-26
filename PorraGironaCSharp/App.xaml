@@ -41,7 +41,10 @@
                 <view:UserHistoric/>
             </DataTemplate>-->
           
-            
+            <DataTemplate DataType="{x:Type viewModel:ActualitzacionsViewModel}">
+                <view:ActualitzacionsView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

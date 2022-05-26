@@ -95,7 +95,8 @@ namespace PorraGironaCSharp.Capes.DataBase
                                          (string)lector["Cognom"],
                                          (string)lector["Nif"],
                                          (string)lector["Alias"],
-                                         (string)lector["Contrasenya"]));
+                                         (string)lector["Contrasenya"],
+                                         (string)lector["rol"]));
                 }
             }
             return usuaris;
@@ -110,6 +111,7 @@ namespace PorraGironaCSharp.Capes.DataBase
             command.ExecuteNonQuery();
             command.Connection.Close();
         }
+
 
         static public bool InsertarPorra(Porra porra, string alias) //Faig que retorni true o false perquè em serà interessant per saber si puc insertar o modificar
         {
@@ -134,9 +136,6 @@ namespace PorraGironaCSharp.Capes.DataBase
 
         static public void ModificarPorra(Porra porra, string alias)
         {
-           
-            
-
             MySqlCommand command = new MySqlCommand($"update porra set GolsLocal ={porra.PrevisioGolsLocal}, GolsVisitant = {porra.PrevisioGolsVisitant}, " +
                 $"DataPorra = current_timestamp()" +
                 $"where IdUsuari = (select IdUsuari from usuari where alias = '{alias}'); ");
@@ -144,8 +143,25 @@ namespace PorraGironaCSharp.Capes.DataBase
             Connexio.Open();
             command.ExecuteNonQuery();
             command.Connection.Close();
+        }
+      
+        static public void ActualitzarUsuariBD(Usuari u)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE Usuari SET Nom='{u.nom}', Cognom='{u.cognom}', Nif='{u.nif}' where Alias='{u.alias}';");
+            //update usuari set Nom = 'Jorge', Cognom = 'Curioso', Nif = '41654422H', DataAlta = current_timestamp, PuntuacioTotal = 5 where IdUsuari = 5;
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
 
-
+        static public void AugmentarPuntuacio(int augment, int usuari)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE Usuari SET PuntuacioTotal = PuntuacioTotal + {augment} WHERE IdUsuari = {usuari} ;");
+            command.Connection = Connexio.Connect();
+            Connexio.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
 
         }
 
@@ -229,8 +245,7 @@ namespace PorraGironaCSharp.Capes.DataBase
 
             }
 
-        }
-
+          }
 
     }
 }
