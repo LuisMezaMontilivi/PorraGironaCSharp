@@ -202,6 +202,35 @@ namespace PorraGironaCSharp.Capes.DataBase
         }
 
 
+        public static List<Historic> LlistaHistorics(string alias)
+        {
+            string conexio = "server=localhost; port=3306; user=root; password=; database=porra";
+            List<Historic> retorn = new List<Historic>();
+            using (MySqlConnection connect = new MySqlConnection(conexio))
+            {
+                connect.Open();
+                MySqlCommand llegirHistorics = new MySqlCommand($"SELECT * FROM historic where IdUsuari = (select IdUsuari from usuari where alias = '{alias}')", connect);
+                MySqlDataReader lector = llegirHistorics.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    retorn.Add(new Historic(
+                                            (int)lector["IdUsuari"],
+                                            (string)lector["Temporada"],
+                                            (int)lector["PuntuacioTotal"],
+                                            (int)lector["Posicio"]
+                        )
+                        );
+
+
+                }
+
+                return retorn;
+
+            }
+
+        }
+
 
     }
 }

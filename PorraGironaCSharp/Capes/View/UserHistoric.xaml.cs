@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGironaCSharp.Capes.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,30 @@ namespace PorraGironaCSharp.Capes.View
     /// </summary>
     public partial class UserHistoric : UserControl
     {
-        public UserHistoric()
+
+        private string alias;
+        private Historics historics;
+        private List<Historic> llistahistorics;
+
+        public UserHistoric(string alias)
         {
+            this.alias = alias;
             InitializeComponent();
+            historics = new Historics();
+
+            llistahistorics = historics.RecuperarHistorics(alias);
+
+            BindGrid(llistahistorics);
+
+        }
+
+
+
+
+
+        private void BindGrid(List<Historic> llistaHistorics)
+        {
+            DataGridHistorics.ItemsSource = llistaHistorics;
         }
     }
 }

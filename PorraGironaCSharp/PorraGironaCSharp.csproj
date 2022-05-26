@@ -205,6 +205,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Capes\Model\Historics.cs" />
     <Compile Include="Capes\ViewModel\ContingutUserVM.cs" />
     <Compile Include="Capes\ViewModel\UserPrincipalVM.cs" />
     <Compile Include="Capes\ViewModel\UserPuntuacionsVM.cs" />

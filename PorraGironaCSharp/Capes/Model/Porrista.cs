@@ -12,7 +12,7 @@ namespace PorraGironaCSharp.Capes.Model
 
         private int idPorrista;
         private int puntuacio;
-
+        private int posicioRanking;
        
        
         private int puntuacioTotal;
@@ -40,7 +40,9 @@ namespace PorraGironaCSharp.Capes.Model
        
         
         public int PuntuacioTotal { get => puntuacioTotal; set => puntuacioTotal = value; }
-       // internal List<Historic> Historics { get => historics; set => historics = value; }
+        public int PosicioRanking { get => posicioRanking; set => posicioRanking = value; }
+
+        // internal List<Historic> Historics { get => historics; set => historics = value; }
 
         public bool AugmentarPuntuacio(int punts)
         {

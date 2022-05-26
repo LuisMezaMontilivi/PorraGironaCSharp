@@ -6,7 +6,22 @@
              xmlns:local="clr-namespace:PorraGironaCSharp.Capes.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    
+    
+    <DataGrid x:Name="DataGridHistorics" 
+              AlternatingRowBackground="#83b9ff"
+              CanUserAddRows="False"
+              AutoGenerateColumns="False">
+        <DataGrid.Columns>
+
+            <DataGridTextColumn Header="Temporada" Binding="{Binding Path=Temporada}"
+                                Width="200"/>
+            <DataGridTextColumn Header="Puntuacio" Binding="{Binding Path=PuntuacioTotal}"
+                                Width="200"/>
+            <DataGridTextColumn Header="Posició" Binding="{Binding Path=Posicio}"
+                                Width="200"/>
+        </DataGrid.Columns>
+
+
+    </DataGrid>
 </UserControl>

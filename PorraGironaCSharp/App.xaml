@@ -34,12 +34,12 @@
                 <view:BaixesView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:ContingutUserVM}">
+            <!--<DataTemplate DataType="{x:Type viewModel:ContingutUserVM}">
                 <view:UsuariPrincipalView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:UserPuntuacionsVM}">
-                <view:UserPuntuacionsView/>
-            </DataTemplate>
+                <view:UserHistoric/>
+            </DataTemplate>-->
           
             
         </ResourceDictionary>

@@ -58,5 +58,24 @@ namespace PorraGironaCSharp.Capes.Model
             return UsuariBD.LlistaPorristes();
 
         }
+
+        public void AfegirPosicions(List<Porrista> llistaporristes)
+        {
+            //Ordenem per PuntuacioTotal
+            llistaporristes = llistaporristes.OrderBy(o => o.PuntuacioTotal).ToList();
+            foreach(Porrista x in llistaporristes)
+            {
+                x.PosicioRanking = llistaporristes.Count - llistaporristes.IndexOf(x);
+            }
+           
+
+            //llistaporristes = llistaporristes.OrderBy(o => o.PosicioRanking).ToList();
+        }
+
+        public void OrdenarPerPosicions(ref List<Porrista> llistaPorristes)
+        {
+            llistaPorristes = llistaPorristes.OrderBy(o => o.PosicioRanking).ToList();
+        }
+        
     }
 }

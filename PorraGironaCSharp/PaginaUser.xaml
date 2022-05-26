@@ -126,6 +126,7 @@
                                  FontSize="14" 
                                  NavUri="Capes/View/UserPuntuacionsView.xaml"
                                  Click="NavButtonPuntuacions_Click"
+                                 
                                  />
                 <local:NavButton x:Name="NavButtonHistoric" 
                                  Text="Historic" 

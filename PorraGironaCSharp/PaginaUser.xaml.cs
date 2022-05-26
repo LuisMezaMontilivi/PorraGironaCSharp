@@ -99,7 +99,7 @@ namespace PorraGironaCSharp
         private void NavButtonHistoric_Click(object sender, RoutedEventArgs e)
         {
             var ClickedButton = e.OriginalSource as NavButton;
-            FramePrincipal.Content = new UsuariPrincipalView(alias);
+            FramePrincipal.Content = new UserHistoric(alias);
 
         }
     }

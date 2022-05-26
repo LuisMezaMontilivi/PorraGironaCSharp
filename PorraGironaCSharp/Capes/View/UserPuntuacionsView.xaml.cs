@@ -34,6 +34,10 @@ namespace PorraGironaCSharp.Capes.View
             porristes = new Porristes();
 
             List<Porrista> llistaPorristes = porristes.RecuperarPorristes();
+            porristes.AfegirPosicions(llistaPorristes);
+            porristes.OrdenarPerPosicions(ref llistaPorristes);
+
+
 
             BindGrid(llistaPorristes);
 

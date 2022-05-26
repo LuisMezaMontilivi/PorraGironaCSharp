@@ -18,6 +18,8 @@
                                 Width="200"/>
             <DataGridTextColumn Header="Puntuacio" Binding="{Binding Path=PuntuacioTotal}"
                                 Width="200"/>
+            <DataGridTextColumn Header="Posició" Binding="{Binding Path=PosicioRanking}"
+                                Width="200"/>
         </DataGrid.Columns>
         
         
